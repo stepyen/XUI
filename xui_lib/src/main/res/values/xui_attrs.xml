@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--控件的自定义属性-->
+<resources>
+
+
+    <!--自动换行-->
+    <declare-styleable name="AutoNewLineLayout">
+        <attr name="max_row" format="integer" />
+        <attr name="max_column" format="integer" />
+        <attr name="vertical_space" format="dimension" />
+        <attr name="horizontal_space" format="dimension" />
+    </declare-styleable>
+
+</resources>

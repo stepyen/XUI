@@ -1,0 +1,90 @@
+package com.stepyen.xuidemo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * date：2019/6/24
+ * author：stepyen
+ * description：演示数据
+ */
+public class DataProvider {
+
+    public static String[] titles = new String[]{
+            "伪装者:胡歌演绎'痞子特工'",
+            "无心法师:生死离别!月牙遭虐杀",
+            "花千骨:尊上沦为花千骨",
+            "综艺饭:胖轩偷看夏天洗澡掀波澜",
+            "碟中谍4:阿汤哥高塔命悬一线,超越不可能",
+    };
+
+
+    public static String[] urls = new String[]{//640*360 360/640=0.5625
+            "http://photocdn.sohu.com/tvmobilemvms/20150907/144160323071011277.jpg",//伪装者:胡歌演绎"痞子特工"
+            "http://photocdn.sohu.com/tvmobilemvms/20150907/144158380433341332.jpg",//无心法师:生死离别!月牙遭虐杀
+            "http://photocdn.sohu.com/tvmobilemvms/20150907/144160286644953923.jpg",//花千骨:尊上沦为花千骨
+            "http://photocdn.sohu.com/tvmobilemvms/20150902/144115156939164801.jpg",//综艺饭:胖轩偷看夏天洗澡掀波澜
+            "http://photocdn.sohu.com/tvmobilemvms/20150907/144159406950245847.jpg",//碟中谍4:阿汤哥高塔命悬一线,超越不可能
+    };
+
+    // 引导页
+    public static List<Object> getUsertGuides() {
+        List<Object> list = new ArrayList<>();
+        list.add(R.mipmap.guide_img_1);
+        list.add(R.mipmap.guide_img_2);
+        list.add(R.mipmap.guide_img_3);
+        list.add(R.mipmap.guide_img_4);
+        return list;
+    }
+
+    public static String[] dpiItems = new String[]{
+            "480 × 800",
+            "1080 × 1920",
+            "720 × 1280",
+    };
+
+    public static ArrayList<String> getTags() {
+        ArrayList<String> data = new ArrayList<>();
+        data.add("冰肌玉骨");
+        data.add("山清水秀");
+        data.add("星月");
+        data.add("草长莺飞");
+        data.add("情动");
+        data.add("绝影");
+        data.add("春和景明");
+        data.add("化羽");
+        data.add("百花齐放");
+        data.add("醉梦");
+        data.add("秀外慧中");
+        data.add("万紫千红");
+        data.add("波澜");
+        data.add("春意盎然");
+        data.add("沧澜");
+        data.add("鸿鹄");
+        data.add("日照香炉生紫烟");
+        data.add("湖光山色");
+        data.add("山岚");
+        data.add("春华");
+        data.add("星雨");
+        data.add("鸟语花香");
+        data.add("浩瀚");
+        data.add("风萧");
+        data.add("浮波");
+        data.add("沧澜");
+        data.add("鸿鹄");
+        data.add("日照香炉生紫烟");
+        data.add("鸟语花香");
+        data.add("湖光山色");
+        data.add("沉鱼落雁闭月羞花");
+        data.add("逐风");
+        data.add("风和日丽");
+        data.add("姹紫嫣红");
+        data.add("遥看瀑布挂前川");
+        data.add("春暖花开");
+        data.add("草长莺飞");
+        data.add("春和景明");
+        data.add("眉目如画");
+        return data;
+    }
+
+}

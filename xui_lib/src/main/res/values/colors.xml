@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--不透明度值-->
+    <color name="white">#FFFFFFFF</color>
+    <color name="white95">#F2FFFFFF</color>
+    <color name="white90">#E6FFFFFF</color>
+    <color name="white85">#D9FFFFFF</color>
+    <color name="white80">#CCFFFFFF</color>
+    <color name="white75">#BFFFFFFF</color>
+    <color name="white70">#B3FFFFFF</color>
+    <color name="white65">#A6FFFFFF</color>
+    <color name="white60">#99FFFFFF</color>
+    <color name="white55">#8CFFFFFF</color>
+    <color name="white50">#80FFFFFF</color>
+    <color name="white45">#73FFFFFF</color>
+    <color name="white40">#66FFFFFF</color>
+    <color name="white35">#59FFFFFF</color>
+    <color name="white30">#4DFFFFFF</color>
+    <color name="white25">#40FFFFFF</color>
+    <color name="white20">#33FFFFFF</color>
+    <color name="white15">#26FFFFFF</color>
+    <color name="white10">#1AFFFFFF</color>
+    <color name="white5">#0DFFFFFF</color>
+    <color name="white0">#00FFFFFF</color>
+
+    <!--<color name="black">  #FF00000</color>-->
+    <!--<color name="black95">#F200000</color>-->
+    <!--<color name="black90">#E600000</color>-->
+    <!--<color name="black85">#D900000</color>-->
+    <!--<color name="black80">#CC00000</color>-->
+    <!--<color name="black75">#BF00000</color>-->
+    <!--<color name="black70">#B300000</color>-->
+    <!--<color name="black65">#A600000</color>-->
+    <!--<color name="black60">#9900000</color>-->
+    <!--<color name="black55">#8C00000</color>-->
+    <!--<color name="black50">#8000000</color>-->
+    <!--<color name="black45">#7300000</color>-->
+    <!--<color name="black40">#6600000</color>-->
+    <!--<color name="black35">#5900000</color>-->
+    <!--<color name="black30">#4D00000</color>-->
+    <!--<color name="black25">#4000000</color>-->
+    <!--<color name="black20">#3300000</color>-->
+    <!--<color name="black15">#2600000</color>-->
+    <!--<color name="black10">#1A00000</color>-->
+    <!--<color name="black5"> #0D00000</color>-->
+    <!--<color name="black0"> #0000000</color>-->
+
+    <color name="transparent">#00000000</color><!-- 透明 -->
+
+    <color name="gray_1">#f8f8f8</color>
+    <color name="gray_2">#f0f0f0</color>
+    <color name="gray_3">#646466</color>
+    <color name="gray_4">#999999</color>
+    <color name="gray_5">#969696</color>
+    <color name="gray_6">#868686</color>
+    <color name="gray_7">#bcbcbc</color>
+    <color name="gray_8">#FCFCFC</color>
+    <color name="gray_9">#CCCACA</color>
+
+    <color name="line">#f0f0f0</color>
+
+
+
+</resources>
