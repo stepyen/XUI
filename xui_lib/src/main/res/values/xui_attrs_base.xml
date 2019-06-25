@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--全局样式-->
+
+    <!--全局高度-->
+
+    <!-- margin 和 padding 等使用的内容通用水平间距 -->
+    <attr name="xui_config_content_spacing_horizontal" format="dimension"/>
+    <!-- margin 和 padding 等使用的内容通用垂直间距 -->
+    <attr name="xui_config_content_spacing_vertical" format="dimension"/>
+
+    <!--分隔线-->
+    <attr name="xui_config_separator_height" format="dimension"/>
+    <!--选项-->
+    <attr name="xui_config_option_item_height" format="dimension"/>
+
+
+
+    <!--全局颜色-->
+    <attr name="xui_config_color_background" format="color" />
+    <attr name="xui_config_separator_color" format="color"/>
+
+
+
+    <attr name="xui_switch_alpha_pressed" format="boolean" />
+    <attr name="xui_switch_alpha_disabled" format="boolean" />
+    <attr name="xui_alpha_pressed" format="float" />
+    <attr name="xui_alpha_disabled" format="float" />
+
+<!--文字-->
+    <!--标题文字大小-->
+    <attr name="xui_config_size_title_text" format="dimension" />
+    <!--正文内容文字大小-->
+    <attr name="xui_config_size_content_text" format="dimension" />
+    <!--辅助说明文字大小-->
+    <attr name="xui_config_size_explain_text" format="dimension" />
+
+    <attr name="xui_config_color_title_text" format="color" />
+    <attr name="xui_config_color_content_text" format="color" />
+    <attr name="xui_config_color_explain_text" format="color" />
+
+    <!-- ==========================splash================================== -->
+    <!--启动页背景-->
+    <attr name="xui_config_color_splash_bg" format="reference"/>
+    <!--启动页上的应用图标-->
+    <attr name="xui_config_splash_app_logo" format="reference"/>
+    <!--启动页上应用图标距离下端的距离-->
+    <attr name="xui_config_app_logo_bottom" format="dimension"/>
+    <!--启动页上公司的标志-->
+    <attr name="xui_config_splash_company_logo" format="reference"/>
+    <!--启动页上公司的标志距离下端的距离-->
+    <attr name="xui_config_company_logo_bottom" format="dimension"/>
+
+    <attr name="xui_guide_btn_padding_horizontal" format="float"/>
+    <attr name="xui_guide_btn_padding_vertical" format="float"/>
+    <attr name="xui_guide_btn_margin_bottom" format="float"/>
+
+
+    <!-- ==========================ActionBar================================== -->
+    <!--标题栏的背景颜色-->
+    <attr name="xui_actionbar_color" format="color"/>
+    <!--标题栏文字的颜色-->
+    <attr name="xui_actionbar_text_color" format="color"/>
+    <!--是否支持沉浸式标题栏-->
+    <attr name="xui_actionbar_immersive" format="boolean"/>
+    <!--标题栏返回箭头-->
+    <attr name="xui_actionbar_ic_navigation_back" format="reference"/>
+
+    <!--标题栏的高度-->
+    <attr name="xui_actionbar_height" format="dimension"/>
+    <!--标题栏标题文字的大小-->
+    <attr name="xui_actionbar_title_text_size" format="dimension"/>
+    <!--标题栏副标题文字的大小-->
+    <attr name="xui_actionbar_sub_text_size" format="dimension"/>
+    <!--标题栏动作文字的大小-->
+    <attr name="xui_actionbar_action_text_size" format="dimension"/>
+    <!--标题栏动作图片的padding-->
+    <attr name="xui_actionbar_action_padding" format="dimension"/>
+    <!--标题栏两侧文字的padding-->
+    <attr name="xui_actionbar_side_text_padding" format="dimension"/>
+
+
+
+
+
+</resources>

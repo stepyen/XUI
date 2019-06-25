@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">xui_lib</string>
+
+    <!--默认字体路径-->
+    <string name="default_app_font_path"></string>
+</resources>

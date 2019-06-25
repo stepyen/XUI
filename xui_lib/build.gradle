@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion build_versions.target_sdk
     buildToolsVersion build_versions.build_tools
@@ -31,9 +31,14 @@ dependencies {
         exclude module: 'support-annotations'
     }
     api deps.support.annotations
+    api deps.support.recyclerview
 
     implementation deps.butterknife.runtime
     annotationProcessor deps.butterknife.compiler
+
+    // 字体
+    api 'uk.co.chrisjenx:calligraphy:2.3.0'
+    implementation 'com.nineoldandroids:library:2.4.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

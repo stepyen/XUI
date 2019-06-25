@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--全局样式-->
+
+    <!--全局高度-->
+    <!-- margin 和 padding 等使用的内容通用水平间距 -->
+    <dimen name="xui_config_content_spacing_horizontal_tablet_big">20dp</dimen>
+    <!-- margin 和 padding 等使用的内容通用水平间距 -->
+    <dimen name="xui_config_content_spacing_horizontal_tablet_small">16dp</dimen>
+    <!-- margin 和 padding 等使用的内容通用水平间距 -->
+    <dimen name="xui_config_content_spacing_horizontal_phone">15dp</dimen>
+
+    <!-- margin 和 padding 等使用的内容通用垂直间距 -->
+    <dimen name="xui_config_content_spacing_vertical_tablet_big">12dp</dimen>
+    <!-- margin 和 padding 等使用的内容通用垂直间距 -->
+    <dimen name="xui_config_content_spacing_vertical_tablet_small">10dp</dimen>
+    <!-- margin 和 padding 等使用的内容通用垂直间距 -->
+    <dimen name="xui_config_content_spacing_vertical_phone">7.5dp</dimen>
+
+
+
+    <!--分割线高度-->
+    <dimen name="xui_config_separator_height_tablet_big">3dp</dimen>
+    <dimen name="xui_config_separator_height_tablet_small">2dp</dimen>
+    <dimen name="xui_config_separator_height_phone">0.5dp</dimen>
+
+
+    <dimen name="xui_config_option_item_height_phone">47dp</dimen>
+
+    <!--标题文字大小-->
+    <dimen name="xui_config_size_title_text_phone">18sp</dimen>
+    <!--正文内容文字大小-->
+    <dimen name="xui_config_size_content_text_phone">15sp</dimen>
+    <!--辅助说明文字大小-->
+    <dimen name="xui_config_size_explain_text_phone">12sp</dimen>
+
+
+    <!--  ================xui splash view====================  -->
+    <dimen name="xui_config_app_logo_bottom">250dp</dimen>
+    <dimen name="xui_config_company_logo_bottom">80dp</dimen>
+
+
+    <!-- ActionBar-->
+    <dimen name="xui_actionbar_height_tablet_big">70dp</dimen>
+    <dimen name="xui_actionbar_height_tablet_small">60dp</dimen>
+    <dimen name="xui_actionbar_height_phone">52dp</dimen>
+
+    <dimen name="xui_actionbar_title_text_size_tablet_big">24sp</dimen>
+    <dimen name="xui_actionbar_title_text_size_tablet_small">21sp</dimen>
+    <dimen name="xui_actionbar_title_text_size_phone">18sp</dimen>
+
+    <dimen name="xui_actionbar_action_text_size_tablet_big">22sp</dimen>
+    <dimen name="xui_actionbar_action_text_size_tablet_small">18sp</dimen>
+    <dimen name="xui_actionbar_action_text_size_phone">15sp</dimen>
+
+    <dimen name="xui_actionbar_sub_text_size_tablet_big">16sp</dimen>
+    <dimen name="xui_actionbar_sub_text_size_tablet_small">14sp</dimen>
+    <dimen name="xui_actionbar_sub_text_size_phone">12sp</dimen>
+
+    <dimen name="xui_actionbar_action_padding_tablet_big">7dp</dimen>
+    <dimen name="xui_actionbar_action_padding_tablet_small">6dp</dimen>
+    <dimen name="xui_actionbar_action_padding_phone">5dp</dimen>
+
+    <dimen name="xui_actionbar_side_text_padding_tablet_big">18dp</dimen>
+    <dimen name="xui_actionbar_side_text_padding_tablet_small">16dp</dimen>
+    <dimen name="xui_actionbar_side_text_padding_phone">14dp</dimen>
+
+
+
+
+</resources>

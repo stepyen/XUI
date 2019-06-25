@@ -24,7 +24,7 @@
         android:supportsRtl="true"
         android:name=".App"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -32,7 +32,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.LayoutActivity"></activity>
+        <activity
+            android:name=".base.BaseActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation|keyboard"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
     </application>
 
 </manifest>

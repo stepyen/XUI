@@ -30,10 +30,10 @@ public class DataProvider {
     // 引导页
     public static List<Object> getUsertGuides() {
         List<Object> list = new ArrayList<>();
-        list.add(R.mipmap.guide_img_1);
-        list.add(R.mipmap.guide_img_2);
-        list.add(R.mipmap.guide_img_3);
-        list.add(R.mipmap.guide_img_4);
+        list.add(R.drawable.guide_img_1);
+        list.add(R.drawable.guide_img_2);
+        list.add(R.drawable.guide_img_3);
+        list.add(R.drawable.guide_img_4);
         return list;
     }
 

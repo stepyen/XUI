@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 关于Theme的继承关系：
+  由于 Theme 需要在不同 API Level 下有不同的配置，并且继承自不同的系统 Theme，所以多层继承。
+
+  继承关系和每个层的分工如下：
+  XUIRootTheme（Theme 的最顶层，各个 API Level 自行决定继承自系统的哪个 Theme）
+    |-values
+    |-values-v21
+    |-values-...
+    |
+  XUIBaseTheme（基础 Theme，定义所有公用的 style。）
+    |-values
+    |
+  XUITheme（可配置的 Theme，各个 API Level 自行配置各自的 style 差异。）
+    |-values
+    |-values-v21
+    |-values-...
+    |
+  XUI（XUI提供的theme控制，供外界使用）
+
+  So，
+  如果要对某 API Level 配置继承自某个系统的 Theme，在 values-v* 目录下修改 xui_themes.xml 的 XUIRootTheme。
+  如果要对某 API Level 配置定制化的 Theme，在 values-v* 目录下修改 xui_themes.xml 的 XUITheme。
+  如果在项目中要对特定项目配置业务相关的 Theme，在 values 目录下修改 themes.xml 的 AppTheme。
+   -->
+
+    <style name="XUIRootTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
+
+    <style name="XUIBaseTheme" parent="XUIRootTheme">
+        <!-- CheckBox，RadioButton，SwitchCompat等一般控件的选中效果默认采用该颜色 -->
+        <item name="colorAccent">@color/xui_config_main_theme</item>
+        <!--应用的主要色调，actionBar默认使用该颜色，Toolbar导航栏的底色-->
+        <item name="colorPrimary">@color/xui_config_main_theme</item>
+        <!--应用的主要暗色调，statusBarColor默认使用该颜色-->
+        <item name="colorPrimaryDark">@color/xui_config_main_theme</item>
+
+        <item name="colorControlNormal">@color/xui_config_color_control_normal</item>
+
+
+        <!--无Title-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+
+        <!--actionbar的样式-->
+        <item name="xui_actionbar_color">@color/xui_config_titlebar</item>
+        <item name="xui_actionbar_text_color">@color/white</item>
+        <item name="xui_actionbar_immersive">false</item>
+        <item name="xui_actionbar_ic_navigation_back">@drawable/xui_ic_navigation_back_white</item>
+
+        <!-- 文字的style -->
+        <item name="xui_config_color_title_text">@color/xui_config_color_title_text</item>
+        <item name="xui_config_color_content_text">@color/xui_config_color_content_text</item>
+        <item name="xui_config_color_explain_text">@color/xui_config_color_explain_text</item>
+
+    </style>
+
+    <style name="XUITheme" parent="XUIBaseTheme" />
+
+    <!--窗体背景，这个背景能在第一时间显示, 避免启动时白屏，黑屏问题-->
+    <style name="XUITheme.Launch">
+        <item name="xui_config_color_splash_bg">@color/white</item>
+        <item name="xui_config_app_logo_bottom">@dimen/xui_config_app_logo_bottom</item>
+        <item name="xui_config_company_logo_bottom">@dimen/xui_config_company_logo_bottom</item>
+        <item name="android:windowBackground">@drawable/xui_config_preview_window</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!--======================XUI主题=========================-->
+
+    <!--手机主题-->
+    <style name="XUITheme.Phone">
+
+        <!--全局样式-->
+        <item name="xui_config_content_spacing_horizontal">@dimen/xui_config_content_spacing_horizontal_phone</item>
+        <item name="xui_config_content_spacing_vertical">@dimen/xui_config_content_spacing_vertical_phone</item>
+
+        <item name="xui_config_separator_height">@dimen/xui_config_separator_height_phone</item>
+        <item name="xui_config_option_item_height">@dimen/xui_config_option_item_height_phone</item>
+
+        <item name="xui_config_color_background">@color/xui_config_color_background_phone</item>
+        <item name="android:windowBackground">?attr/xui_config_color_background</item>
+
+        <item name="xui_config_separator_color">@color/xui_config_separator_color</item>
+
+        <!--actionbar-->
+        <item name="xui_actionbar_height">@dimen/xui_actionbar_height_phone</item>
+        <item name="xui_actionbar_title_text_size">@dimen/xui_actionbar_title_text_size_phone</item>
+        <item name="xui_actionbar_action_text_size">@dimen/xui_actionbar_action_text_size_phone</item>
+        <item name="xui_actionbar_sub_text_size">@dimen/xui_actionbar_sub_text_size_phone</item>
+        <item name="xui_actionbar_action_padding">@dimen/xui_actionbar_action_padding_phone</item>
+        <item name="xui_actionbar_side_text_padding">@dimen/xui_actionbar_side_text_padding_phone</item>
+
+        <!--文字字号样式-->
+        <item name="xui_config_size_title_text">@dimen/xui_config_size_title_text_phone</item>
+        <item name="xui_config_size_content_text">@dimen/xui_config_size_content_text_phone</item>
+        <item name="xui_config_size_explain_text">@dimen/xui_config_size_explain_text_phone</item>
+
+
+
+    </style>
+
+
+    <!--平板主题-->
+    <style name="XUITheme.Tablet"> </style>
+
+
+    <!--大平板主题-->
+    <style name="XUITheme.Tablet.Big"></style>
+
+
+    <!--小平板主题-->
+    <style name="XUITheme.Tablet.Small"></style>
+
+
+
+
+
+</resources>

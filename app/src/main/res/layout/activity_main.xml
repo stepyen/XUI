@@ -6,12 +6,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <FrameLayout
+        android:id="@id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </FrameLayout>
 
-        />
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        style="@style/TabLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/xui_actionbar_height"
+        android:background="@drawable/xui_list_item_bg_with_border_top"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@android:color/transparent"
+        app:tabMinWidth="300dp"
+        app:tabMode="fixed"
+        app:tabPaddingTop="2dp"
+        app:tabTextAppearance="@style/TabText.Explain">
+
+    </android.support.design.widget.TabLayout>
 
 </LinearLayout>

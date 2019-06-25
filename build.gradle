@@ -5,9 +5,13 @@ buildscript {
     apply from: './versions.gradle'
     addRepos(repositories) //增加代码仓库
     dependencies {
+
         classpath deps.android_gradle_plugin
         classpath deps.android_maven_gradle_plugin
         classpath deps.retrolambda
+        // 用这个版本的
+        classpath "com.jakewharton:butterknife-gradle-plugin:8.4.0"
+        classpath 'com.github.xuexiangjys.XAOP:xaop-plugin:1.0.3'
     }
 
 }
