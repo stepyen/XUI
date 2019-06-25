@@ -5,12 +5,17 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.stepyen.xui.R;
+import com.stepyen.xui.logs.LogHelp;
 import com.stepyen.xui.utils.DensityUtils;
+import com.stepyen.xui.utils.ResUtils;
 import com.stepyen.xui.utils.shape.ShapeBuilder;
 
 /**
@@ -22,6 +27,7 @@ import com.stepyen.xui.utils.shape.ShapeBuilder;
  * - 7 +
  */
 public class NumberPicker extends LinearLayout {
+    private static final String TAG = "NumberPicker";
     private static final int DEFAULT_MIN_MUM = 1;  // 最小值
     private static final int DEFAULT_MAX_MUM = Integer.MAX_VALUE;  // 最大值
     private static final int DEFAULT_MIDDLE_WIDTH = DensityUtils.dp2px(20);  // 中间宽度
@@ -84,7 +90,7 @@ public class NumberPicker extends LinearLayout {
 
         mTvValue = new TextView(context);
         mTvValue.setGravity(Gravity.CENTER);
-        mTvValue.setText(mMinNum + "");
+        mTvValue.setText(mNumber + "");
         mTvValue.setTextSize(18);
 
         mTvAdd = new TextView(context);
@@ -96,21 +102,20 @@ public class NumberPicker extends LinearLayout {
         addView(mTvValue);
         addView(mTvAdd);
 
-        mTvSub.setOnClickListener(v->{
+        mTvSub.setOnClickListener(v -> {
             sub();
         });
-        mTvAdd.setOnClickListener(v->{
+        mTvAdd.setOnClickListener(v -> {
             add();
         });
 
-        ShapeBuilder.create(context).stroke(1, R.color.black).build(this);
+        ShapeBuilder.create(context)
+                .stroke(DensityUtils.dp2px(0.5f), R.color.xui_gray_7)
+                .solid(R.color.white)
+                .build(this);
         ShapeBuilder.create(context).stroke(1, R.color.black).build(mTvValue);
     }
 
-    @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
-    }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -119,32 +124,21 @@ public class NumberPicker extends LinearLayout {
         int otherWidth = (getMeasuredWidth() - mMiddleWidth) / 2;
 
         LinearLayout.LayoutParams tvSubLp = (LayoutParams) mTvSub.getLayoutParams();
-        tvSubLp.width =otherWidth;
+        tvSubLp.width = otherWidth;
         tvSubLp.height = LayoutParams.MATCH_PARENT;
         mTvSub.setLayoutParams(tvSubLp);
-
+//
         LinearLayout.LayoutParams tvValueLp = (LayoutParams) mTvValue.getLayoutParams();
-        tvValueLp.width =mMiddleWidth;
+        tvValueLp.width = mMiddleWidth;
         tvValueLp.height = LayoutParams.MATCH_PARENT;
         mTvValue.setLayoutParams(tvValueLp);
 
         LinearLayout.LayoutParams tvAddLp = (LayoutParams) mTvAdd.getLayoutParams();
-        tvAddLp.width =otherWidth;
+        tvAddLp.width = otherWidth;
         tvAddLp.height = LayoutParams.MATCH_PARENT;
         mTvAdd.setLayoutParams(tvAddLp);
     }
 
-    @Override
-    protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        super.onLayout(changed, l, t, r, b);
-
-    }
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-
-    }
 
     /**
      * 设置中间宽度
@@ -170,6 +164,7 @@ public class NumberPicker extends LinearLayout {
 
     /**
      * 设置数量
+     *
      * @param number
      */
     public void setNumber(int number) {
@@ -199,30 +194,12 @@ public class NumberPicker extends LinearLayout {
     }
 
     /**
-     * 设置减这个view的背景
-     *
-     * @param drawable
-     */
-    public void setSubViewBackground(Drawable drawable) {
-        mTvSub.setBackground(drawable);
-    }
-
-    /**
      * 设置中间值这个view的背景
      *
      * @param drawable
      */
     public void setValueViewBackground(Drawable drawable) {
         mTvValue.setBackground(drawable);
-    }
-
-    /**
-     * 设置加这个view的背景
-     *
-     * @param drawable
-     */
-    public void setAddViewBackground(Drawable drawable) {
-        mTvAdd.setBackground(drawable);
     }
 
     private void sub() {

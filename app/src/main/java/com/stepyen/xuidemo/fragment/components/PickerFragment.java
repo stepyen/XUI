@@ -1,20 +1,25 @@
 package com.stepyen.xuidemo.fragment.components;
 
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
+import com.stepyen.xui.logs.LogHelp;
+import com.stepyen.xui.utils.shape.ShapeBuilder;
 import com.stepyen.xui.widget.picker.NumberPicker;
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.BaseFragment;
 import com.stepyen.xutil.tip.ToastUtils;
 import com.xuexiang.xpage.annotation.Page;
 
-import java.io.PipedReader;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
@@ -35,6 +40,12 @@ public class PickerFragment extends BaseFragment {
 
     @Override
     protected void initViews() {
+        initNumberPicker();
+
+
+    }
+
+    private void initNumberPicker() {
         mNumberPicker.setNumberLimitListen(new NumberPicker.OnNumberLimitListen() {
             @Override
             public void isMinimum() {
@@ -46,7 +57,21 @@ public class PickerFragment extends BaseFragment {
                 ToastUtils.toast("已经是最大了");
             }
         });
-    }
 
+
+        ShapeBuilder.create(getContext())
+                .solid(R.color.white)
+                .radius(22.5f)
+                .stroke(0.5f, R.color.xui_gray_7)
+                .build(mNumberPicker);
+
+        Drawable drawable = ShapeBuilder.create(getContext())
+                .solid(R.color.white)
+                .stroke(0.5f, R.color.xui_gray_7)
+                .build();
+
+
+        mNumberPicker.setValueViewBackground(drawable);
+    }
 
 }

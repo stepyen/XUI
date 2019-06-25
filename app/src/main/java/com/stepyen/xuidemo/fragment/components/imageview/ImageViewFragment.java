@@ -10,7 +10,7 @@ import com.xuexiang.xpage.annotation.Page;
  * description：
  */
 
-@Page(name = "图片")
+@Page(name = "图片", extra = R.drawable.ic_widget_imageview)
 public class ImageViewFragment extends ComponentContainerFragment {
     /**
      * 获取页面的类集合[使用@Page注解进行注册的页面]

@@ -10,7 +10,7 @@
 
     <TextView
         style="@style/TextView_hint_tag"
-        android:text="自动换行"
+        android:text="自动换行 AutoNewLineLayout"
         />
 
     <com.stepyen.xui.widget.linearlayout.AutoNewLineLayout
