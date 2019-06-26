@@ -2,6 +2,7 @@
 <resources>
 
 
+    <!--TitleBar-->
     <style name="TitleBar">
         <item name="tb_barHeight">?attr/xui_actionbar_height</item>
         <item name="tb_immersive">?attr/xui_actionbar_immersive</item>
@@ -20,6 +21,31 @@
         <item name="tb_dividerHeight">1dp</item>
     </style>
 
+
+    <!--字母索引列表-->
+    <declare-styleable name="LetterIndexBar">
+        <attr name="letterSize" format="dimension"/>
+        <attr name="letterColor" format="color"/>
+        <attr name="selectLetterColor" format="color"/>
+        <attr name="selectBackground" format="reference|color"/>
+        <attr name="isBoldface" format="boolean"/>
+        <attr name="isLetterCenter" format="boolean"/>
+    </declare-styleable>
+
+    <!--自定义数字输入键盘-->
+    <declare-styleable name="PasswordKeyboardView">
+        <!-- 删除按键的图标 -->
+        <attr name="pkv_deleteDrawable" format="reference" />
+
+        <!-- 删除按键图标的宽度 -->
+        <attr name="pkv_deleteWidth" format="dimension|reference" />
+
+        <!-- 删除按键图标的高度 -->
+        <attr name="pkv_deleteHeight" format="dimension|reference" />
+
+        <!-- 删除按键图标的颜色 -->
+        <attr name="pkv_deleteBackgroundColor" format="color|reference" />
+    </declare-styleable>
 
 
 

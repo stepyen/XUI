@@ -98,4 +98,11 @@
 
 
 
+    <!--RoundButton-->
+    <dimen name="default_rb_border_width">1dp</dimen>
+    <dimen name="default_rb_radius">5dp</dimen>
+
+
+
+
 </resources>

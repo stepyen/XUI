@@ -1,14 +1,18 @@
 package com.stepyen.xuidemo.base;
 
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.stepyen.xui.utils.DensityUtils;
+import com.stepyen.xui.utils.ResUtils;
 import com.stepyen.xuidemo.R;
 
 import butterknife.ButterKnife;
@@ -58,11 +62,24 @@ public  abstract class BaseTestFragment extends BaseFragment {
     }
 
     public void addView(String title, View.OnClickListener clickListener, int marginTop) {
-        Button button = new Button(getContext());
-        button.setText(title);
-        button.setOnClickListener(clickListener);
-        mParentLl.addView(button);
-        setLpMarginTop(button, marginTop);
+        TextView tv = new TextView(getContext());
+        tv.setGravity(Gravity.CENTER_VERTICAL);
+        tv.setPadding(DensityUtils.dp2px(15), 0, 0,0);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, DensityUtils.dp2px(47));
+        tv.setLayoutParams(lp);
+        tv.setBackgroundColor(ResUtils.getColor(R.color.white));
+        tv.setText(title);
+        tv.setOnClickListener(clickListener);
+        mParentLl.addView(tv);
+        setLpMarginTop(tv, marginTop);
+
+        // 加条线
+        View lineView = new View(getContext());
+        LinearLayout.LayoutParams lineLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, DensityUtils.dp2px(ResUtils.getDimens(com.stepyen.xui.R.dimen.xui_config_line)));
+        lineView.setLayoutParams(lineLp);
+        lineView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.xui_config_line));
+        mParentLl.addView(lineView);
+
     }
 
     public TextView addTextView(CharSequence txt, int marginTop) {

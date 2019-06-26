@@ -19,4 +19,6 @@
         android:layout_marginLeft="20dp"
         app:viewSize="12">
     </com.daidingkang.SnapUpCountDownTimerView>
+
+
 </LinearLayout>

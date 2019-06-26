@@ -59,6 +59,7 @@
     </declare-styleable>
     <attr name="TitleBarStyle" format="reference" />
 
+    <!--数量选择器-->
     <declare-styleable name="NumberPicker">
         <!--中间view的宽度-->
         <attr name="middle_width" format="dimension" />
@@ -67,4 +68,21 @@
         <attr name="number_prefix" format="string" />
     </declare-styleable>
 
+
+    <!-- 圆形按钮 -->
+    <declare-styleable name="RoundButton">
+        <!-- 背景颜色-->
+        <attr name="rb_backgroundColor" format="reference" />
+        <!-- 边框颜色 -->
+        <attr name="rb_borderColor" format="reference" />
+        <!-- 边框宽度，默认1dp -->
+        <attr name="rb_borderWidth" format="dimension" />
+        <attr name="rb_isRadiusAdjustBounds" format="boolean" />
+        <!-- 圆角弧度，默认5dp -->
+        <attr name="rb_radius" format="dimension" />
+        <attr name="rb_radiusTopLeft" format="dimension" />
+        <attr name="rb_radiusTopRight" format="dimension" />
+        <attr name="rb_radiusBottomLeft" format="dimension" />
+        <attr name="rb_radiusBottomRight" format="dimension" />
+    </declare-styleable>
 </resources>
