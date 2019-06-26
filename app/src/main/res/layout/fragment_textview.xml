@@ -7,21 +7,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 >
-
     <TextView
         style="@style/TextView_hint_tag"
-        android:text="数量选择器 NumberPicker"
+        android:text="商城倒计时"
         />
 
-    <com.stepyen.xui.widget.picker.NumberPicker
-        android:id="@+id/number_picker"
-        android:layout_width="120dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="15dp"
-        app:max_number="10"
-        app:min_number="1"
-        app:middle_width="30dp"
-        ></com.stepyen.xui.widget.picker.NumberPicker>
-
-
+    <com.daidingkang.SnapUpCountDownTimerView
+        android:id="@+id/RushBuyCountDownTimerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        app:viewSize="12">
+    </com.daidingkang.SnapUpCountDownTimerView>
 </LinearLayout>

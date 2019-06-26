@@ -1,4 +1,4 @@
-package com.stepyen.xuidemo.fragment.components.imageview;
+package com.stepyen.xuidemo.fragment.components;
 
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.ComponentContainerFragment;
@@ -20,7 +20,7 @@ public class ImageViewFragment extends ComponentContainerFragment {
     @Override
     protected Class[] getPagesClasses() {
         return new Class[]{
-//                RadiusImageViewFragment.class,
+//                SuperImageViewFragment.class,
 //                PhotoPickerFragment.class,
 //                PreviewFragment.class
         };

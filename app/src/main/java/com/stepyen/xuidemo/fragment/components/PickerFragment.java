@@ -1,26 +1,12 @@
 package com.stepyen.xuidemo.fragment.components;
-
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-
-import com.stepyen.xui.logs.LogHelp;
 import com.stepyen.xui.utils.shape.ShapeBuilder;
 import com.stepyen.xui.widget.picker.NumberPicker;
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.BaseFragment;
 import com.stepyen.xutil.tip.ToastUtils;
 import com.xuexiang.xpage.annotation.Page;
-
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import butterknife.Unbinder;
 
 /**
  * date：2019/6/25
@@ -41,7 +27,6 @@ public class PickerFragment extends BaseFragment {
     @Override
     protected void initViews() {
         initNumberPicker();
-
 
     }
 

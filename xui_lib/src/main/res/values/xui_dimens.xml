@@ -35,6 +35,36 @@
     <dimen name="xui_config_size_explain_text_phone">12sp</dimen>
 
 
+    <!--大标题文字-->
+    <dimen name="xui_config_big_title">18dp</dimen>
+    <!--弹窗文字-->
+    <dimen name="xui_config_dialog_text">17dp</dimen>
+    <!--弹窗文字-->
+    <dimen name="xui_config_dialog_content">13dp</dimen>
+    <!--标题文字-->
+    <dimen name="xui_config_title">15dp</dimen>
+    <!--子标题文字-->
+    <dimen name="xui_config__subtitle">13dp</dimen>
+    <!--短文本 （文字按钮等）-->
+    <dimen name="xui_config__button">15dp</dimen>
+    <!--长文本-->
+    <dimen name="xui_config__content">14dp</dimen>
+    <!--说明注释 -->
+    <dimen name="xui_config_explain">12dp</dimen>
+    <!--时间 \数字-->
+    <dimen name="xui_config_time">11dp</dimen>
+    <!--间距-->
+    <dimen name="xui_config_padding">15dp</dimen>
+    <!--间距-->
+    <dimen name="xui_config_margin">15dp</dimen>
+    <!--模块高度-->
+    <dimen name="xui_config_item_height">47dp</dimen>
+    <!--线高度-->
+    <dimen name="xui_config_line">0.5dp</dimen>
+    <!--模块间距-->
+    <dimen name="xui_config_item_space">10dp</dimen>
+
+
     <!--  ================xui splash view====================  -->
     <dimen name="xui_config_app_logo_bottom">250dp</dimen>
     <dimen name="xui_config_company_logo_bottom">80dp</dimen>

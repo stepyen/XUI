@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -44,7 +45,15 @@ public class NumberPicker extends LinearLayout {
      */
     private int mNumber = mMinNum;
 
+    /**
+     * 中间宽度
+     */
     private int mMiddleWidth = DEFAULT_MIDDLE_WIDTH;
+
+    /**
+     * 数量前缀
+     */
+    private String mNumberPrefix = "";
 
 
     TextView mTvSub;
@@ -76,6 +85,10 @@ public class NumberPicker extends LinearLayout {
         mMiddleWidth = (int) ta.getDimension(R.styleable.NumberPicker_middle_width, DEFAULT_MIDDLE_WIDTH);
         mMinNum = ta.getInteger(R.styleable.NumberPicker_min_number, DEFAULT_MIN_MUM);
         mMaxNum = ta.getInteger(R.styleable.NumberPicker_max_number, DEFAULT_MAX_MUM);
+        mNumberPrefix = ta.getString(R.styleable.NumberPicker_number_prefix);
+        if (TextUtils.isEmpty(mNumberPrefix)) {
+            mNumberPrefix = "";
+        }
 
         ta.recycle();
     }
@@ -114,6 +127,8 @@ public class NumberPicker extends LinearLayout {
                 .solid(R.color.white)
                 .build(this);
         ShapeBuilder.create(context).stroke(1, R.color.black).build(mTvValue);
+
+        mTvValue.setText(mNumberPrefix + mNumber);
     }
 
 
@@ -151,6 +166,15 @@ public class NumberPicker extends LinearLayout {
         }
 
         mMiddleWidth = middleWidth;
+    }
+
+    /**
+     * 设置数组前缀
+     *
+     * @param numberPrefix 如：￥ 100
+     */
+    public void setNumberPrefix(String numberPrefix) {
+        mNumberPrefix = numberPrefix;
     }
 
     /**
@@ -206,24 +230,24 @@ public class NumberPicker extends LinearLayout {
         if (mNumber == mMinNum) {
             if (mNumberLimitListen != null) {
                 mNumberLimitListen.isMinimum();
-                return;
             }
+            return;
         }
 
         mNumber--;
-        mTvValue.setText(mNumber + "");
+        mTvValue.setText(mNumberPrefix + mNumber);
     }
 
     private void add() {
         if (mNumber == mMaxNum) {
             if (mNumberLimitListen != null) {
                 mNumberLimitListen.isMaximum();
-                return;
             }
+            return;
         }
 
         mNumber++;
-        mTvValue.setText(mNumber + "");
+        mTvValue.setText(mNumberPrefix + mNumber);
     }
 
     public interface OnNumberLimitListen {

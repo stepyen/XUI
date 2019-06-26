@@ -64,6 +64,7 @@
         <attr name="middle_width" format="dimension" />
         <attr name="min_number" format="integer" />
         <attr name="max_number" format="integer" />
+        <attr name="number_prefix" format="string" />
     </declare-styleable>
 
 </resources>

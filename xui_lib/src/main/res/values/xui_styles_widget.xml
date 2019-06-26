@@ -20,4 +20,23 @@
         <item name="tb_dividerHeight">1dp</item>
     </style>
 
+
+
+
+    <style name="Dialog.NoTitle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Dialog.NoTitle.NoShadow">
+        <!--使背景模糊的-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+
+    <style name="Animation.Bottom.Rising" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/anim_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/anim_slide_out_bottom</item>
+    </style>
+
 </resources>

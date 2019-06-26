@@ -59,6 +59,8 @@
 
     <color name="separator">#f0f0f0</color>
 
+    <color name="green">#43CD80</color>
+
     <color name="xui_config_color_dark_blue_gray">#223B53</color>
     <color name="xui_config_color_middle_blue_gray">#6A798E</color>
     <color name="xui_config_color_light_blue_gray">#9FABBC</color>
@@ -96,5 +98,23 @@
     <color name="xui_config_color_background_phone">#EEF3F7</color>
     <!--条目点击后的背景颜色-->
     <color name="xui_config_color_background_pressed">@color/xui_config_color_pressed</color>
+
+
+    <!--背景颜色-->
+    <color name="xui_config_background">#EEF3F7</color>
+    <!--大标题文字-->
+    <color name="xui_config_big_title">#161F29</color>
+    <!--标题文字-->
+    <color name="xui_config_title">#161F29</color>
+    <!--子标题文字-->
+    <color name="xui_config__subtitle">#333A40</color>
+    <!--长文本-->
+    <color name="xui_config__content">#333A40</color>
+    <!--说明注释 -->
+    <color name="xui_config_explain">#7D8389</color>
+    <!--线高度-->
+    <color name="xui_config_line">#EEEEEE</color>
+    <!--按压-->
+    <color name="xui_configpress">#FFF4F4F4</color>
 
 </resources>

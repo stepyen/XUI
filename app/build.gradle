@@ -69,6 +69,9 @@ dependencies {
     implementation 'com.github.xuexiangjys.XPage:xpage-lib:2.2.6'
     annotationProcessor project(':widget_compiler')
 
+    //倒计时
+    implementation 'com.daidingkang:snapupcountdowntimerview:1.0.0'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
