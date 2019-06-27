@@ -41,7 +41,7 @@
 
     <!-- ==========================splash================================== -->
     <!--启动页背景-->
-    <attr name="xui_config_color_splash_bg" format="reference"/>
+    <attr name="xui_config_splash_bg" format="reference"/>
     <!--启动页上的应用图标-->
     <attr name="xui_config_splash_app_logo" format="reference"/>
     <!--启动页上应用图标距离下端的距离-->

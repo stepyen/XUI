@@ -5,4 +5,8 @@
 
     </style>
 
+
+    <style name="XUITheme.Launch.APP">
+        <item name="xui_config_splash_bg">@drawable/splash_bg</item>
+    </style>
 </resources>

@@ -2,6 +2,7 @@ package com.stepyen.xuidemo.fragment.components;
 
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.ComponentContainerFragment;
+import com.stepyen.xuidemo.fragment.components.imageview.RadiusImageViewFragment;
 import com.xuexiang.xpage.annotation.Page;
 
 /**
@@ -20,7 +21,7 @@ public class ImageViewFragment extends ComponentContainerFragment {
     @Override
     protected Class[] getPagesClasses() {
         return new Class[]{
-//                SuperImageViewFragment.class,
+                RadiusImageViewFragment.class,
 //                PhotoPickerFragment.class,
 //                PreviewFragment.class
         };
