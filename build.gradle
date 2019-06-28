@@ -4,6 +4,7 @@
 buildscript {
     apply from: './versions.gradle'
     addRepos(repositories) //增加代码仓库
+
     dependencies {
 
         classpath deps.android_gradle_plugin
