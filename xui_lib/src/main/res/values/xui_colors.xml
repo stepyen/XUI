@@ -117,4 +117,7 @@
     <!--按压-->
     <color name="xui_configpress">#FFF4F4F4</color>
 
+    <!-- SuperTextView -->
+    <color name="xui_common_pressed">#10000000</color>  <!--白色背景按下去的颜色-->
+
 </resources>

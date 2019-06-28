@@ -1,4 +1,4 @@
-package com.stepyen.xui.widget.button.roundbutton;
+package com.stepyen.xui.widget.button;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
@@ -29,7 +29,11 @@ public class SuperButton extends AppCompatButton {
     private int selectorDisableColor;
     private int selectorNormalColor;
 
+    /**
+     *  圆角大小是否自适应为 View 的高度的一半
+     */
     private boolean isRadiusAdjustBounds = false;
+
     private float cornersRadius;
     private float cornersTopLeftRadius;
     private float cornersTopRightRadius;
@@ -527,10 +531,10 @@ public class SuperButton extends AppCompatButton {
 
     /**
      * 圆角大小是否自适应为 View 的高度的一半
-     * @param radiusAdjustBounds
+     * @param isRadiusAdjustBounds
      */
-    public void setRadiusAdjustBounds(boolean radiusAdjustBounds) {
-        isRadiusAdjustBounds = radiusAdjustBounds;
+    public void setRadiusAdjustBounds(boolean isRadiusAdjustBounds) {
+        this.isRadiusAdjustBounds = isRadiusAdjustBounds;
     }
 
     /**
