@@ -1,4 +1,4 @@
-package com.stepyen.xui.widget.edittext;
+package com.stepyen.xui.widget.textview.edittext;
 
 import android.content.Context;
 import android.content.res.TypedArray;

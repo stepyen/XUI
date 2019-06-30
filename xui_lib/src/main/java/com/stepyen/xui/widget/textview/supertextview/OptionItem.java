@@ -23,8 +23,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import com.stepyen.xui.R;
 import com.stepyen.xui.utils.ResUtils;
-import com.stepyen.xui.widget.edittext.ClearEditText;
-import com.stepyen.xui.widget.edittext.PasswordEditText;
+import com.stepyen.xui.widget.textview.edittext.ClearEditText;
+import com.stepyen.xui.widget.textview.edittext.PasswordEditText;
 
 import uk.co.chrisjenx.calligraphy.HasTypeface;
 
@@ -36,7 +36,7 @@ import uk.co.chrisjenx.calligraphy.HasTypeface;
  * 1、设置padding会影响线的绘制
  *
  */
-public class SuperTextView extends RelativeLayout implements HasTypeface {
+public class OptionItem extends RelativeLayout implements HasTypeface {
 
     private Context mContext;
 
@@ -290,12 +290,14 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
     private int mRightSwitchMarginRight;
     private boolean mSwitchIsChecked = true;
 
-    // 右边RadioButton
+    /**
+     * 右边RadioButton
+     * 它的checked{@link com.stepyen.xui.widget.radiogruop.RadioGroupPlus} 属性 rgp_checkedButton来指定
+     */
     private RadioButton mRadioButton;
     private LayoutParams mRadioButtonParams;
     private Drawable mRightRadioButtonBg;
     private int mRightRadioButtonMarginRight;
-    private boolean mRadioButtonIsChecked = false;
     /**
      * 指定 RadioButtonId，配合{@link com.stepyen.xui.widget.radiogruop.RadioGroupPlus} 可以完成单选
      */
@@ -312,7 +314,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
     private Drawable mThumbResource;
     private Drawable mTrackResource;
 
-    /////////////////////一下是shape相关属性
+   //一下是shape相关属性
     private int mDefaultShapeColor = 0xffffffff;
 
     private int mSelectorPressedColor;
@@ -336,17 +338,17 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
 
     private GradientDrawable mGradientDrawable;
 
-    public SuperTextView(Context context) {
+    public OptionItem(Context context) {
         super(context);
         initAttrs(context, null);
     }
 
-    public SuperTextView(Context context, AttributeSet attrs) {
+    public OptionItem(Context context, AttributeSet attrs) {
         super(context, attrs);
         initAttrs(context, attrs);
     }
 
-    public SuperTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public OptionItem(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initAttrs(context, attrs);
     }
@@ -361,207 +363,205 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
     }
 
     private void getAttr(AttributeSet attrs) {
-        TypedArray typedArray = mContext.obtainStyledAttributes(attrs, R.styleable.SuperTextView);
-
-        /////////////////////////////////////////////////
-        mLeftTextString = typedArray.getString(R.styleable.SuperTextView_sLeftTextString);
-        mLeftTopTextString = typedArray.getString(R.styleable.SuperTextView_sLeftTopTextString);
-        mLeftBottomTextString = typedArray.getString(R.styleable.SuperTextView_sLeftBottomTextString);
-
-        mCenterTextString = typedArray.getString(R.styleable.SuperTextView_sCenterTextString);
-        mCenterTopTextString = typedArray.getString(R.styleable.SuperTextView_sCenterTopTextString);
-        mCenterBottomTextString = typedArray.getString(R.styleable.SuperTextView_sCenterBottomTextString);
-
-        mRightTextString = typedArray.getString(R.styleable.SuperTextView_sRightTextString);
-        mRightTopTextString = typedArray.getString(R.styleable.SuperTextView_sRightTopTextString);
-        mRightBottomTextString = typedArray.getString(R.styleable.SuperTextView_sRightBottomTextString);
+        TypedArray typedArray = mContext.obtainStyledAttributes(attrs, R.styleable.OptionItem);
 
 
-        mLeftTextColor = typedArray.getColor(R.styleable.SuperTextView_sLeftTextColor, mDefaultColor);
-        mLeftTopTextColor = typedArray.getColor(R.styleable.SuperTextView_sLeftTopTextColor, mDefaultColor);
-        mLeftBottomTextColor = typedArray.getColor(R.styleable.SuperTextView_sLeftBottomTextColor, mDefaultColor);
+        mLeftTextString = typedArray.getString(R.styleable.OptionItem_sLeftTextString);
+        mLeftTopTextString = typedArray.getString(R.styleable.OptionItem_sLeftTopTextString);
+        mLeftBottomTextString = typedArray.getString(R.styleable.OptionItem_sLeftBottomTextString);
 
-        mCenterTextColor = typedArray.getColor(R.styleable.SuperTextView_sCenterTextColor, mDefaultColor);
-        mCenterTopTextColor = typedArray.getColor(R.styleable.SuperTextView_sCenterTopTextColor, mDefaultColor);
-        mCenterBottomTextColor = typedArray.getColor(R.styleable.SuperTextView_sCenterBottomTextColor, mDefaultColor);
+        mCenterTextString = typedArray.getString(R.styleable.OptionItem_sCenterTextString);
+        mCenterTopTextString = typedArray.getString(R.styleable.OptionItem_sCenterTopTextString);
+        mCenterBottomTextString = typedArray.getString(R.styleable.OptionItem_sCenterBottomTextString);
 
-        mRightTextColor = typedArray.getColor(R.styleable.SuperTextView_sRightTextColor, mDefaultColor);
-        mRightTopTextColor = typedArray.getColor(R.styleable.SuperTextView_sRightTopTextColor, mDefaultColor);
-        mRightBottomTextColor = typedArray.getColor(R.styleable.SuperTextView_sRightBottomTextColor, mDefaultColor);
-
-        mLeftTextSize = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sLeftTextSize, mDefaultSize);
-        mLeftTopTextSize = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sLeftTopTextSize, mDefaultSize);
-        mLeftBottomTextSize = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sLeftBottomTextSize, mDefaultSize);
-
-        mCenterTextSize = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sCenterTextSize, mDefaultSize);
-        mCenterTopTextSize = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sCenterTopTextSize, mDefaultSize);
-        mCenterBottomTextSize = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sCenterBottomTextSize, mDefaultSize);
-
-        mRightTextSize = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sRightTextSize, mDefaultSize);
-        mRightTopTextSize = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sRightTopTextSize, mDefaultSize);
-        mRightBottomTextSize = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sRightBottomTextSize, mDefaultSize);
+        mRightTextString = typedArray.getString(R.styleable.OptionItem_sRightTextString);
+        mRightTopTextString = typedArray.getString(R.styleable.OptionItem_sRightTopTextString);
+        mRightBottomTextString = typedArray.getString(R.styleable.OptionItem_sRightBottomTextString);
 
 
-        mLeftTopLines = typedArray.getInt(R.styleable.SuperTextView_sLeftTopLines, 1);
-        mLeftLines = typedArray.getInt(R.styleable.SuperTextView_sLeftLines, 1);
-        mLeftBottomLines = typedArray.getInt(R.styleable.SuperTextView_sLeftBottomLines, 1);
+        mLeftTextColor = typedArray.getColor(R.styleable.OptionItem_sLeftTextColor, mDefaultColor);
+        mLeftTopTextColor = typedArray.getColor(R.styleable.OptionItem_sLeftTopTextColor, mDefaultColor);
+        mLeftBottomTextColor = typedArray.getColor(R.styleable.OptionItem_sLeftBottomTextColor, mDefaultColor);
 
-        mCenterTopLines = typedArray.getInt(R.styleable.SuperTextView_sCenterTopLines, 1);
-        mCenterLines = typedArray.getInt(R.styleable.SuperTextView_sCenterLines, 1);
-        mCenterBottomLines = typedArray.getInt(R.styleable.SuperTextView_sCenterBottomLines, 1);
+        mCenterTextColor = typedArray.getColor(R.styleable.OptionItem_sCenterTextColor, mDefaultColor);
+        mCenterTopTextColor = typedArray.getColor(R.styleable.OptionItem_sCenterTopTextColor, mDefaultColor);
+        mCenterBottomTextColor = typedArray.getColor(R.styleable.OptionItem_sCenterBottomTextColor, mDefaultColor);
 
-        mRightTopLines = typedArray.getInt(R.styleable.SuperTextView_sRightTopLines, 1);
-        mRightLines = typedArray.getInt(R.styleable.SuperTextView_sRightLines, 1);
-        mRightBottomLines = typedArray.getInt(R.styleable.SuperTextView_sRightBottomLines, 1);
+        mRightTextColor = typedArray.getColor(R.styleable.OptionItem_sRightTextColor, mDefaultColor);
+        mRightTopTextColor = typedArray.getColor(R.styleable.OptionItem_sRightTopTextColor, mDefaultColor);
+        mRightBottomTextColor = typedArray.getColor(R.styleable.OptionItem_sRightBottomTextColor, mDefaultColor);
+
+        mLeftTextSize = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sLeftTextSize, mDefaultSize);
+        mLeftTopTextSize = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sLeftTopTextSize, mDefaultSize);
+        mLeftBottomTextSize = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sLeftBottomTextSize, mDefaultSize);
+
+        mCenterTextSize = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sCenterTextSize, mDefaultSize);
+        mCenterTopTextSize = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sCenterTopTextSize, mDefaultSize);
+        mCenterBottomTextSize = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sCenterBottomTextSize, mDefaultSize);
+
+        mRightTextSize = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sRightTextSize, mDefaultSize);
+        mRightTopTextSize = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sRightTopTextSize, mDefaultSize);
+        mRightBottomTextSize = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sRightBottomTextSize, mDefaultSize);
 
 
+        mLeftTopLines = typedArray.getInt(R.styleable.OptionItem_sLeftTopLines, 1);
+        mLeftLines = typedArray.getInt(R.styleable.OptionItem_sLeftLines, 1);
+        mLeftBottomLines = typedArray.getInt(R.styleable.OptionItem_sLeftBottomLines, 1);
 
-        mLeftTopMaxEms = typedArray.getInt(R.styleable.SuperTextView_sLeftTopMaxEms, mDefaultMaxEms);
-        mLeftMaxEms = typedArray.getInt(R.styleable.SuperTextView_sLeftMaxEms, mDefaultMaxEms);
-        mLeftBottomMaxEms = typedArray.getInt(R.styleable.SuperTextView_sLeftBottomMaxEms, mDefaultMaxEms);
+        mCenterTopLines = typedArray.getInt(R.styleable.OptionItem_sCenterTopLines, 1);
+        mCenterLines = typedArray.getInt(R.styleable.OptionItem_sCenterLines, 1);
+        mCenterBottomLines = typedArray.getInt(R.styleable.OptionItem_sCenterBottomLines, 1);
 
-        mCenterTopMaxEms = typedArray.getInt(R.styleable.SuperTextView_sCenterTopMaxEms, mDefaultMaxEms);
-        mCenterMaxEms = typedArray.getInt(R.styleable.SuperTextView_sCenterMaxEms, mDefaultMaxEms);
-        mCenterBottomMaxEms = typedArray.getInt(R.styleable.SuperTextView_sCenterBottomMaxEms, mDefaultMaxEms);
-
-        mRightTopMaxEms = typedArray.getInt(R.styleable.SuperTextView_sRightTopMaxEms, mDefaultMaxEms);
-        mRightMaxEms = typedArray.getInt(R.styleable.SuperTextView_sRightMaxEms, mDefaultMaxEms);
-        mRightBottomMaxEms = typedArray.getInt(R.styleable.SuperTextView_sRightBottomMaxEms, mDefaultMaxEms);
+        mRightTopLines = typedArray.getInt(R.styleable.OptionItem_sRightTopLines, 1);
+        mRightLines = typedArray.getInt(R.styleable.OptionItem_sRightLines, 1);
+        mRightBottomLines = typedArray.getInt(R.styleable.OptionItem_sRightBottomLines, 1);
 
 
 
-        mLeftGravity = typedArray.getInt(R.styleable.SuperTextView_sLeftViewGravity, DEFAULT_GRAVITY);
-        mCenterGravity = typedArray.getInt(R.styleable.SuperTextView_sCenterViewGravity, DEFAULT_GRAVITY);
-        mRightGravity = typedArray.getInt(R.styleable.SuperTextView_sRightViewGravity, DEFAULT_GRAVITY);
+        mLeftTopMaxEms = typedArray.getInt(R.styleable.OptionItem_sLeftTopMaxEms, mDefaultMaxEms);
+        mLeftMaxEms = typedArray.getInt(R.styleable.OptionItem_sLeftMaxEms, mDefaultMaxEms);
+        mLeftBottomMaxEms = typedArray.getInt(R.styleable.OptionItem_sLeftBottomMaxEms, mDefaultMaxEms);
+
+        mCenterTopMaxEms = typedArray.getInt(R.styleable.OptionItem_sCenterTopMaxEms, mDefaultMaxEms);
+        mCenterMaxEms = typedArray.getInt(R.styleable.OptionItem_sCenterMaxEms, mDefaultMaxEms);
+        mCenterBottomMaxEms = typedArray.getInt(R.styleable.OptionItem_sCenterBottomMaxEms, mDefaultMaxEms);
+
+        mRightTopMaxEms = typedArray.getInt(R.styleable.OptionItem_sRightTopMaxEms, mDefaultMaxEms);
+        mRightMaxEms = typedArray.getInt(R.styleable.OptionItem_sRightMaxEms, mDefaultMaxEms);
+        mRightBottomMaxEms = typedArray.getInt(R.styleable.OptionItem_sRightBottomMaxEms, mDefaultMaxEms);
 
 
-        mLeftTvDrawableLeft = typedArray.getDrawable(R.styleable.SuperTextView_sLeftTvDrawableLeft);
-        mLeftTvDrawableRight = typedArray.getDrawable(R.styleable.SuperTextView_sLeftTvDrawableRight);
-        mCenterTvDrawableLeft = typedArray.getDrawable(R.styleable.SuperTextView_sCenterTvDrawableLeft);
-        mCenterTvDrawableRight = typedArray.getDrawable(R.styleable.SuperTextView_sCenterTvDrawableRight);
-        mRightTvDrawableLeft = typedArray.getDrawable(R.styleable.SuperTextView_sRightTvDrawableLeft);
-        mRightTvDrawableRight = typedArray.getDrawable(R.styleable.SuperTextView_sRightTvDrawableRight);
 
-        mTextViewDrawablePadding = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sTextViewDrawablePadding, mDefaultMargin);
-        ////////////////////////////////////////////////
-
-        mLeftTvDrawableWidth = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sLeftTvDrawableWidth, -1);
-        mLeftTvDrawableHeight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sLeftTvDrawableHeight, -1);
-
-        mCenterTvDrawableWidth = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sCenterTvDrawableWidth, -1);
-        mCenterTvDrawableHeight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sCenterTvDrawableHeight, -1);
-
-        mRightTvDrawableWidth = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sRightTvDrawableWidth, -1);
-        mRightTvDrawableHeight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sRightTvDrawableHeight, -1);
-
-        mLeftViewWidth = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sLeftViewWidth, 0);
-        ///////////////////////////////////////////////
-        mTopDividerLineMarginLR = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sTopDividerLineMarginLR, 0);
-        mTopDividerLineMarginLeft = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sTopDividerLineMarginLeft, 0);
-        mTopDividerLineMarginRight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sTopDividerLineMarginRight, 0);
-
-        mBottomDividerLineMarginLR = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sBottomDividerLineMarginLR, 0);
-        mBottomDividerLineMarginLeft = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sBottomDividerLineMarginLeft, 0);
-        mBottomDividerLineMarginRight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sBottomDividerLineMarginRight, 0);
+        mLeftGravity = typedArray.getInt(R.styleable.OptionItem_sLeftViewGravity, DEFAULT_GRAVITY);
+        mCenterGravity = typedArray.getInt(R.styleable.OptionItem_sCenterViewGravity, DEFAULT_GRAVITY);
+        mRightGravity = typedArray.getInt(R.styleable.OptionItem_sRightViewGravity, DEFAULT_GRAVITY);
 
 
-        mDividerLineType = typedArray.getInt(R.styleable.SuperTextView_sDividerLineType, DEFAULT_DIVIDER);
-        mDividerLineColor = typedArray.getColor(R.styleable.SuperTextView_sDividerLineColor, mDefaultDividerLineColor);
-        mDividerLineHeight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sDividerLineHeight, dip2px(mContext, 0.5f));
-        mIsBottomDividerAlignLeftText = typedArray.getBoolean(R.styleable.SuperTextView_sIsBottomDividerAlignLeftText, false);
+        mLeftTvDrawableLeft = typedArray.getDrawable(R.styleable.OptionItem_sLeftTvDrawableLeft);
+        mLeftTvDrawableRight = typedArray.getDrawable(R.styleable.OptionItem_sLeftTvDrawableRight);
+        mCenterTvDrawableLeft = typedArray.getDrawable(R.styleable.OptionItem_sCenterTvDrawableLeft);
+        mCenterTvDrawableRight = typedArray.getDrawable(R.styleable.OptionItem_sCenterTvDrawableRight);
+        mRightTvDrawableLeft = typedArray.getDrawable(R.styleable.OptionItem_sRightTvDrawableLeft);
+        mRightTvDrawableRight = typedArray.getDrawable(R.styleable.OptionItem_sRightTvDrawableRight);
 
-        mLeftViewMarginLeft = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sLeftViewMarginLeft, mDefaultMargin);
-        mLeftViewMarginRight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sLeftViewMarginRight, mDefaultMargin);
-        mCenterViewMarginLeft = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sCenterViewMarginLeft, 0);
-        mCenterViewMarginRight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sCenterViewMarginRight, 0);
-        mRightViewMarginLeft = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sRightViewMarginLeft, mDefaultMargin);
-        mRightViewMarginRight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sRightViewMarginRight, mDefaultMargin);
-        ///////////////////////////////////////////////
-        mLeftIconWidth = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sLeftIconWidth, 0);
-        mLeftIconHeight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sLeftIconHeight, 0);
+        mTextViewDrawablePadding = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sTextViewDrawablePadding, mDefaultMargin);
 
-        mRightIconWidth = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sRightIconWidth, 0);
-        mRightIconHeight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sRightIconHeight, 0);
+        mLeftTvDrawableWidth = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sLeftTvDrawableWidth, -1);
+        mLeftTvDrawableHeight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sLeftTvDrawableHeight, -1);
 
-        mLeftIconMarginLeft = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sLeftIconMarginLeft, mDefaultMargin);
-        mRightIconMarginRight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sRightIconMarginRight, mDefaultMargin);
+        mCenterTvDrawableWidth = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sCenterTvDrawableWidth, -1);
+        mCenterTvDrawableHeight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sCenterTvDrawableHeight, -1);
 
-        mLeftIconRes = typedArray.getDrawable(R.styleable.SuperTextView_sLeftIconRes);
-        mRightIconRes = typedArray.getDrawable(R.styleable.SuperTextView_sRightIconRes);
-        //////////////////////////////////////////////
-        mLeftTopTextBold = typedArray.getBoolean(R.styleable.SuperTextView_sLeftTopTextIsBold, false);
-        mLeftTextBold = typedArray.getBoolean(R.styleable.SuperTextView_sLeftTextIsBold, false);
-        mLeftBottomTextBold = typedArray.getBoolean(R.styleable.SuperTextView_sLeftBottomTextIsBold, false);
+        mRightTvDrawableWidth = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sRightTvDrawableWidth, -1);
+        mRightTvDrawableHeight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sRightTvDrawableHeight, -1);
 
-        mCenterTopTextBold = typedArray.getBoolean(R.styleable.SuperTextView_sCenterTopTextIsBold, false);
-        mCenterTextBold = typedArray.getBoolean(R.styleable.SuperTextView_sCenterTextIsBold, false);
-        mCenterBottomTextBold = typedArray.getBoolean(R.styleable.SuperTextView_sCenterBottomTextIsBold, false);
+        mLeftViewWidth = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sLeftViewWidth, 0);
 
-        mRightTopTextBold = typedArray.getBoolean(R.styleable.SuperTextView_sRightTopTextIsBold, false);
-        mRightTextBold = typedArray.getBoolean(R.styleable.SuperTextView_sRightTextIsBold, false);
-        mRightBottomTextBold = typedArray.getBoolean(R.styleable.SuperTextView_sRightBottomTextIsBold, false);
+        mTopDividerLineMarginLR = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sTopDividerLineMarginLR, 0);
+        mTopDividerLineMarginLeft = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sTopDividerLineMarginLeft, 0);
+        mTopDividerLineMarginRight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sTopDividerLineMarginRight, 0);
 
-        mLeftTextBackground = typedArray.getDrawable(R.styleable.SuperTextView_sLeftTextBackground);
-        mCenterTextBackground = typedArray.getDrawable(R.styleable.SuperTextView_sCenterTextBackground);
-        mRightTextBackground = typedArray.getDrawable(R.styleable.SuperTextView_sRightTextBackground);
+        mBottomDividerLineMarginLR = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sBottomDividerLineMarginLR, 0);
+        mBottomDividerLineMarginLeft = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sBottomDividerLineMarginLeft, 0);
+        mBottomDividerLineMarginRight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sBottomDividerLineMarginRight, 0);
+
+
+        mDividerLineType = typedArray.getInt(R.styleable.OptionItem_sDividerLineType, DEFAULT_DIVIDER);
+        mDividerLineColor = typedArray.getColor(R.styleable.OptionItem_sDividerLineColor, mDefaultDividerLineColor);
+        mDividerLineHeight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sDividerLineHeight, dip2px(mContext, 0.5f));
+        mIsBottomDividerAlignLeftText = typedArray.getBoolean(R.styleable.OptionItem_sIsBottomDividerAlignLeftText, false);
+
+        mLeftViewMarginLeft = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sLeftViewMarginLeft, mDefaultMargin);
+        mLeftViewMarginRight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sLeftViewMarginRight, mDefaultMargin);
+        mCenterViewMarginLeft = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sCenterViewMarginLeft, 0);
+        mCenterViewMarginRight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sCenterViewMarginRight, 0);
+        mRightViewMarginLeft = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sRightViewMarginLeft, mDefaultMargin);
+        mRightViewMarginRight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sRightViewMarginRight, mDefaultMargin);
+
+        mLeftIconWidth = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sLeftIconWidth, 0);
+        mLeftIconHeight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sLeftIconHeight, 0);
+
+        mRightIconWidth = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sRightIconWidth, 0);
+        mRightIconHeight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sRightIconHeight, 0);
+
+        mLeftIconMarginLeft = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sLeftIconMarginLeft, mDefaultMargin);
+        mRightIconMarginRight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sRightIconMarginRight, mDefaultMargin);
+
+        mLeftIconRes = typedArray.getDrawable(R.styleable.OptionItem_sLeftIconRes);
+        mRightIconRes = typedArray.getDrawable(R.styleable.OptionItem_sRightIconRes);
+
+        mLeftTopTextBold = typedArray.getBoolean(R.styleable.OptionItem_sLeftTopTextIsBold, false);
+        mLeftTextBold = typedArray.getBoolean(R.styleable.OptionItem_sLeftTextIsBold, false);
+        mLeftBottomTextBold = typedArray.getBoolean(R.styleable.OptionItem_sLeftBottomTextIsBold, false);
+
+        mCenterTopTextBold = typedArray.getBoolean(R.styleable.OptionItem_sCenterTopTextIsBold, false);
+        mCenterTextBold = typedArray.getBoolean(R.styleable.OptionItem_sCenterTextIsBold, false);
+        mCenterBottomTextBold = typedArray.getBoolean(R.styleable.OptionItem_sCenterBottomTextIsBold, false);
+
+        mRightTopTextBold = typedArray.getBoolean(R.styleable.OptionItem_sRightTopTextIsBold, false);
+        mRightTextBold = typedArray.getBoolean(R.styleable.OptionItem_sRightTextIsBold, false);
+        mRightBottomTextBold = typedArray.getBoolean(R.styleable.OptionItem_sRightBottomTextIsBold, false);
+
+        mLeftTextBackground = typedArray.getDrawable(R.styleable.OptionItem_sLeftTextBackground);
+        mCenterTextBackground = typedArray.getDrawable(R.styleable.OptionItem_sCenterTextBackground);
+        mRightTextBackground = typedArray.getDrawable(R.styleable.OptionItem_sRightTextBackground);
         ////////////////////////////////////////////////////
 
-        mEnableEdit = typedArray.getBoolean(R.styleable.SuperTextView_sEnableEdit, mEnableEdit);
-        mEditBackground = typedArray.getDrawable(R.styleable.SuperTextView_sEditBackGround);
-        mEditTextWidth = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sEditTextWidth, mEditTextWidth);
-        mEditTextString = typedArray.getString(R.styleable.SuperTextView_sEditTextString);
-        mEditTextHint = typedArray.getString(R.styleable.SuperTextView_sEditTextHint);
-        mEditTextInputType = typedArray.getInt(R.styleable.SuperTextView_android_inputType, -1);
-        mEditTextButtonType = typedArray.getInt(R.styleable.SuperTextView_sEditTextButtonType, mEditTextButtonType);
+        mEnableEdit = typedArray.getBoolean(R.styleable.OptionItem_sEnableEdit, mEnableEdit);
+        mEditBackground = typedArray.getDrawable(R.styleable.OptionItem_sEditBackGround);
+        mEditTextWidth = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sEditTextWidth, mEditTextWidth);
+        mEditTextString = typedArray.getString(R.styleable.OptionItem_sEditTextString);
+        mEditTextHint = typedArray.getString(R.styleable.OptionItem_sEditTextHint);
+        mEditTextInputType = typedArray.getInt(R.styleable.OptionItem_android_inputType, -1);
+        mEditTextButtonType = typedArray.getInt(R.styleable.OptionItem_sEditTextButtonType, mEditTextButtonType);
 
 
-        mUseRipple = typedArray.getBoolean(R.styleable.SuperTextView_sUseRipple, true);
-        mBackgroundDrawable = typedArray.getDrawable(R.styleable.SuperTextView_sBackgroundDrawableRes);
+        mUseRipple = typedArray.getBoolean(R.styleable.OptionItem_sUseRipple, true);
+        mBackgroundDrawable = typedArray.getDrawable(R.styleable.OptionItem_sBackgroundDrawableRes);
 
-        mRightViewType = typedArray.getInt(R.styleable.SuperTextView_sRightViewType, -1);
+        mRightViewType = typedArray.getInt(R.styleable.OptionItem_sRightViewType, -1);
 
-        mIsChecked = typedArray.getBoolean(R.styleable.SuperTextView_sIsChecked, false);
-        mRightCheckBoxMarginRight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sRightCheckBoxMarginRight, mDefaultMargin);
-        mRightCheckBoxBg = typedArray.getDrawable(R.styleable.SuperTextView_sRightCheckBoxRes);
+        mIsChecked = typedArray.getBoolean(R.styleable.OptionItem_sIsChecked, false);
+        mRightCheckBoxMarginRight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sRightCheckBoxMarginRight, mDefaultMargin);
+        mRightCheckBoxBg = typedArray.getDrawable(R.styleable.OptionItem_sRightCheckBoxRes);
 
-        mRightSwitchMarginRight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sRightSwitchMarginRight, mDefaultMargin);
-        mSwitchIsChecked = typedArray.getBoolean(R.styleable.SuperTextView_sSwitchIsChecked, false);
+        mRightSwitchMarginRight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sRightSwitchMarginRight, mDefaultMargin);
+        mSwitchIsChecked = typedArray.getBoolean(R.styleable.OptionItem_sSwitchIsChecked, false);
 
-        mRadioButtonIsChecked = typedArray.getBoolean(R.styleable.SuperTextView_sIsRadioButtonChecked, false);
-        mRightRadioButtonMarginRight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sRightRadioButtonMarginRight, mDefaultMargin);
-        mRightRadioButtonBg = typedArray.getDrawable(R.styleable.SuperTextView_sRightRadioButtonRes);
-        mRightRadioButtonId = typedArray.getInteger(R.styleable.SuperTextView_sRadioButtonId, R.id.sRightRadioButtonId);
+        mRightRadioButtonMarginRight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sRightRadioButtonMarginRight, mDefaultMargin);
+        mRightRadioButtonBg = typedArray.getDrawable(R.styleable.OptionItem_sRightRadioButtonRes);
+        mRightRadioButtonId = typedArray.getResourceId(R.styleable.OptionItem_sRadioButtonId, View.NO_ID);
 
-        mTextOff = typedArray.getString(R.styleable.SuperTextView_sTextOff);
-        mTextOn = typedArray.getString(R.styleable.SuperTextView_sTextOn);
+        mTextOff = typedArray.getString(R.styleable.OptionItem_sTextOff);
+        mTextOn = typedArray.getString(R.styleable.OptionItem_sTextOn);
 
-        mSwitchMinWidth = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sSwitchMinWidth, 0);
-        mSwitchPadding = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sSwitchPadding, 0);
-        mThumbTextPadding = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sThumbTextPadding, 0);
+        mSwitchMinWidth = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sSwitchMinWidth, 0);
+        mSwitchPadding = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sSwitchPadding, 0);
+        mThumbTextPadding = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sThumbTextPadding, 0);
 
-        mThumbResource = typedArray.getDrawable(R.styleable.SuperTextView_sThumbResource);
-        mTrackResource = typedArray.getDrawable(R.styleable.SuperTextView_sTrackResource);
+        mThumbResource = typedArray.getDrawable(R.styleable.OptionItem_sThumbResource);
+        mTrackResource = typedArray.getDrawable(R.styleable.OptionItem_sTrackResource);
 
-        mCenterSpaceHeight = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sCenterSpaceHeight, dip2px(mContext, 5));
+        mCenterSpaceHeight = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sCenterSpaceHeight, dip2px(mContext, 5));
         ////////////////////////////////////////////////////
-        mSelectorPressedColor = typedArray.getColor(R.styleable.SuperTextView_sShapeSelectorPressedColor, mDefaultShapeColor);
-        mSelectorNormalColor = typedArray.getColor(R.styleable.SuperTextView_sShapeSelectorNormalColor, mDefaultShapeColor);
+        mSelectorPressedColor = typedArray.getColor(R.styleable.OptionItem_sShapeSelectorPressedColor, mDefaultShapeColor);
+        mSelectorNormalColor = typedArray.getColor(R.styleable.OptionItem_sShapeSelectorNormalColor, mDefaultShapeColor);
 
-        mSolidColor = typedArray.getColor(R.styleable.SuperTextView_sShapeSolidColor, mDefaultShapeColor);
+        mSolidColor = typedArray.getColor(R.styleable.OptionItem_sShapeSolidColor, mDefaultShapeColor);
 
-        mCornersRadius = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sShapeCornersRadius, 0);
-        mCornersTopLeftRadius = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sShapeCornersTopLeftRadius, 0);
-        mCornersTopRightRadius = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sShapeCornersTopRightRadius, 0);
-        mCornersBottomLeftRadius = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sShapeCornersBottomLeftRadius, 0);
-        mCornersBottomRightRadius = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sShapeCornersBottomRightRadius, 0);
+        mCornersRadius = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sShapeCornersRadius, 0);
+        mCornersTopLeftRadius = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sShapeCornersTopLeftRadius, 0);
+        mCornersTopRightRadius = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sShapeCornersTopRightRadius, 0);
+        mCornersBottomLeftRadius = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sShapeCornersBottomLeftRadius, 0);
+        mCornersBottomRightRadius = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sShapeCornersBottomRightRadius, 0);
 
-        mStrokeWidth = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sShapeStrokeWidth, 0);
-        mStrokeDashWidth = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sShapeStrokeDashWidth, 0);
-        mStrokeDashGap = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sShapeStrokeDashGap, 0);
+        mStrokeWidth = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sShapeStrokeWidth, 0);
+        mStrokeDashWidth = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sShapeStrokeDashWidth, 0);
+        mStrokeDashGap = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sShapeStrokeDashGap, 0);
 
-        mStrokeColor = typedArray.getColor(R.styleable.SuperTextView_sShapeStrokeColor, mDefaultShapeColor);
+        mStrokeColor = typedArray.getColor(R.styleable.OptionItem_sShapeStrokeColor, mDefaultShapeColor);
 
-        mUseShape = typedArray.getBoolean(R.styleable.SuperTextView_sUseShape, false);
+        mUseShape = typedArray.getBoolean(R.styleable.OptionItem_sUseShape, false);
 
         typedArray.recycle();
     }
@@ -941,13 +941,17 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
         mRadioButtonParams.addRule(ALIGN_PARENT_RIGHT, TRUE);
         mRadioButtonParams.addRule(RelativeLayout.CENTER_VERTICAL, TRUE);
         mRadioButtonParams.setMargins(0, 0, mRightRadioButtonMarginRight, 0);
+
+        if (mRightRadioButtonId == View.NO_ID) {
+            throw new IllegalStateException("必须指定RadioButton的id，因为在使用RadioGroupPlus时，它需要每个RadioButton的id都不一样");
+        }
         mRadioButton.setId(mRightRadioButtonId);
         mRadioButton.setLayoutParams(mRadioButtonParams);
         if (mRightRadioButtonBg != null) {
             mRadioButton.setGravity(CENTER_IN_PARENT);
             mRadioButton.setButtonDrawable(mRightRadioButtonBg);
         }
-        mRadioButton.setChecked(mRadioButtonIsChecked);
+
         mRadioButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -1360,7 +1364,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param string 字符串
      * @return 方便链式调用
      */
-    public SuperTextView setLeftTopString(CharSequence string) {
+    public OptionItem setLeftTopString(CharSequence string) {
         if (mLeftView != null) {
             mLeftView.setTopTextString(string);
         }
@@ -1373,7 +1377,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param string 字符串
      * @return 方便链式调用
      */
-    public SuperTextView setLeftString(CharSequence string) {
+    public OptionItem setLeftString(CharSequence string) {
         if (mLeftView != null) {
             mLeftView.setCenterTextString(string);
         }
@@ -1386,7 +1390,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param string 字符串
      * @return 方便链式调用
      */
-    public SuperTextView setLeftBottomString(CharSequence string) {
+    public OptionItem setLeftBottomString(CharSequence string) {
         if (mLeftView != null) {
             mLeftView.setBottomTextString(string);
         }
@@ -1400,7 +1404,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param string 字符串
      * @return 方便链式调用
      */
-    public SuperTextView setCenterTopString(CharSequence string) {
+    public OptionItem setCenterTopString(CharSequence string) {
         if (mCenterView != null) {
             mCenterView.setTopTextString(string);
         }
@@ -1413,7 +1417,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param string 字符串
      * @return 方便链式调用
      */
-    public SuperTextView setCenterString(CharSequence string) {
+    public OptionItem setCenterString(CharSequence string) {
         if (mCenterView != null) {
             mCenterView.setCenterTextString(string);
         }
@@ -1426,7 +1430,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param string 字符串
      * @return 方便链式调用
      */
-    public SuperTextView setCenterEditString(CharSequence string) {
+    public OptionItem setCenterEditString(CharSequence string) {
         if (mCenterEditText != null) {
             mCenterEditText.setText(string);
         }
@@ -1439,7 +1443,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param string 字符串
      * @return 方便链式调用
      */
-    public SuperTextView setCenterBottomString(CharSequence string) {
+    public OptionItem setCenterBottomString(CharSequence string) {
         if (mCenterView != null) {
             mCenterView.setBottomTextString(string);
         }
@@ -1452,7 +1456,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param string 字符串
      * @return 方便链式调用
      */
-    public SuperTextView setRightTopString(CharSequence string) {
+    public OptionItem setRightTopString(CharSequence string) {
         if (mRightView != null) {
             mRightView.setTopTextString(string);
         }
@@ -1465,7 +1469,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param string 字符串
      * @return 方便链式调用
      */
-    public SuperTextView setRightString(CharSequence string) {
+    public OptionItem setRightString(CharSequence string) {
         if (mRightView != null) {
             mRightView.setCenterTextString(string);
         }
@@ -1478,7 +1482,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param string 字符串
      * @return 方便链式调用
      */
-    public SuperTextView setRightBottomString(CharSequence string) {
+    public OptionItem setRightBottomString(CharSequence string) {
         if (mRightView != null) {
             mRightView.setBottomTextString(string);
         }
@@ -1491,7 +1495,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param color 颜色值
      * @return SuperTextView
      */
-    public SuperTextView setLeftTopTextColor(int color) {
+    public OptionItem setLeftTopTextColor(int color) {
         if (mLeftView != null) {
             mLeftView.getTopTextView().setTextColor(color);
         }
@@ -1504,7 +1508,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param color 颜色值
      * @return SuperTextView
      */
-    public SuperTextView setLeftTextColor(int color) {
+    public OptionItem setLeftTextColor(int color) {
         if (mLeftView != null) {
             mLeftView.getCenterTextView().setTextColor(color);
         }
@@ -1517,7 +1521,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param color 颜色值
      * @return SuperTextView
      */
-    public SuperTextView setLeftBottomTextColor(int color) {
+    public OptionItem setLeftBottomTextColor(int color) {
         if (mLeftView != null) {
             mLeftView.getBottomTextView().setTextColor(color);
         }
@@ -1530,7 +1534,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param color 颜色值
      * @return SuperTextView
      */
-    public SuperTextView setCenterTopTextColor(int color) {
+    public OptionItem setCenterTopTextColor(int color) {
         if (mCenterView != null) {
             mCenterView.getTopTextView().setTextColor(color);
         }
@@ -1543,7 +1547,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param color 颜色值
      * @return SuperTextView
      */
-    public SuperTextView setCenterTextColor(int color) {
+    public OptionItem setCenterTextColor(int color) {
         if (mCenterView != null) {
             mCenterView.getCenterTextView().setTextColor(color);
         }
@@ -1556,7 +1560,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param color 颜色值
      * @return SuperTextView
      */
-    public SuperTextView setCenterBottomTextColor(int color) {
+    public OptionItem setCenterBottomTextColor(int color) {
         if (mCenterView != null) {
             mCenterView.getBottomTextView().setTextColor(color);
         }
@@ -1569,7 +1573,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param color 颜色值
      * @return SuperTextView
      */
-    public SuperTextView setRightTopTextColor(int color) {
+    public OptionItem setRightTopTextColor(int color) {
         if (mRightView != null) {
             mRightView.getTopTextView().setTextColor(color);
         }
@@ -1582,7 +1586,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param color 颜色值
      * @return SuperTextView
      */
-    public SuperTextView setRightTextColor(int color) {
+    public OptionItem setRightTextColor(int color) {
         if (mRightView != null) {
             mRightView.getCenterTextView().setTextColor(color);
         }
@@ -1595,7 +1599,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param color 颜色值
      * @return SuperTextView
      */
-    public SuperTextView setRightBottomTextColor(int color) {
+    public OptionItem setRightBottomTextColor(int color) {
         if (mRightView != null) {
             mRightView.getBottomTextView().setTextColor(color);
         }
@@ -1711,7 +1715,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param checked 是否选中
      * @return 返回值
      */
-    public SuperTextView setCbChecked(boolean checked) {
+    public OptionItem setCbChecked(boolean checked) {
         mIsChecked = checked;
         if (mRightCheckBox != null) {
             mRightCheckBox.setChecked(checked);
@@ -1725,7 +1729,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param drawable drawable对象
      * @return 返回对象
      */
-    public SuperTextView setCbBackground(Drawable drawable) {
+    public OptionItem setCbBackground(Drawable drawable) {
         mRightCheckBoxBg = drawable;
         if (mRightCheckBox != null) {
             mRightCheckBox.setBackgroundDrawable(drawable);
@@ -1748,25 +1752,12 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
 
 
     /**
-     *
-     * @param checked 是否选中
-     * @return 返回值
-     */
-    public SuperTextView setRadioButtonChecked(boolean checked) {
-        mRadioButtonIsChecked = checked;
-        if (mRadioButton != null) {
-            mRadioButton.setChecked(checked);
-        }
-        return this;
-    }
-
-    /**
      * 设置RadioButton的背景图
      *
      * @param drawable drawable对象
      * @return 返回对象
      */
-    public SuperTextView setRadioButtonBackground(Drawable drawable) {
+    public OptionItem setRadioButtonBackground(Drawable drawable) {
         mRightRadioButtonBg = drawable;
         if (mRadioButton != null) {
             mRadioButton.setBackgroundDrawable(drawable);
@@ -1792,7 +1783,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param checked Switch是否选中
      * @return 返回值
      */
-    public SuperTextView setSwitchIsChecked(boolean checked) {
+    public OptionItem setSwitchIsChecked(boolean checked) {
         mSwitchIsChecked = checked;
         if (mSwitch != null) {
             mSwitch.setChecked(checked);
@@ -1818,7 +1809,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      *
      * @param drawableLeft 左边图片资源
      */
-    public SuperTextView setLeftTvDrawableLeft(Drawable drawableLeft) {
+    public OptionItem setLeftTvDrawableLeft(Drawable drawableLeft) {
         setDefaultDrawable(mLeftView.getCenterTextView(), drawableLeft, null, mTextViewDrawablePadding, mLeftTvDrawableWidth, mLeftTvDrawableHeight);
         return this;
     }
@@ -1828,7 +1819,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      *
      * @param drawableRight 右边图片资源
      */
-    public SuperTextView setLeftTvDrawableRight(Drawable drawableRight) {
+    public OptionItem setLeftTvDrawableRight(Drawable drawableRight) {
         setDefaultDrawable(mLeftView.getCenterTextView(), null, drawableRight, mTextViewDrawablePadding, mLeftTvDrawableWidth, mLeftTvDrawableHeight);
         return this;
     }
@@ -1839,7 +1830,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      *
      * @param drawableLeft 左边图片资源
      */
-    public SuperTextView setCenterTvDrawableLeft(Drawable drawableLeft) {
+    public OptionItem setCenterTvDrawableLeft(Drawable drawableLeft) {
         setDefaultDrawable(mCenterView.getCenterTextView(), drawableLeft, null, mTextViewDrawablePadding, mCenterTvDrawableWidth, mCenterTvDrawableHeight);
         return this;
     }
@@ -1850,7 +1841,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      *
      * @param drawableRight 右边图片资源
      */
-    public SuperTextView setCenterTvDrawableRight(Drawable drawableRight) {
+    public OptionItem setCenterTvDrawableRight(Drawable drawableRight) {
         setDefaultDrawable(mCenterView.getCenterTextView(), null, drawableRight, mTextViewDrawablePadding, mCenterTvDrawableWidth, mCenterTvDrawableHeight);
         return this;
     }
@@ -1861,7 +1852,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      *
      * @param drawableLeft 左边图片资源
      */
-    public SuperTextView setRightTvDrawableLeft(Drawable drawableLeft) {
+    public OptionItem setRightTvDrawableLeft(Drawable drawableLeft) {
         setDefaultDrawable(mRightView.getCenterTextView(), drawableLeft, null, mTextViewDrawablePadding, mRightTvDrawableWidth, mRightTvDrawableHeight);
         return this;
     }
@@ -1871,7 +1862,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      *
      * @param drawableRight 右边图片资源
      */
-    public SuperTextView setRightTvDrawableRight(Drawable drawableRight) {
+    public OptionItem setRightTvDrawableRight(Drawable drawableRight) {
         setDefaultDrawable(mRightView.getCenterTextView(), null, drawableRight, mTextViewDrawablePadding, mRightTvDrawableWidth, mRightTvDrawableHeight);
         return this;
     }
@@ -1882,7 +1873,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param leftIcon 左边图标
      * @return 返回对象
      */
-    public SuperTextView setLeftIcon(Drawable leftIcon) {
+    public OptionItem setLeftIcon(Drawable leftIcon) {
         if (mLeftIconIV != null) {
             mLeftImgParams.setMargins(mLeftIconMarginLeft, 0, 0, 0);
             mLeftIconIV.setImageDrawable(leftIcon);
@@ -1896,7 +1887,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param resId 左边图标资源id
      * @return 返回对象
      */
-    public SuperTextView setLeftIcon(int resId) {
+    public OptionItem setLeftIcon(int resId) {
         if (mLeftIconIV != null) {
             mLeftImgParams.setMargins(mLeftIconMarginLeft, 0, 0, 0);
             mLeftIconIV.setImageResource(resId);
@@ -1910,7 +1901,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param rightIcon 右边图标
      * @return 返回对象
      */
-    public SuperTextView setRightIcon(Drawable rightIcon) {
+    public OptionItem setRightIcon(Drawable rightIcon) {
         if (mRightIconIV != null) {
             mRightImgParams.setMargins(0, 0, mRightIconMarginRight, 0);
             mRightIconIV.setImageDrawable(rightIcon);
@@ -1924,7 +1915,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param resId 右边图标
      * @return 返回对象
      */
-    public SuperTextView setRightIcon(int resId) {
+    public OptionItem setRightIcon(int resId) {
         if (mRightIconIV != null) {
             mRightImgParams.setMargins(0, 0, mRightIconMarginRight, 0);
             mRightIconIV.setImageResource(resId);
@@ -1938,7 +1929,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param drawable 背景资源
      * @return 对象
      */
-    public SuperTextView setSBackground(Drawable drawable) {
+    public OptionItem setSBackground(Drawable drawable) {
         if (drawable != null) {
             this.setBackgroundDrawable(drawable);
         }
@@ -2114,7 +2105,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param gravity 对齐方式
      * @return SuperTextView
      */
-    public SuperTextView setLeftTextGravity(int gravity) {
+    public OptionItem setLeftTextGravity(int gravity) {
         setTextGravity(mLeftView, gravity);
         return this;
     }
@@ -2125,7 +2116,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param gravity 对齐方式
      * @return SuperTextView
      */
-    public SuperTextView setCenterTextGravity(int gravity) {
+    public OptionItem setCenterTextGravity(int gravity) {
         setTextGravity(mCenterView, gravity);
         return this;
     }
@@ -2136,7 +2127,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param gravity 对齐方式
      * @return SuperTextView
      */
-    public SuperTextView setRightTextGravity(int gravity) {
+    public OptionItem setRightTextGravity(int gravity) {
         setTextGravity(mRightView, gravity);
         return this;
     }
@@ -2159,7 +2150,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param visibility visibility
      * @return superTextView
      */
-    public SuperTextView setTopDividerLineVisibility(int visibility) {
+    public OptionItem setTopDividerLineVisibility(int visibility) {
         if (mTopDividerLineView == null) {
             setTopDividerLineView();
         }
@@ -2173,7 +2164,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param visibility visibility
      * @return superTextView
      */
-    public SuperTextView setBottomDividerLineVisibility(int visibility) {
+    public OptionItem setBottomDividerLineVisibility(int visibility) {
         if (mBottomDividerLineView == null) {
             setBottomDividerLineView();
         }
@@ -2190,38 +2181,38 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param onSuperTextViewClickListener ClickListener
      * @return SuperTextView
      */
-    public SuperTextView setOnSuperTextViewClickListener(OnSuperTextViewClickListener onSuperTextViewClickListener) {
+    public OptionItem setOnSuperTextViewClickListener(OnSuperTextViewClickListener onSuperTextViewClickListener) {
         this.mSuperTextViewClickListener = onSuperTextViewClickListener;
         if (mSuperTextViewClickListener != null) {
             this.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mSuperTextViewClickListener.onClickListener(SuperTextView.this);
+                    mSuperTextViewClickListener.onClickListener(OptionItem.this);
                 }
             });
         }
         return this;
     }
 
-    public SuperTextView setLeftTopTvClickListener(OnLeftTopTvClickListener leftTopTvClickListener) {
+    public OptionItem setLeftTopTvClickListener(OnLeftTopTvClickListener leftTopTvClickListener) {
         this.mLeftTopTvClickListener = leftTopTvClickListener;
         setDefaultLeftViewClickListener(mLeftView);
         return this;
     }
 
-    public SuperTextView setLeftTvClickListener(OnLeftTvClickListener leftTvClickListener) {
+    public OptionItem setLeftTvClickListener(OnLeftTvClickListener leftTvClickListener) {
         this.mLeftTvClickListener = leftTvClickListener;
         setDefaultLeftViewClickListener(mLeftView);
         return this;
     }
 
-    public SuperTextView setLeftBottomTvClickListener(OnLeftBottomTvClickListener leftBottomTvClickListener) {
+    public OptionItem setLeftBottomTvClickListener(OnLeftBottomTvClickListener leftBottomTvClickListener) {
         this.mLeftBottomTvClickListener = leftBottomTvClickListener;
         setDefaultLeftViewClickListener(mLeftView);
         return this;
     }
 
-    public SuperTextView setCenterTopTvClickListener(OnCenterTopTvClickListener centerTopTvClickListener) {
+    public OptionItem setCenterTopTvClickListener(OnCenterTopTvClickListener centerTopTvClickListener) {
         this.mCenterTopTvClickListener = centerTopTvClickListener;
         setDefaultCenterViewClickListener(mCenterView);
         return this;
@@ -2233,7 +2224,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param clickListener
      * @return
      */
-    public SuperTextView setCenterEditTextClickListener(OnClickListener clickListener) {
+    public OptionItem setCenterEditTextClickListener(OnClickListener clickListener) {
         if (mCenterEditText != null) {
             mCenterEditText.setOnClickListener(clickListener);
         }
@@ -2246,44 +2237,44 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param focusChangeListener
      * @return
      */
-    public SuperTextView setCenterEditTextFocusChangeListener(OnFocusChangeListener focusChangeListener) {
+    public OptionItem setCenterEditTextFocusChangeListener(OnFocusChangeListener focusChangeListener) {
         if (mCenterEditText != null && mEditTextButtonType == TYPE_NONE) {
             mCenterEditText.setOnFocusChangeListener(focusChangeListener);
         }
         return this;
     }
 
-    public SuperTextView setCenterTvClickListener(OnCenterTvClickListener centerTvClickListener) {
+    public OptionItem setCenterTvClickListener(OnCenterTvClickListener centerTvClickListener) {
         this.mCenterTvClickListener = centerTvClickListener;
         setDefaultCenterViewClickListener(mCenterView);
         return this;
     }
 
-    public SuperTextView setCenterBottomTvClickListener(OnCenterBottomTvClickListener centerBottomTvClickListener) {
+    public OptionItem setCenterBottomTvClickListener(OnCenterBottomTvClickListener centerBottomTvClickListener) {
         this.mCenterBottomTvClickListener = centerBottomTvClickListener;
         setDefaultCenterViewClickListener(mCenterView);
         return this;
     }
 
-    public SuperTextView setRightTopTvClickListener(OnRightTopTvClickListener rightTopTvClickListener) {
+    public OptionItem setRightTopTvClickListener(OnRightTopTvClickListener rightTopTvClickListener) {
         this.mRightTopTvClickListener = rightTopTvClickListener;
         setDefaultRightViewClickListener(mRightView);
         return this;
     }
 
-    public SuperTextView setRightTvClickListener(OnRightTvClickListener rightTvClickListener) {
+    public OptionItem setRightTvClickListener(OnRightTvClickListener rightTvClickListener) {
         this.mRightTvClickListener = rightTvClickListener;
         setDefaultRightViewClickListener(mRightView);
         return this;
     }
 
-    public SuperTextView setRightBottomTvClickListener(OnRightBottomTvClickListener rightBottomTvClickListener) {
+    public OptionItem setRightBottomTvClickListener(OnRightBottomTvClickListener rightBottomTvClickListener) {
         this.mRightBottomTvClickListener = rightBottomTvClickListener;
         setDefaultRightViewClickListener(mRightView);
         return this;
     }
 
-    public SuperTextView setLeftImageViewClickListener(OnLeftImageViewClickListener listener) {
+    public OptionItem setLeftImageViewClickListener(OnLeftImageViewClickListener listener) {
         this.mLeftImageViewClickListener = listener;
 
         if (mLeftIconIV != null) {
@@ -2297,7 +2288,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
         return this;
     }
 
-    public SuperTextView setRightImageViewClickListener(final OnRightImageViewClickListener listener) {
+    public OptionItem setRightImageViewClickListener(final OnRightImageViewClickListener listener) {
         this.mRightImageViewClickListener = listener;
         if (mRightIconIV != null) {
             mRightIconIV.setOnClickListener(new OnClickListener() {
@@ -2310,12 +2301,12 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
         return this;
     }
 
-    public SuperTextView setSwitchCheckedChangeListener(OnSwitchCheckedChangeListener switchCheckedChangeListener) {
+    public OptionItem setSwitchCheckedChangeListener(OnSwitchCheckedChangeListener switchCheckedChangeListener) {
         this.mSwitchCheckedChangeListener = switchCheckedChangeListener;
         return this;
     }
 
-    public SuperTextView setCheckBoxCheckedChangeListener(OnCheckBoxCheckedChangeListener checkBoxCheckedChangeListener) {
+    public OptionItem setCheckBoxCheckedChangeListener(OnCheckBoxCheckedChangeListener checkBoxCheckedChangeListener) {
         this.mCheckBoxCheckedChangeListener = checkBoxCheckedChangeListener;
         return this;
     }
@@ -2329,7 +2320,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
 
     ////////////////////////////////////////////////////////////////////////////////////
     public interface OnSuperTextViewClickListener {
-        void onClickListener(SuperTextView superTextView);
+        void onClickListener(OptionItem optionItem);
     }
 
     public interface OnLeftTopTvClickListener {
@@ -2465,7 +2456,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param color 颜色
      * @return 对象
      */
-    public SuperTextView setShapeSelectorPressedColor(int color) {
+    public OptionItem setShapeSelectorPressedColor(int color) {
         this.mSelectorPressedColor = color;
         return this;
     }
@@ -2476,7 +2467,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param color 颜色
      * @return 对象
      */
-    public SuperTextView setShapeSelectorNormalColor(int color) {
+    public OptionItem setShapeSelectorNormalColor(int color) {
         this.mSelectorNormalColor = color;
         return this;
     }
@@ -2487,7 +2478,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param color 颜色
      * @return 对象
      */
-    public SuperTextView setShapeSolidColor(int color) {
+    public OptionItem setShapeSolidColor(int color) {
         this.mSolidColor = color;
         return this;
     }
@@ -2498,7 +2489,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param strokeWidth 边框宽度值
      * @return 对象
      */
-    public SuperTextView setShapeStrokeWidth(int strokeWidth) {
+    public OptionItem setShapeStrokeWidth(int strokeWidth) {
         this.mStrokeWidth = dip2px(mContext, strokeWidth);
         return this;
     }
@@ -2509,7 +2500,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param strokeColor 边框颜色
      * @return 对象
      */
-    public SuperTextView setShapeStrokeColor(int strokeColor) {
+    public OptionItem setShapeStrokeColor(int strokeColor) {
         this.mStrokeColor = strokeColor;
         return this;
     }
@@ -2520,7 +2511,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param strokeDashWidth 边框虚线宽度
      * @return 对象
      */
-    public SuperTextView setShapeSrokeDashWidth(float strokeDashWidth) {
+    public OptionItem setShapeSrokeDashWidth(float strokeDashWidth) {
         this.mStrokeDashWidth = dip2px(mContext, strokeDashWidth);
         return this;
     }
@@ -2531,7 +2522,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param strokeDashGap 边框虚线间隙值
      * @return 对象
      */
-    public SuperTextView setShapeStrokeDashGap(float strokeDashGap) {
+    public OptionItem setShapeStrokeDashGap(float strokeDashGap) {
         this.mStrokeDashGap = dip2px(mContext, strokeDashGap);
         return this;
     }
@@ -2542,7 +2533,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param radius 半径
      * @return 对象
      */
-    public SuperTextView setShapeCornersRadius(float radius) {
+    public OptionItem setShapeCornersRadius(float radius) {
         this.mCornersRadius = dip2px(mContext, radius);
         return this;
     }
@@ -2553,7 +2544,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param radius 半径
      * @return 对象
      */
-    public SuperTextView setShapeCornersTopLeftRadius(float radius) {
+    public OptionItem setShapeCornersTopLeftRadius(float radius) {
         this.mCornersTopLeftRadius = dip2px(mContext, radius);
         return this;
     }
@@ -2564,7 +2555,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param radius 半径
      * @return 对象
      */
-    public SuperTextView setShapeCornersTopRightRadius(float radius) {
+    public OptionItem setShapeCornersTopRightRadius(float radius) {
         this.mCornersTopRightRadius = dip2px(mContext, radius);
         return this;
     }
@@ -2575,7 +2566,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param radius 半径
      * @return 对象
      */
-    public SuperTextView setShapeCornersBottomLeftRadius(float radius) {
+    public OptionItem setShapeCornersBottomLeftRadius(float radius) {
         this.mCornersBottomLeftRadius = dip2px(mContext, radius);
         return this;
     }
@@ -2586,7 +2577,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      * @param radius 半径
      * @return 对象
      */
-    public SuperTextView setShapeCornersBottomRightRadius(float radius) {
+    public OptionItem setShapeCornersBottomRightRadius(float radius) {
         this.mCornersBottomRightRadius = dip2px(mContext, radius);
         return this;
     }
@@ -2596,7 +2587,7 @@ public class SuperTextView extends RelativeLayout implements HasTypeface {
      *
      * @return 对象
      */
-    public SuperTextView useShape() {
+    public OptionItem useShape() {
         if (Build.VERSION.SDK_INT < 16) {
             setBackgroundDrawable(getSelector());
         } else {

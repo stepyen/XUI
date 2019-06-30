@@ -1,4 +1,4 @@
-package com.stepyen.xui.widget.button;
+package com.stepyen.xui.widget.textview.button;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Rect;

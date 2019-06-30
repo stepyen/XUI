@@ -162,7 +162,12 @@
     </declare-styleable>
 
 
-    <declare-styleable name="SuperTextView">
+    <declare-styleable name="RadioGroupPlus">
+        <attr name="rgp_checkedButton" format="reference"></attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="OptionItem">
 
         <!-- 文字字符串 -->
         <attr name="sLeftTextString" format="string" />
@@ -360,8 +365,7 @@
 
         <attr name="sRightRadioButtonRes" format="reference" />
         <attr name="sRightRadioButtonMarginRight" format="dimension" />
-        <attr name="sIsRadioButtonChecked" format="boolean" />
-        <attr name="sRadioButtonId" format="integer" />
+        <attr name="sRadioButtonId" format="reference" />
 
 
         <attr name="sTextOff" format="string" />

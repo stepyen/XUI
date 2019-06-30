@@ -123,4 +123,10 @@ public abstract class BaseFragment extends XPageFragment {
         super.onPause();
 //        MobclickAgent.onPageEnd(getPageName());
     }
+
+
+
+    public void onViewClick(View view) {
+
+    }
 }

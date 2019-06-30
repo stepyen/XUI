@@ -10,6 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.stepyen.xui.R;
+
 
 /**
  *
@@ -23,10 +25,14 @@ import android.widget.RadioGroup;
  * to uncheck a particular radio button, the radio group can be cleared to
  * remove the checked state.</p>
  * <p/>
- * <p>The selection is identified by the unique id of the radio button as defined
+ * <p>The selection is identified by the unique id of the radio button OKHttpUpdateHttpService defined
  * in the XML layout file.</p>
  * <p/>
  * <p><strong>XML Attributes</strong></p>
+ * <p>See {@link com.android.internal.R.styleable#RadioGroup RadioGroup Attributes},
+ * {@link com.android.internal.R.styleable#LinearLayout LinearLayout Attributes},
+ * {@link com.android.internal.R.styleable#ViewGroup ViewGroup Attributes},
+ * {@link com.android.internal.R.styleable#View View Attributes}</p>
  * <p>Also see
  * {@link LinearLayout.LayoutParams LinearLayout.LayoutParams}
  * for layout attributes.</p>
@@ -36,7 +42,7 @@ import android.widget.RadioGroup;
  *
  * 封装的 RadioGroup 单选
  *
- *
+ * RadioGroupPlus里可以任意嵌套包含RadioButton，都能被约束到
  *
  */
 public class RadioGroupPlus extends LinearLayout {
@@ -64,21 +70,18 @@ public class RadioGroupPlus extends LinearLayout {
     public RadioGroupPlus(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        // retrieve selected radio button as requested by the user in the
+        // retrieve selected radio button OKHttpUpdateHttpService requested by the user in the
         // XML layout file
         //TODO: fix ignored attributes
-//        TypedArray attributes = context.obtainStyledAttributes(
-//                attrs, com.android.internal.R.styleable.RadioGroup, com.android.internal.R.attr.radioButtonStyle, 0);
 
-//        int value = attributes.getResourceId(com.android.internal.R.styleable.RadioGroup_checkedButton, View.NO_ID);
-//        if (value != View.NO_ID) {
-//            mCheckedId = value;
-//        }
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.RadioGroupPlus);
 
-//        final int index = attributes.getInt(com.android.internal.R.styleable.RadioGroup_orientation, VERTICAL);
-//        setOrientation(index);
+        int value = ta.getResourceId(R.styleable.RadioGroupPlus_rgp_checkedButton, View.NO_ID);
+        if (value != View.NO_ID) {
+            mCheckedId = value;
+        }
 
-//        attributes.recycle();
+        ta.recycle();
         init();
     }
 
@@ -104,7 +107,7 @@ public class RadioGroupPlus extends LinearLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        // checks the appropriate radio button as requested in the XML file
+        // checks the appropriate radio button OKHttpUpdateHttpService requested in the XML file
         if (mCheckedId != -1) {
             mProtectFromCheckedChange = true;
             setCheckedStateForView(mCheckedId, true);
@@ -132,7 +135,7 @@ public class RadioGroupPlus extends LinearLayout {
 
     /**
      * <p>Sets the selection to the radio button whose identifier is passed in
-     * parameter. Using -1 as the selection identifier clears the selection;
+     * parameter. Using -1 OKHttpUpdateHttpService the selection identifier clears the selection;
      * such an operation is equivalent to invoking {@link #clearCheck()}.</p>
      *
      * @param id the unique id of the radio button to select in this group
@@ -238,6 +241,7 @@ public class RadioGroupPlus extends LinearLayout {
      * XML file. Otherwise, this class ussed the value read from the XML file.</p>
      * <p/>
      * <p>See
+     * {@link com.android.internal.R.styleable#LinearLayout_Layout LinearLayout Attributes}
      * for a list of all child view attributes that this class supports.</p>
      */
     public static class LayoutParams extends LinearLayout.LayoutParams {

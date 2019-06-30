@@ -19,9 +19,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <com.stepyen.xui.widget.button.roundbutton.SuperButton
+        <com.stepyen.xui.widget.textview.button.SuperButton
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
+            android:layout_height="24dp"
             android:background="@color/xui_config_color_light_blue"
             android:layout_marginLeft="@dimen/xui_config_margin"
             android:paddingHorizontal="7dp"
@@ -31,7 +31,7 @@
             android:textColor="@color/white"
             />
 
-        <com.stepyen.xui.widget.button.roundbutton.SuperButton
+        <com.stepyen.xui.widget.textview.button.SuperButton
             android:layout_width="wrap_content"
             android:layout_height="48dp"
            android:layout_marginHorizontal="5dp"
@@ -42,7 +42,7 @@
             app:sSelectorPressedColor="@color/xui_gray_6"
             app:sUseSelector="true" />
 
-        <com.stepyen.xui.widget.button.roundbutton.SuperButton
+        <com.stepyen.xui.widget.textview.button.SuperButton
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:enabled="false"
@@ -55,6 +55,12 @@
             app:sUseSelector="true" />
 
     </LinearLayout>
+
+
+
+
+
+
 
 
 </LinearLayout>
