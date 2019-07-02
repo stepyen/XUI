@@ -55,7 +55,7 @@ dependencies {
     implementation deps.butterknife.runtime
     annotationProcessor deps.butterknife.compiler
 
-    implementation project(path: ':xui_lib')
+    api project(path: ':xui_lib')
 
     //切片
     implementation 'com.github.xuexiangjys.XAOP:xaop-runtime:x1.0.3'

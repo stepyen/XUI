@@ -4,4 +4,9 @@
 
     <!--默认字体路径-->
     <string name="default_app_font_path"></string>
+
+    <string name="common_money">%.2f</string>   <!--金额保留两位小数-->
+
+
+
 </resources>

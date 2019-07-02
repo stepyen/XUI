@@ -31,10 +31,6 @@ import uk.co.chrisjenx.calligraphy.HasTypeface;
 /**
  * 打造万能的布局满足市面常见的样式
  *
- *
- * 注意：
- * 1、设置padding会影响线的绘制
- *
  */
 public class OptionItem extends RelativeLayout implements HasTypeface {
 

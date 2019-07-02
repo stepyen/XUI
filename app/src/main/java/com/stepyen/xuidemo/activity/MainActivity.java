@@ -1,17 +1,12 @@
 package com.stepyen.xuidemo.activity;
-
 import android.support.design.widget.TabLayout;
 import android.os.Bundle;
-import android.widget.NumberPicker;
-
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.BaseActivity;
 import com.stepyen.xuidemo.fragment.ComponentsFragment;
 import com.stepyen.xuidemo.fragment.ExpandsFragment;
 import com.stepyen.xuidemo.fragment.UtilitysFragment;
-
 import butterknife.BindView;
-
 /**
  *
  *
