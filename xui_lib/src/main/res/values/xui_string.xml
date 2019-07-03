@@ -7,6 +7,6 @@
 
     <string name="common_money">%.2f</string>   <!--金额保留两位小数-->
 
-
+    <string name="xui_try_immediately">立即体验</string>
 
 </resources>

@@ -51,6 +51,7 @@ dependencies {
     implementation  deps.support.app_compat
     implementation  deps.support.design
     implementation  deps.constraint_layout
+    implementation  deps.glide
 
     implementation deps.butterknife.runtime
     annotationProcessor deps.butterknife.compiler

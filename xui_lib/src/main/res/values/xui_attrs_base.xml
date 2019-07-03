@@ -80,7 +80,17 @@
     <attr name="xui_actionbar_side_text_padding" format="dimension"/>
 
 
+    <!-- android 5.0以下不能再selector中用?attr,必须要整个drawable由使用者提供 -->
+    <attr name="xui_round_btn_bg_color" format="color" />
+    <attr name="xui_round_btn_border_color" format="color" />
+    <attr name="xui_round_btn_text_color" format="color" />
 
+    <attr name="xui_btn_view_radius" format="dimension" />
+    <attr name="xui_btn_view_width" format="dimension" />
+    <attr name="xui_btn_view_height" format="dimension" />
+    <attr name="xui_btn_view_text_size" format="dimension" />
+    <attr name="xui_btn_view_border_width" format="dimension" />
 
+    <attr name="xui_config_icon_drawable_padding" format="dimension" />
 
 </resources>

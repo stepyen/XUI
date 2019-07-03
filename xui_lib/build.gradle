@@ -36,6 +36,7 @@ dependencies {
     implementation deps.butterknife.runtime
     annotationProcessor deps.butterknife.compiler
 
+    compileOnly deps.glide
     // 字体
     api 'uk.co.chrisjenx:calligraphy:2.3.0'
     implementation 'com.nineoldandroids:library:2.4.0'

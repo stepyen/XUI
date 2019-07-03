@@ -1,5 +1,15 @@
 package com.stepyen.xuidemo;
 
+import android.support.v4.view.ViewPager;
+
+import com.stepyen.xui.widget.banner.transform.DepthTransformer;
+import com.stepyen.xui.widget.banner.transform.FadeSlideTransformer;
+import com.stepyen.xui.widget.banner.transform.FlowTransformer;
+import com.stepyen.xui.widget.banner.transform.RotateDownTransformer;
+import com.stepyen.xui.widget.banner.transform.RotateUpTransformer;
+import com.stepyen.xui.widget.banner.transform.ZoomOutSlideTransformer;
+import com.stepyen.xui.widget.banner.widget.banner.BannerItem;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -86,5 +96,27 @@ public class DataProvider {
         data.add("眉目如画");
         return data;
     }
+
+
+    public static List<BannerItem> getBannerList() {
+        ArrayList<BannerItem> list = new ArrayList<>();
+        for (int i = 0; i < urls.length; i++) {
+            BannerItem item = new BannerItem();
+            item.imgUrl = urls[i];
+            item.title = titles[i];
+
+            list.add(item);
+        }
+
+        return list;
+    }
+    public static Class<? extends ViewPager.PageTransformer> transformers[] = new Class[]{
+            DepthTransformer.class,
+            FadeSlideTransformer.class,
+            FlowTransformer.class,
+            RotateDownTransformer.class,
+            RotateUpTransformer.class,
+            ZoomOutSlideTransformer.class,
+    };
 
 }
