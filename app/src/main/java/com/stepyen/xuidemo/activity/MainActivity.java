@@ -1,9 +1,6 @@
 package com.stepyen.xuidemo.activity;
-import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.os.Bundle;
-
-import com.stepyen.xui.logs.LogHelp;
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.BaseActivity;
 import com.stepyen.xuidemo.fragment.ComponentsFragment;

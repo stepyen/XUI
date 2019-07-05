@@ -157,9 +157,9 @@ public class BottomMenuDialog extends Dialog {
             //不是最后一个就加条线
             if (i != size - 1) {
                 View lineView = new View(mContext);
-                LinearLayout.LayoutParams lineLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, DensityUtils.dp2px(ResUtils.getDimens(R.dimen.xui_config_line)));
+                LinearLayout.LayoutParams lineLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, DensityUtils.dp2px(ResUtils.getDimens(R.dimen.xui_config_size_line)));
                 lineView.setLayoutParams(lineLp);
-                lineView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.xui_config_line));
+                lineView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.xui_config_color_line));
                 mLlMenu.addView(lineView);
             }
         }

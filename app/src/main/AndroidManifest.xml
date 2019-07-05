@@ -45,6 +45,10 @@
             android:name=".base.BaseActivity"
             android:configChanges="screenSize|keyboardHidden|orientation|keyboard"
             android:windowSoftInputMode="adjustPan|stateHidden" />
+      <activity
+            android:name=".activity.PreviewActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation|keyboard"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
     </application>
 

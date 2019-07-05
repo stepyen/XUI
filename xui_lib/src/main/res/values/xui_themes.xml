@@ -52,10 +52,6 @@
         <item name="xui_actionbar_immersive">false</item>
         <item name="xui_actionbar_ic_navigation_back">@drawable/xui_ic_navigation_back_white</item>
 
-        <!-- 文字的style -->
-        <item name="xui_config_color_title_text">@color/xui_config_color_title_text</item>
-        <item name="xui_config_color_content_text">@color/xui_config_color_content_text</item>
-        <item name="xui_config_color_explain_text">@color/xui_config_color_explain_text</item>
 
     </style>
 
@@ -76,16 +72,16 @@
     <style name="XUITheme.Phone">
 
         <!--全局样式-->
-        <item name="xui_config_content_spacing_horizontal">@dimen/xui_config_content_spacing_horizontal_phone</item>
-        <item name="xui_config_content_spacing_vertical">@dimen/xui_config_content_spacing_vertical_phone</item>
+        <item name="xui_config_padding">@dimen/xui_config_padding</item>
+        <item name="xui_config_margin">@dimen/xui_config_margin</item>
+        <item name="xui_config_size_item_space">@dimen/xui_config_size_item_space</item>
+        <item name="xui_config_size_item">@dimen/xui_config_size_item</item>
 
-        <item name="xui_config_separator_height">@dimen/xui_config_separator_height_phone</item>
-        <item name="xui_config_option_item_height">@dimen/xui_config_option_item_height_phone</item>
 
+        <item name="xui_config_color_item_space">@color/xui_config_color_item_space</item>
         <item name="xui_config_color_background">@color/xui_config_color_background_phone</item>
         <item name="android:windowBackground">?attr/xui_config_color_background</item>
 
-        <item name="xui_config_separator_color">@color/xui_config_separator_color</item>
 
         <!--actionbar-->
         <item name="xui_actionbar_height">@dimen/xui_actionbar_height_phone</item>
@@ -95,12 +91,30 @@
         <item name="xui_actionbar_action_padding">@dimen/xui_actionbar_action_padding_phone</item>
         <item name="xui_actionbar_side_text_padding">@dimen/xui_actionbar_side_text_padding_phone</item>
 
-        <!--文字字号样式-->
-        <item name="xui_config_size_title_text">@dimen/xui_config_size_title_text_phone</item>
-        <item name="xui_config_size_content_text">@dimen/xui_config_size_content_text_phone</item>
-        <item name="xui_config_size_explain_text">@dimen/xui_config_size_explain_text_phone</item>
+        <!--************************文本样式*******************************-->
+        <item name="xui_config_size_big_title">@dimen/xui_config_size_big_title</item>
+        <item name="xui_config_size_title">@dimen/xui_config_size_title</item>
+        <item name="xui_config_size_subtitle">@dimen/xui_config_size_subtitle</item>
+        <item name="xui_config_size_content">@dimen/xui_config_size_content</item>
+        <item name="xui_config_size_explain">@dimen/xui_config_size_explain</item>
+
+        <item name="xui_config_color_big_title">@color/xui_config_color_big_title</item>
+        <item name="xui_config_color_title">@color/xui_config_color_title</item>
+        <item name="xui_config_color_subtitle">@color/xui_config_color_subtitle</item>
+        <item name="xui_config_color_content">@color/xui_config_color_content</item>
+        <item name="xui_config_color_explain">@color/xui_config_color_explain</item>
 
 
+
+
+
+<!--对话框 dialog-->
+        <item name="xui_dialog_radius_size">@dimen/xui_dialog_radius_size</item>
+        <item name="xui_dialog_content_padding">@dimen/xui_dialog_content_padding</item>
+
+        <!--MiniLoadingDialog-->
+        <item name="xui_dialog_mini_loadingview_size">@dimen/xui_dialog_mini_loadingview_size</item>
+        <item name="xui_dialog_mini_loadingview_margin_top">@dimen/xui_dialog_mini_loadingview_margin_top</item>
 
     </style>
 

@@ -75,9 +75,9 @@ public  abstract class BaseTestFragment extends BaseFragment {
 
         // 加条线
         View lineView = new View(getContext());
-        LinearLayout.LayoutParams lineLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, DensityUtils.dp2px(ResUtils.getDimens(com.stepyen.xui.R.dimen.xui_config_line)));
+        LinearLayout.LayoutParams lineLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, DensityUtils.dp2px(ResUtils.getDimens(com.stepyen.xui.R.dimen.xui_config_size_line)));
         lineView.setLayoutParams(lineLp);
-        lineView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.xui_config_line));
+        lineView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.xui_config_color_line));
         mParentLl.addView(lineView);
 
     }

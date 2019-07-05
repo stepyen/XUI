@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--不透明度值-->
     <color name="white">#FFFFFFFF</color>
     <color name="white95">#F2FFFFFF</color>
     <color name="white90">#E6FFFFFF</color>
@@ -62,6 +61,18 @@
     <color name="green">#43CD80</color>
 
 
+    <!--文本颜色-->
+    <color name="xui_config_color_big_title">#161F29</color>
+    <color name="xui_config_color_title">#161F29</color>
+    <color name="xui_config_color_subtitle">#333A40</color>
+    <color name="xui_config_color_content">#333A40</color>
+    <color name="xui_config_color_explain">#7D8389</color>
+
+    <color name="xui_config_color_line">#EEEEEE</color>
+    <color name="xui_config_color_press">#FFF4F4F4</color>
+    <color name="xui_config_color_background">#EEF3F7</color>
+    <color name="xui_config_color_item_space">#EEF3F7</color>
+
     <color name="xui_config_color_dark_blue_gray">#223B53</color>
     <color name="xui_config_color_middle_blue_gray">#6A798E</color>
     <color name="xui_config_color_light_blue_gray">#9FABBC</color>
@@ -79,8 +90,6 @@
     <color name="xui_config_titlebar">@color/xui_config_main_theme</color>
 
     <color name="xui_config_separator_color">@color/separator</color>
-
-
 
     <!--text color-->
     <color name="xui_config_color_title_text">@color/xui_config_color_dark_blue_gray</color>
@@ -101,22 +110,7 @@
     <color name="xui_config_color_background_pressed">@color/xui_config_color_pressed</color>
 
 
-    <!--背景颜色-->
-    <color name="xui_config_background">#EEF3F7</color>
-    <!--大标题文字-->
-    <color name="xui_config_big_title">#161F29</color>
-    <!--标题文字-->
-    <color name="xui_config_title">#161F29</color>
-    <!--子标题文字-->
-    <color name="xui_config__subtitle">#333A40</color>
-    <!--长文本-->
-    <color name="xui_config__content">#333A40</color>
-    <!--说明注释 -->
-    <color name="xui_config_explain">#7D8389</color>
-    <!--线高度-->
-    <color name="xui_config_line">#EEEEEE</color>
-    <!--按压-->
-    <color name="xui_configpress">#FFF4F4F4</color>
+
 
     <!-- SuperTextView -->
     <color name="xui_common_pressed">#10000000</color>  <!--白色背景按下去的颜色-->

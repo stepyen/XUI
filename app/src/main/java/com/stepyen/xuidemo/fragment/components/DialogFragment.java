@@ -1,8 +1,10 @@
 package com.stepyen.xuidemo.fragment.components;
 
+import android.os.Handler;
 import android.widget.Toast;
 
 import com.stepyen.xui.widget.dialog.BottomMenuDialog;
+import com.stepyen.xui.widget.dialog.MiniLoadingDialog;
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.BaseFragment;
 import com.stepyen.xuidemo.base.BaseTestFragment;
@@ -32,6 +34,17 @@ public class DialogFragment extends BaseTestFragment {
                     })
                     .builder()
                     .show();
+        });
+
+        addView("MiniLoadingDialog", v -> {
+            MiniLoadingDialog miniLoadingDialog = new MiniLoadingDialog(getContext());
+            miniLoadingDialog.show();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    miniLoadingDialog.dismiss();
+                }
+            }, 3000);
         });
     }
 }

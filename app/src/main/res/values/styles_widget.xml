@@ -4,12 +4,12 @@
     <!--TabLayout-->
     <style name="TabText" parent="TextAppearance.Design.Tab">
         <item name="android:textColor">@color/selector_tab_text_color</item>
-        <item name="android:textSize">?attr/xui_config_size_content_text</item>
+        <item name="android:textSize">?attr/xui_config_size_content</item>
     </style>
 
     <style name="TabText.Explain">
         <item name="android:textColor">@color/selector_tab_text_color</item>
-        <item name="android:textSize">?attr/xui_config_size_explain_text</item>
+        <item name="android:textSize">?attr/xui_config_size_explain</item>
     </style>
 
     <style name="TabLayoutStyle" parent="Base.Widget.Design.TabLayout">
@@ -27,7 +27,7 @@
     <!--TextView 提示标签-->
     <style name="TextView_hint_tag" parent="TextStyle">
         <item name="android:textColor">@color/xui_config_main_theme</item>
-        <item name="android:textSize">?attr/xui_config_size_content_text</item>
+        <item name="android:textSize">?attr/xui_config_size_content</item>
         <item name="android:layout_marginLeft">@dimen/xui_config_content_spacing_horizontal_phone</item>
         <item name="android:layout_marginTop">@dimen/xui_config_content_spacing_vertical_phone</item>
         <item name="android:layout_marginBottom">@dimen/xui_config_content_spacing_vertical_phone</item>

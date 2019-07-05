@@ -9,4 +9,5 @@
 
     <string name="xui_try_immediately">立即体验</string>
 
+   <string name="xui_tip_loading_message">数据加载中…</string>
 </resources>

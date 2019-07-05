@@ -20,8 +20,8 @@
     <TextView
         android:id="@+id/tv_cancel"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/xui_config_item_height"
-        android:layout_marginTop="@dimen/xui_config_item_space"
+        android:layout_height="@dimen/xui_config_size_item"
+        android:layout_marginTop="@dimen/xui_config_size_item_space"
         android:gravity="center"
         />
 </LinearLayout>
