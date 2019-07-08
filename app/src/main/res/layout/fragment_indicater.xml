@@ -12,12 +12,20 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:fitsSystemWindows="true"/>
+        android:fitsSystemWindows="true"
+
+        />
 
 
     <com.stepyen.xui.widget.tabbar.TabSegment
         android:id="@+id/tabSegment"
         android:layout_width="match_parent"
         android:layout_height="49dp"
-        android:background="@drawable/bg_tab_panel"/>
+        app:ts_normal_color="@color/black"
+        app:ts_icon_position="top"
+        app:ts_has_indicator="false"
+        app:ts_mode="fixed"
+        android:textSize="10sp"
+
+        />
 </LinearLayout>

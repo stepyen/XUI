@@ -119,4 +119,8 @@ public class DataProvider {
             ZoomOutSlideTransformer.class,
     };
 
+
+    public static String[] getTabTitles() {
+        return new String[]{"首页","消息","订单","我的"};
+    }
 }
