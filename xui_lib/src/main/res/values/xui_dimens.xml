@@ -33,10 +33,9 @@
     <!--高度-->
     <dimen name="xui_config_padding">15dp</dimen>
     <dimen name="xui_config_margin">15dp</dimen>
-    <dimen name="xui_config_size_item">47dp</dimen>
     <dimen name="xui_config_size_line">0.5dp</dimen>
+    <dimen name="xui_config_size_item">47dp</dimen>
     <dimen name="xui_config_size_item_space">10dp</dimen>
-
 
 
     <!--***************   xui splash view  *************************-->
@@ -208,5 +207,11 @@
     <dimen name="xui_list_divider_height_table">1dp</dimen>
     <dimen name="xui_list_divider_height_phone">0.5dp</dimen>
 
-
+    <!--**********************************************
+     *                TabSegment                  *
+     **********************************************-->
+    <dimen name="xui_tab_segment_indicator_height">2dp</dimen>
+    <dimen name="xui_tab_segment_text_size">16sp</dimen>
+    <dimen name="xui_tab_sign_count_view_minSize_with_text">16dp</dimen>
+    <dimen name="xui_tab_sign_count_view_minSize">8dp</dimen>
 </resources>

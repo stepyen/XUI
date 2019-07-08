@@ -10,28 +10,28 @@
     <attr name="xui_config_size_item_space" format="dimension"/>
 
     <!--全局颜色-->
-    <attr name="xui_config_color_background" format="color" />
+    <attr name="xui_config_color_background" format="color"/>
     <attr name="xui_config_color_line" format="color"/>
     <attr name="xui_config_color_item" format="color"/>
     <attr name="xui_config_color_item_space" format="color"/>
 
-    <attr name="xui_switch_alpha_pressed" format="boolean" />
-    <attr name="xui_switch_alpha_disabled" format="boolean" />
-    <attr name="xui_alpha_pressed" format="float" />
-    <attr name="xui_alpha_disabled" format="float" />
+    <attr name="xui_switch_alpha_pressed" format="boolean"/>
+    <attr name="xui_switch_alpha_disabled" format="boolean"/>
+    <attr name="xui_alpha_pressed" format="float"/>
+    <attr name="xui_alpha_disabled" format="float"/>
 
-<!--**************************文本样式************************************-->
-    <attr name="xui_config_size_big_title" format="dimension" />
-    <attr name="xui_config_size_title" format="dimension" />
-    <attr name="xui_config_size_subtitle" format="dimension" />
-    <attr name="xui_config_size_content" format="dimension" />
-    <attr name="xui_config_size_explain" format="dimension" />
+    <!--**************************文本样式************************************-->
+    <attr name="xui_config_size_big_title" format="dimension"/>
+    <attr name="xui_config_size_title" format="dimension"/>
+    <attr name="xui_config_size_subtitle" format="dimension"/>
+    <attr name="xui_config_size_content" format="dimension"/>
+    <attr name="xui_config_size_explain" format="dimension"/>
 
-    <attr name="xui_config_color_big_title" format="color" />
-    <attr name="xui_config_color_title" format="color" />
-    <attr name="xui_config_color_subtitle" format="color" />
-    <attr name="xui_config_color_content" format="color" />
-    <attr name="xui_config_color_explain" format="color" />
+    <attr name="xui_config_color_big_title" format="color"/>
+    <attr name="xui_config_color_title" format="color"/>
+    <attr name="xui_config_color_subtitle" format="color"/>
+    <attr name="xui_config_color_content" format="color"/>
+    <attr name="xui_config_color_explain" format="color"/>
 
 
     <!-- ==========================splash================================== -->
@@ -45,12 +45,6 @@
     <attr name="xui_config_splash_company_logo" format="reference"/>
     <!--启动页上公司的标志距离下端的距离-->
     <attr name="xui_config_company_logo_bottom" format="dimension"/>
-
-
-
-
-
-
 
 
     <attr name="xui_guide_btn_padding_horizontal" format="float"/>
@@ -83,27 +77,35 @@
 
 
     <!-- android 5.0以下不能再selector中用?attr,必须要整个drawable由使用者提供 -->
-    <attr name="xui_round_btn_bg_color" format="color" />
-    <attr name="xui_round_btn_border_color" format="color" />
-    <attr name="xui_round_btn_text_color" format="color" />
+    <attr name="xui_round_btn_bg_color" format="color"/>
+    <attr name="xui_round_btn_border_color" format="color"/>
+    <attr name="xui_round_btn_text_color" format="color"/>
 
-    <attr name="xui_btn_view_radius" format="dimension" />
-    <attr name="xui_btn_view_width" format="dimension" />
-    <attr name="xui_btn_view_height" format="dimension" />
-    <attr name="xui_btn_view_text_size" format="dimension" />
-    <attr name="xui_btn_view_border_width" format="dimension" />
+    <attr name="xui_btn_view_radius" format="dimension"/>
+    <attr name="xui_btn_view_width" format="dimension"/>
+    <attr name="xui_btn_view_height" format="dimension"/>
+    <attr name="xui_btn_view_text_size" format="dimension"/>
+    <attr name="xui_btn_view_border_width" format="dimension"/>
 
-    <attr name="xui_config_icon_drawable_padding" format="dimension" />
+    <attr name="xui_config_icon_drawable_padding" format="dimension"/>
 
 
     <!--***********dialog********************-->
-    <attr name="xui_dialog_radius_size" format="dimension" />
-    <attr name="xui_dialog_background_dim_amount" format="float" />
-    <attr name="xui_dialog_content_padding" format="dimension" />
+    <attr name="xui_dialog_radius_size" format="dimension"/>
+    <attr name="xui_dialog_background_dim_amount" format="float"/>
+    <attr name="xui_dialog_content_padding" format="dimension"/>
 
     <!--MiniLoadingDialog-->
-    <attr name="xui_dialog_mini_loadingview_size" format="dimension" />
-    <attr name="xui_dialog_mini_loadingview_margin_top" format="dimension" />
+    <attr name="xui_dialog_mini_loadingview_size" format="dimension"/>
+    <attr name="xui_dialog_mini_loadingview_margin_top" format="dimension"/>
 
 
+    <!--**********************************************
+*                  xui tabSegment              *
+***********************************************-->
+    <attr name="xui_tab_sign_count_view" format="reference"/>
+    <attr name="xui_tab_sign_count_view_minSize" format="dimension"/>
+    <attr name="xui_tab_sign_count_view_minSize_with_text" format="dimension"/>
+    <attr name="xui_tab_sign_count_view_bg" format="reference"/>
+    <attr name="xui_tab_sign_count_view_padding_horizontal" format="dimension"/>
 </resources>

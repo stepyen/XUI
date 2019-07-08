@@ -31,6 +31,10 @@
     <item name="sRightSwitchId" type="id" />
     <item name="sRightRadioButtonId" type="id" />
 
+    <!--XUIItemViewsAdapter-->
+    <item name="xui_tab_segment_item_id" type="id"/>
+    <item name="xui_view_can_not_cache_tag" type="id"/>
+
 
 
 </resources>

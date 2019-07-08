@@ -68,10 +68,14 @@
     <color name="xui_config_color_content">#333A40</color>
     <color name="xui_config_color_explain">#7D8389</color>
 
-    <color name="xui_config_color_line">#EEEEEE</color>
-    <color name="xui_config_color_press">#FFF4F4F4</color>
     <color name="xui_config_color_background">#EEF3F7</color>
+    <color name="xui_config_color_line">#EEEEEE</color>
+    <color name="xui_config_color_item">#FFFFFF</color>
     <color name="xui_config_color_item_space">#EEF3F7</color>
+    <color name="xui_config_color_press">#FFF4F4F4</color>
+
+
+
 
     <color name="xui_config_color_dark_blue_gray">#223B53</color>
     <color name="xui_config_color_middle_blue_gray">#6A798E</color>

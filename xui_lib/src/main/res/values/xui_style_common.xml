@@ -3,7 +3,6 @@
 
     <!--这里写通用的样式-->
 
-
 <!--文本样式-->
     <style name="TextStyle">
         <item name="android:layout_width">wrap_content</item>
@@ -19,13 +18,13 @@
     </style>
 
     <style name="TextStyle.Title">
-        <item name="android:textSize">?attr/xui_config_size_subtitle</item>
-        <item name="android:textColor">?attr/xui_config_color_subtitle</item>
+        <item name="android:textSize">?attr/xui_config_size_title</item>
+        <item name="android:textColor">?attr/xui_config_color_title</item>
     </style>
 
     <style name="TextStyle.Subtitle">
-        <item name="android:textSize">?attr/xui_config_size_title</item>
-        <item name="android:textColor">?attr/xui_config_color_title</item>
+        <item name="android:textSize">?attr/xui_config_size_subtitle</item>
+        <item name="android:textColor">?attr/xui_config_color_subtitle</item>
     </style>
 
     <style name="TextStyle.Content">
@@ -33,18 +32,13 @@
         <item name="android:textColor">?attr/xui_config_color_content</item>
     </style>
 
-    <style name="TextStyle.Content.wrap">
-        <item name="android:layout_marginBottom">?attr/xui_config_margin</item>
-    </style>
-
     <style name="TextStyle.Explain">
         <item name="android:textSize">?attr/xui_config_size_explain</item>
         <item name="android:textColor">?attr/xui_config_color_explain</item>
     </style>
 
-    <style name="TextStyle.Title.wrap">
-        <item name="android:layout_marginBottom">?attr/xui_config_margin</item>
-    </style>
+
+
 
 
     <!--对话框样式-->

@@ -76,10 +76,13 @@
         <item name="xui_config_margin">@dimen/xui_config_margin</item>
         <item name="xui_config_size_item_space">@dimen/xui_config_size_item_space</item>
         <item name="xui_config_size_item">@dimen/xui_config_size_item</item>
+        <item name="xui_config_size_line">@dimen/xui_config_size_line</item>
 
 
-        <item name="xui_config_color_item_space">@color/xui_config_color_item_space</item>
         <item name="xui_config_color_background">@color/xui_config_color_background_phone</item>
+        <item name="xui_config_color_line">@color/xui_config_color_line</item>
+        <item name="xui_config_color_item">@color/xui_config_color_item</item>
+        <item name="xui_config_color_item_space">@color/xui_config_color_item_space</item>
         <item name="android:windowBackground">?attr/xui_config_color_background</item>
 
 

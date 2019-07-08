@@ -582,4 +582,38 @@
         <!--loading控件的颜色，默认白色-->
         <attr name="mlv_loading_view_color" format="color" />
     </declare-styleable>
+
+
+    <declare-styleable name="TabSegment">
+        <!--tab选中时的颜色，默认R.attr.colorAccent-->
+        <attr name="ts_selected_color" format="color" />
+        <!--tab未选中时的颜色，默认R.color.xui_config_color_gray_5-->
+        <attr name="ts_normal_color" format="color" />
+        <!--指示器的高度, 默认2dp-->
+        <attr name="ts_indicator_height" format="dimension" />
+        <!--是否显示指示器，默认true-->
+        <attr name="ts_has_indicator" format="boolean" />
+        <!--文字大小，默认16sp-->
+        <attr name="android:textSize" format="dimension" />
+        <!--指示器是否在顶端，默认false-->
+        <attr name="ts_indicator_top" format="boolean" />
+        <!--指示器的模式，默认fixed-->
+        <attr name="ts_mode" format="enum">
+            <enum name="scrollable" value="0" />
+            <enum name="fixed" value="1" />
+        </attr>
+        <!--tab间的空隙，默认10dp-->
+        <attr name="ts_space" format="dimension" />
+        <!--图标的位置，默认left-->
+        <attr name="ts_icon_position" format="enum">
+            <enum name="left" value="0" />
+            <enum name="top" value="1" />
+            <enum name="right" value="2" />
+            <enum name="bottom" value="3" />
+        </attr>
+        <!--文字的样式-->
+        <attr name="ts_typeface_provider" format="string" />
+    </declare-styleable>
+    <attr name="TabSegmentStyle" format="reference" />
+
 </resources>
