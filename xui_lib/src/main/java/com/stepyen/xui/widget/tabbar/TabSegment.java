@@ -48,7 +48,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 /**
  * <p>用于横向多个 Tab 的布局，可以灵活配置 Tab</p>
  * <ul>
@@ -122,6 +121,11 @@ public class TabSegment extends HorizontalScrollView {
      * item的默认字体大小
      */
     private int mTabTextSize;
+
+    /**
+     * item的选中字体大小
+     */
+    private int mTabSelectTextSize;
     /**
      * 是否有Indicator
      */
@@ -242,6 +246,7 @@ public class TabSegment extends HorizontalScrollView {
         mHasIndicator = array.getBoolean(R.styleable.TabSegment_ts_has_indicator, true);
         mIndicatorHeight = array.getDimensionPixelSize(R.styleable.TabSegment_ts_indicator_height, getResources().getDimensionPixelSize(R.dimen.xui_tab_segment_indicator_height));
         mTabTextSize = array.getDimensionPixelSize(R.styleable.TabSegment_android_textSize, getResources().getDimensionPixelSize(R.dimen.xui_tab_segment_text_size));
+        mTabSelectTextSize = array.getDimensionPixelSize(R.styleable.TabSegment_ts_select_textSize, getResources().getDimensionPixelSize(R.dimen.xui_tab_segment_text_size));
         mIndicatorTop = array.getBoolean(R.styleable.TabSegment_ts_indicator_top, false);
         mDefaultTabIconPosition = array.getInt(R.styleable.TabSegment_ts_icon_position, ICON_POSITION_LEFT);
         mMode = array.getInt(R.styleable.TabSegment_ts_mode, MODE_FIXED);
@@ -317,6 +322,10 @@ public class TabSegment extends HorizontalScrollView {
 
     public void setTabTextSize(int tabTextSize) {
         mTabTextSize = tabTextSize;
+    }
+
+    public void setTabSelectTextSize(int tabSelectTextSize) {
+        mTabSelectTextSize = tabSelectTextSize;
     }
 
     /**
@@ -823,6 +832,15 @@ public class TabSegment extends HorizontalScrollView {
         return textSize;
     }
 
+    private int getTabSelectTextSize(Tab item) {
+        int textSize = item.getSelectTextSize();
+        if (textSize == Tab.USE_TAB_SEGMENT) {
+            textSize = mTabSelectTextSize;
+        }
+        return textSize;
+    }
+
+
     private int getTabSelectedColor(Tab item) {
         int color = item.getSelectedColor();
         if (color == Tab.USE_TAB_SEGMENT) {
@@ -1058,6 +1076,7 @@ public class TabSegment extends HorizontalScrollView {
     public static class Tab {
         public static final int USE_TAB_SEGMENT = Integer.MIN_VALUE;
         private int textSize = USE_TAB_SEGMENT;
+        private int selectTextSize = USE_TAB_SEGMENT;
         private int normalColor = USE_TAB_SEGMENT;
         private int selectedColor = USE_TAB_SEGMENT;
         private Drawable normalIcon = null;
@@ -1116,61 +1135,78 @@ public class TabSegment extends HorizontalScrollView {
          *
          * @param digit 数字显示的最大位数
          */
-        public void setmSignCountDigits(int digit) {
+        public Tab setmSignCountDigits(int digit) {
             mSignCountDigits = digit;
+            return this;
         }
 
-        public void setTextColor(@ColorInt int normalColor, @ColorInt int selectedColor) {
+        public Tab setTextColor(@ColorInt int normalColor, @ColorInt int selectedColor) {
             this.normalColor = normalColor;
             this.selectedColor = selectedColor;
+            return this;
         }
 
         public int getTextSize() {
             return textSize;
         }
 
-        public void setTextSize(int textSize) {
+        public Tab setTextSize(int textSize) {
             this.textSize = textSize;
+            return this;
+        }
+
+        public int getSelectTextSize() {
+            return selectTextSize;
+        }
+
+        public Tab setSelectTextSize(int selectTextSize) {
+            this.selectTextSize = selectTextSize;
+            return this;
         }
 
         public CharSequence getText() {
             return text;
         }
 
-        public void setText(CharSequence text) {
+        public Tab setText(CharSequence text) {
             this.text = text;
+            return this;
         }
 
         public int getContentLeft() {
             return contentLeft;
         }
 
-        public void setContentLeft(int contentLeft) {
+        public Tab setContentLeft(int contentLeft) {
             this.contentLeft = contentLeft;
+            return this;
         }
 
         public int getContentWidth() {
             return contentWidth;
         }
 
-        public void setContentWidth(int contentWidth) {
+        public Tab setContentWidth(int contentWidth) {
             this.contentWidth = contentWidth;
+            return this;
         }
 
         public int getIconPosition() {
             return iconPosition;
         }
 
-        public void setIconPosition(int iconPosition) {
+        public Tab setIconPosition(int iconPosition) {
             this.iconPosition = iconPosition;
+            return this;
         }
 
         public int getGravity() {
             return gravity;
         }
 
-        public void setGravity(int gravity) {
+        public Tab setGravity(int gravity) {
             this.gravity = gravity;
+            return this;
         }
 
         public int getNormalColor() {
@@ -1193,7 +1229,7 @@ public class TabSegment extends HorizontalScrollView {
             return dynamicChangeIconColor;
         }
 
-        public void addCustomView(@NonNull View view) {
+        public Tab addCustomView(@NonNull View view) {
             if (mCustomViews == null) {
                 mCustomViews = new ArrayList<>();
             }
@@ -1201,6 +1237,7 @@ public class TabSegment extends HorizontalScrollView {
                 view.setLayoutParams(getDefaultCustomLayoutParam());
             }
             mCustomViews.add(view);
+            return this;
         }
 
         public List<View> getCustomViews() {
@@ -1213,13 +1250,14 @@ public class TabSegment extends HorizontalScrollView {
          * @param marginLeft 在红点默认位置的基础上添加的 marginLeft
          * @param marginTop  在红点默认位置的基础上添加的 marginTop
          */
-        public void setSignCountMargin(int marginLeft, int marginTop) {
+        public Tab setSignCountMargin(int marginLeft, int marginTop) {
             mSignCountMarginLeft = marginLeft;
             mSignCountMarginTop = marginTop;
             if (mSignCountTextView != null && mSignCountTextView.getLayoutParams() != null) {
                 ((MarginLayoutParams) mSignCountTextView.getLayoutParams()).leftMargin = marginLeft;
                 ((MarginLayoutParams) mSignCountTextView.getLayoutParams()).topMargin = marginTop;
             }
+            return this;
         }
 
         private TextView ensureSignCountView(Context context) {
@@ -1241,7 +1279,7 @@ public class TabSegment extends HorizontalScrollView {
          *
          * @param count 不为0时红点会显示该数字作为未读数,为0时只会显示一个小红点
          */
-        public void showSignCountView(Context context, int count) {
+        public Tab showSignCountView(Context context, int count) {
             ensureSignCountView(context);
             mSignCountTextView.setVisibility(View.VISIBLE);
             RelativeLayout.LayoutParams signCountLp = (RelativeLayout.LayoutParams) mSignCountTextView.getLayoutParams();
@@ -1260,15 +1298,17 @@ public class TabSegment extends HorizontalScrollView {
                 mSignCountTextView.setMinWidth(ThemeUtils.resolveDimension(mSignCountTextView.getContext(), R.attr.xui_tab_sign_count_view_minSize));
                 mSignCountTextView.setText(null);
             }
+            return this;
         }
 
         /**
          * 隐藏 Tab 上的未读数或红点
          */
-        public void hideSignCountView() {
+        public Tab hideSignCountView() {
             if (mSignCountTextView != null) {
                 mSignCountTextView.setVisibility(View.GONE);
             }
+            return this;
         }
 
         /**
@@ -1424,7 +1464,9 @@ public class TabSegment extends HorizontalScrollView {
 
 
             int color = isSelected ? getTabSelectedColor(tab) : getTabNormalColor(tab);
+            int textSize = isSelected ? getTabSelectTextSize(tab) : getTabTextSize(tab);
             mTextView.setTextColor(color);
+            mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,textSize);
 
             Drawable icon = tab.getNormalIcon();
             if (isSelected) {

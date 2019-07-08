@@ -48,6 +48,15 @@ public class IndicaterFragment extends BaseFragment {
     protected void initViews() {
         titles = DataProvider.getTabTitles();
 
+        initTabs2();
+
+        mContentViewPager.setAdapter(mPagerAdapter);
+        mContentViewPager.setCurrentItem(0, false);
+        mTabSegment.setupWithViewPager(mContentViewPager, false);
+
+    }
+
+    private void initTabs1() {
         mTabSegment.addTab(new TabSegment.Tab(
                 ResUtils.getDrawable(R.drawable.ic_home_normal),
                 ResUtils.getDrawable(R.drawable.ic_home_check),
@@ -68,12 +77,15 @@ public class IndicaterFragment extends BaseFragment {
                 ResUtils.getDrawable(R.drawable.ic_my_normal),
                 ResUtils.getDrawable(R.drawable.ic_my_check),
                 titles[3], false));
-
-        mContentViewPager.setAdapter(mPagerAdapter);
-        mContentViewPager.setCurrentItem(0, false);
-        mTabSegment.setupWithViewPager(mContentViewPager, false);
-
     }
+
+    private void initTabs2() {
+        mTabSegment.addTab(new TabSegment.Tab(titles[0]));
+        mTabSegment.addTab(new TabSegment.Tab(titles[1]));
+        mTabSegment.addTab(new TabSegment.Tab(titles[2]));
+        mTabSegment.addTab(new TabSegment.Tab(titles[3]));
+    }
+
 
 
     private View getPageView(String page) {

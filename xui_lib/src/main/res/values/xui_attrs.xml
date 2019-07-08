@@ -595,6 +595,8 @@
         <attr name="ts_has_indicator" format="boolean" />
         <!--文字大小，默认16sp-->
         <attr name="android:textSize" format="dimension" />
+        <!--选中的文字大小，默认16sp-->
+        <attr name="ts_select_textSize" format="dimension"></attr>
         <!--指示器是否在顶端，默认false-->
         <attr name="ts_indicator_top" format="boolean" />
         <!--指示器的模式，默认fixed-->

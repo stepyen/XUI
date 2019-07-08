@@ -26,6 +26,20 @@
         app:ts_has_indicator="false"
         app:ts_mode="fixed"
         android:textSize="10sp"
-
         />
+
+    <com.stepyen.xui.widget.tabbar.TabSegment
+        android:id="@+id/tabSegment2"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        app:ts_normal_color="@color/black"
+        app:ts_has_indicator="false"
+        app:ts_mode="fixed"
+        android:textSize="10sp"
+        app:ts_select_textSize="18sp"
+        app:ts_typeface_provider="com.stepyen.xuidemo.fragment.components.indicater.TestTypefaceProvider"
+        />
+
+
+
 </LinearLayout>
