@@ -24,6 +24,6 @@ public class TestTypefaceProvider implements TabSegment.TypefaceProvider {
     @Nullable
     @Override
     public Typeface getTypeface() {
-        return Typeface.DEFAULT_BOLD;
+        return Typeface.DEFAULT;
     }
 }

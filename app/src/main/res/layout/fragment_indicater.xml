@@ -7,39 +7,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 >
-    <android.support.v4.view.ViewPager
-        android:id="@+id/contentViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fitsSystemWindows="true"
-
-        />
-
-
-    <com.stepyen.xui.widget.tabbar.TabSegment
-        android:id="@+id/tabSegment"
-        android:layout_width="match_parent"
-        android:layout_height="49dp"
-        app:ts_normal_color="@color/black"
-        app:ts_icon_position="top"
-        app:ts_has_indicator="false"
-        app:ts_mode="fixed"
-        android:textSize="10sp"
-        />
 
     <com.stepyen.xui.widget.tabbar.TabSegment
         android:id="@+id/tabSegment2"
         android:layout_width="match_parent"
         android:layout_height="49dp"
         app:ts_normal_color="@color/black"
-        app:ts_has_indicator="false"
-        app:ts_mode="fixed"
-        android:textSize="10sp"
+        app:ts_selected_color="@color/xui_config_color_light_blue"
+        app:ts_has_indicator="true"
+        app:ts_mode="scrollable"
+        android:textSize="13sp"
         app:ts_select_textSize="18sp"
+        app:ts_space="20dp"
+        app:ts_indicator_width="20dp"
+        android:layout_marginTop="10dp"
         app:ts_typeface_provider="com.stepyen.xuidemo.fragment.components.indicater.TestTypefaceProvider"
         />
 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/contentViewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fitsSystemWindows="true"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xui_config_size_item_space"
+        android:background="@color/xui_config_color_line"
+        ></View>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/contentViewPager1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fitsSystemWindows="true"
+
+        />
+    <com.stepyen.xui.widget.tabbar.TabSegment
+        android:id="@+id/tabSegment1"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        app:ts_normal_color="@color/black"
+        app:ts_selected_color="@color/xui_config_color_light_blue"
+        app:ts_has_indicator="false"
+        app:ts_icon_position="top"
+        app:ts_mode="fixed"
+        android:textSize="10sp"
+        />
 
 
 </LinearLayout>

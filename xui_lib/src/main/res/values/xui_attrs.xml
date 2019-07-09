@@ -589,16 +589,20 @@
         <attr name="ts_selected_color" format="color" />
         <!--tab未选中时的颜色，默认R.color.xui_config_color_gray_5-->
         <attr name="ts_normal_color" format="color" />
-        <!--指示器的高度, 默认2dp-->
-        <attr name="ts_indicator_height" format="dimension" />
-        <!--是否显示指示器，默认true-->
-        <attr name="ts_has_indicator" format="boolean" />
         <!--文字大小，默认16sp-->
         <attr name="android:textSize" format="dimension" />
-        <!--选中的文字大小，默认16sp-->
+        <!--选中的文字大小，默认和文字大小一致-->
         <attr name="ts_select_textSize" format="dimension"></attr>
+
+        <!--是否显示指示器，默认true-->
+        <attr name="ts_has_indicator" format="boolean" />
         <!--指示器是否在顶端，默认false-->
         <attr name="ts_indicator_top" format="boolean" />
+        <!--指示器的高度, 默认2dp-->
+        <attr name="ts_indicator_height" format="dimension" />
+        <!--指示器的宽度, 默认为0-->
+        <attr name="ts_indicator_width" format="dimension" />
+
         <!--指示器的模式，默认fixed-->
         <attr name="ts_mode" format="enum">
             <enum name="scrollable" value="0" />

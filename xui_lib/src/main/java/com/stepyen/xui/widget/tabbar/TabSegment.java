@@ -90,18 +90,20 @@ import java.util.List;
  * </code>
  * </li>
  * </ul>
- *
- * @author xuexiang
- * @since 2018/12/26 下午4:51
  */
 public class TabSegment extends HorizontalScrollView {
 
     private static final String TAG = "TabSegment";
 
-    // mode: 自适应宽度+滚动 / 均分
+    /**
+     * 模式
+     * 滚动或者均分
+     */
     public static final int MODE_SCROLLABLE = 0;
     public static final int MODE_FIXED = 1;
-    // icon position
+    /**
+     * 图标的位置
+     */
     public static final int ICON_POSITION_LEFT = 0;
     public static final int ICON_POSITION_TOP = 1;
     public static final int ICON_POSITION_RIGHT = 2;
@@ -135,6 +137,10 @@ public class TabSegment extends HorizontalScrollView {
      */
     private int mIndicatorHeight;
     /**
+     * 指定 indicator 宽度，0表示跟随内容宽度
+     */
+    private int mIndicatorWidth = 0;
+    /**
      * indicator在顶部
      */
     private boolean mIndicatorTop = false;
@@ -142,10 +148,7 @@ public class TabSegment extends HorizontalScrollView {
      * indicator采用drawable
      */
     private Drawable mIndicatorDrawable;
-    /**
-     * indicator宽度跟随内容宽度
-     */
-    private boolean mIsIndicatorWidthFollowContent = true;
+
 
     /**
      * indicator rect, draw directly
@@ -245,8 +248,9 @@ public class TabSegment extends HorizontalScrollView {
         mNormalColor = array.getColor(R.styleable.TabSegment_ts_normal_color, ContextCompat.getColor(context, R.color.xui_gray_5));
         mHasIndicator = array.getBoolean(R.styleable.TabSegment_ts_has_indicator, true);
         mIndicatorHeight = array.getDimensionPixelSize(R.styleable.TabSegment_ts_indicator_height, getResources().getDimensionPixelSize(R.dimen.xui_tab_segment_indicator_height));
+        mIndicatorWidth = array.getDimensionPixelSize(R.styleable.TabSegment_ts_indicator_width, 0);
         mTabTextSize = array.getDimensionPixelSize(R.styleable.TabSegment_android_textSize, getResources().getDimensionPixelSize(R.dimen.xui_tab_segment_text_size));
-        mTabSelectTextSize = array.getDimensionPixelSize(R.styleable.TabSegment_ts_select_textSize, getResources().getDimensionPixelSize(R.dimen.xui_tab_segment_text_size));
+        mTabSelectTextSize = array.getDimensionPixelSize(R.styleable.TabSegment_ts_select_textSize, mTabTextSize);
         mIndicatorTop = array.getBoolean(R.styleable.TabSegment_ts_indicator_top, false);
         mDefaultTabIconPosition = array.getInt(R.styleable.TabSegment_ts_icon_position, ICON_POSITION_LEFT);
         mMode = array.getInt(R.styleable.TabSegment_ts_mode, MODE_FIXED);
@@ -371,15 +375,6 @@ public class TabSegment extends HorizontalScrollView {
         mContentLayout.invalidate();
     }
 
-    /**
-     * 设置 indicator的宽度是否随内容宽度变化
-     */
-    public void setIndicatorWidthAdjustContent(boolean indicatorWidthFollowContent) {
-        if (mIsIndicatorWidthFollowContent != indicatorWidthFollowContent) {
-            mIsIndicatorWidthFollowContent = indicatorWidthFollowContent;
-            mContentLayout.requestLayout();
-        }
-    }
 
     /**
      * 设置 indicator 的位置
@@ -1618,7 +1613,7 @@ public class TabSegment extends HorizontalScrollView {
                 int oldLeft, oldWidth, newLeft, newWidth;
                 oldLeft = model.getContentLeft();
                 oldWidth = model.getContentWidth();
-                if (mMode == MODE_FIXED && mIsIndicatorWidthFollowContent) {
+                if (mMode == MODE_FIXED ) {
                     TextView contentView = childView.getTextView();
                     newLeft = usedLeft + contentView.getLeft();
                     newWidth = contentView.getWidth();
@@ -1650,6 +1645,14 @@ public class TabSegment extends HorizontalScrollView {
                     mIndicatorRect.bottom = getHeight() - getPaddingBottom();
                     mIndicatorRect.top = mIndicatorRect.bottom - mIndicatorHeight;
                 }
+
+
+                // 不等于0表示使用自己设置的宽度
+                if (mIndicatorWidth != 0) {
+                    mIndicatorRect.left = mIndicatorRect.left + (mIndicatorRect.width()-mIndicatorWidth) / 2;
+                    mIndicatorRect.right = mIndicatorRect.left + mIndicatorWidth;
+                }
+
                 if (mIndicatorDrawable != null) {
                     mIndicatorDrawable.setBounds(mIndicatorRect);
                     mIndicatorDrawable.draw(canvas);
