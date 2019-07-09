@@ -1,86 +1,55 @@
-package com.stepyen.xuidemo.fragment.components;
+package com.stepyen.xuidemo.fragment.expands.rv_nest.item_provider;
 
 import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.Typeface;
-import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.provider.BaseItemProvider;
+import com.stepyen.xui.utils.DensityUtils;
 import com.stepyen.xui.widget.tabbar.TabSegment;
 import com.stepyen.xuidemo.DataProvider;
 import com.stepyen.xuidemo.R;
-import com.stepyen.xuidemo.base.BaseFragment;
-import com.stepyen.xutil.resource.ResUtils;
-import com.xuexiang.xpage.annotation.Page;
-import java.util.Arrays;
+import com.stepyen.xuidemo.fragment.components.IndicaterFragment;
+import com.stepyen.xuidemo.fragment.expands.rv_nest.NormalMultipleEntity;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import butterknife.BindView;
 
 /**
- * date：2019/7/8
+ * date：2019/7/9
  * author：stepyen
  * description：
  */
-
-@Page(name = "指示器", extra = R.drawable.ic_widget_imageview)
-public class IndicaterFragment extends BaseFragment {
-
-    @BindView(R.id.contentViewPager1)
-    ViewPager mContentViewPager1;
-    @BindView(R.id.tabSegment1)
-    TabSegment mTabSegment1;
-    @BindView(R.id.contentViewPager2)
+public class ViewpagerItemProvider extends BaseItemProvider<NormalMultipleEntity, BaseViewHolder> {
     ViewPager mContentViewPager2;
-    @BindView(R.id.tabSegment2)
     TabSegment mTabSegment2;
 
     @Override
-    protected int getLayoutId() {
-        return R.layout.fragment_indicater;
+    public int viewType() {
+        return NormalMultipleEntity.TYPE_VIEWPAGER;
     }
 
     @Override
-    protected void initViews() {
-        initTabs1();
+    public int layout() {
+        return R.layout.vh_rv_viewpager;
+    }
+
+    @Override
+    public void convert(BaseViewHolder helper, NormalMultipleEntity data, int position) {
+        mTabSegment2 =  helper.itemView.findViewById(R.id.tabSegment2);
+        mContentViewPager2 =  helper.itemView.findViewById(R.id.contentViewPager2);
+
         initTabs2();
-
     }
 
-    private void initTabs1() {
-        List<String> titles = Arrays.asList(DataProvider.getTabTitles());
-
-        mTabSegment1.addTab(new TabSegment.Tab(
-                ResUtils.getDrawable(R.drawable.ic_home_normal),
-                ResUtils.getDrawable(R.drawable.ic_home_check),
-                titles.get(0), false));
-
-        mTabSegment1.addTab(new TabSegment.Tab(
-                ResUtils.getDrawable(R.drawable.ic_order_normal),
-                ResUtils.getDrawable(R.drawable.ic_order_check),
-                titles.get(1), false));
-
-
-        mTabSegment1.addTab(new TabSegment.Tab(
-                ResUtils.getDrawable(R.drawable.ic_message_normal),
-                ResUtils.getDrawable(R.drawable.ic_message_check),
-                titles.get(2), false));
-
-        mTabSegment1.addTab(new TabSegment.Tab(
-                ResUtils.getDrawable(R.drawable.ic_my_normal),
-                ResUtils.getDrawable(R.drawable.ic_my_check),
-                titles.get(3), false));
-
-        mContentViewPager1.setAdapter(new Adapter(getContext(), titles));
-        mContentViewPager1.setCurrentItem(0, false);
-        mTabSegment1.setupWithViewPager(mContentViewPager1, false);
-    }
 
     private void initTabs2() {
         List<String> titles = DataProvider.getTags();
@@ -98,11 +67,9 @@ public class IndicaterFragment extends BaseFragment {
         mTabSegment2.addTab(new TabSegment.Tab(titles.get(10)));
         mTabSegment2.addTab(new TabSegment.Tab(titles.get(11)));
 
-
-        mContentViewPager2.setAdapter(new Adapter(getContext(), titles));
+        mContentViewPager2.setAdapter(new Adapter(mContext, titles));
         mContentViewPager2.setCurrentItem(0, false);
         mTabSegment2.setupWithViewPager(mContentViewPager2, false);
-
     }
 
     private static class Adapter extends PagerAdapter {
@@ -140,7 +107,7 @@ public class IndicaterFragment extends BaseFragment {
         public Object instantiateItem(final ViewGroup container, int position) {
 
             View view = getPageView(titles.get(position));
-            ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, DensityUtils.dp2px(200));
             container.addView(view, params);
             return view;
         }
@@ -150,6 +117,5 @@ public class IndicaterFragment extends BaseFragment {
             container.removeView((View) object);
         }
     };
-
 
 }

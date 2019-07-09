@@ -17,4 +17,32 @@ public class TextViewFragment extends ComponentContainerFragment {
     protected Class[] getPagesClasses() {
         return new Class[]{OtherTextViewFragment.class, OptionItemFragment.class};
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

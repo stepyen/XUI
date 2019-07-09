@@ -9,8 +9,6 @@ import com.stepyen.xuidemo.fragment.UtilitysFragment;
 import butterknife.BindView;
 /**
  *
- *
- *
  * 慢慢来，整理自己需要的
  */
 public class MainActivity extends BaseActivity {
