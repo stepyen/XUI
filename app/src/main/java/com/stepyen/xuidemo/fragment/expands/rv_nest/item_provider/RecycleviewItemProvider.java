@@ -30,6 +30,7 @@ public class RecycleviewItemProvider extends BaseItemProvider<NormalMultipleEnti
     private static final int PAGE_SIZE = 6;
 
     private int mNextRequestPage = 1;
+
     @Override
     public int viewType() {
         return NormalMultipleEntity.TYPE_RECYCLEVIEW;
@@ -42,13 +43,12 @@ public class RecycleviewItemProvider extends BaseItemProvider<NormalMultipleEnti
 
     @Override
     public void convert(BaseViewHolder helper, NormalMultipleEntity data, int position) {
-        mRecyclerView =  helper.itemView.findViewById(R.id.rv_nest);
+        mRecyclerView = helper.itemView.findViewById(R.id.rv_nest_page);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
         initAdapter();
     }
 
-    private void initAdapter()
-    {
+    private void initAdapter() {
         mAdapter = new PullToRefreshAdapter();
         mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override
@@ -59,6 +59,8 @@ public class RecycleviewItemProvider extends BaseItemProvider<NormalMultipleEnti
         mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
 //        mAdapter.setPreLoadNumber(3);
         mRecyclerView.setAdapter(mAdapter);
+
+        loadMore();
     }
 
     private void loadMore() {
@@ -68,14 +70,15 @@ public class RecycleviewItemProvider extends BaseItemProvider<NormalMultipleEnti
                 /**
                  * fix https://github.com/CymChad/BaseRecyclerViewAdapterHelper/issues/2400
                  */
-                boolean isRefresh =mNextRequestPage ==1;
+                boolean isRefresh = mNextRequestPage == 1;
                 setData(isRefresh, data);
             }
 
             @Override
             public void fail(Exception e) {
                 mAdapter.loadMoreFail();
-                Toast.makeText(mContext,"错误", Toast.LENGTH_LONG).show();
+                mAdapter.loadMoreFail();
+                Toast.makeText(mContext, "错误", Toast.LENGTH_LONG).show();
             }
         }).start();
     }
@@ -123,7 +126,10 @@ class Request extends Thread {
 
     @Override
     public void run() {
-        try {Thread.sleep(500);} catch (InterruptedException e) {}
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+        }
 
         if (mPage == 2 && mFirstError) {
             mFirstError = false;
