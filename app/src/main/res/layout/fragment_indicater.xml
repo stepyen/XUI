@@ -16,6 +16,7 @@
         app:ts_selected_color="@color/xui_config_color_light_blue"
         app:ts_has_indicator="true"
         app:ts_mode="scrollable"
+        app:ts_indicator_color="@color/xui_config_color_red"
         android:textSize="13sp"
         app:ts_select_textSize="18sp"
         app:ts_space="20dp"

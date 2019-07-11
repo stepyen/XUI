@@ -17,8 +17,10 @@ import com.stepyen.xuidemo.DataProvider;
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.BaseFragment;
 import com.stepyen.xutil.tip.ToastUtils;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 

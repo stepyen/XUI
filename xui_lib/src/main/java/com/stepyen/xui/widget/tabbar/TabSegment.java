@@ -132,6 +132,11 @@ public class TabSegment extends HorizontalScrollView {
      * 是否有Indicator
      */
     private boolean mHasIndicator = true;
+
+    /**
+     * Indicator颜色，默认和选择字体的颜色一样
+     */
+    private int mIndicatorColor = 0;
     /**
      * Indicator高度
      */
@@ -247,6 +252,7 @@ public class TabSegment extends HorizontalScrollView {
         mSelectedColor = array.getColor(R.styleable.TabSegment_ts_selected_color, ThemeUtils.resolveColor(context, R.attr.colorAccent));
         mNormalColor = array.getColor(R.styleable.TabSegment_ts_normal_color, ContextCompat.getColor(context, R.color.xui_gray_5));
         mHasIndicator = array.getBoolean(R.styleable.TabSegment_ts_has_indicator, true);
+        mIndicatorColor = array.getColor(R.styleable.TabSegment_ts_indicator_color, mSelectedColor);
         mIndicatorHeight = array.getDimensionPixelSize(R.styleable.TabSegment_ts_indicator_height, getResources().getDimensionPixelSize(R.dimen.xui_tab_segment_indicator_height));
         mIndicatorWidth = array.getDimensionPixelSize(R.styleable.TabSegment_ts_indicator_width, 0);
         mTabTextSize = array.getDimensionPixelSize(R.styleable.TabSegment_android_textSize, getResources().getDimensionPixelSize(R.dimen.xui_tab_segment_text_size));
@@ -696,7 +702,7 @@ public class TabSegment extends HorizontalScrollView {
             mIndicatorPaint = new Paint();
             mIndicatorPaint.setStyle(Paint.Style.FILL);
         }
-        mIndicatorPaint.setColor(getTabSelectedColor(model));
+        mIndicatorPaint.setColor(mIndicatorColor);
         if (invalidate) {
             mContentLayout.invalidate();
         }
@@ -718,9 +724,7 @@ public class TabSegment extends HorizontalScrollView {
             mIndicatorPaint = new Paint();
             mIndicatorPaint.setStyle(Paint.Style.FILL);
         }
-        int indicatorColor = ColorUtils.computeColor(
-                getTabSelectedColor(preModel), getTabSelectedColor(targetModel), offsetPercent);
-        mIndicatorPaint.setColor(indicatorColor);
+        mIndicatorPaint.setColor(mIndicatorColor);
         mContentLayout.invalidate();
     }
 

@@ -603,6 +603,8 @@
         <!--指示器的宽度, 默认为0-->
         <attr name="ts_indicator_width" format="dimension" />
 
+        <attr name="ts_indicator_color" format="color" />
+
         <!--指示器的模式，默认fixed-->
         <attr name="ts_mode" format="enum">
             <enum name="scrollable" value="0" />
