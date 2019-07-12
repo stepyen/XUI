@@ -14,7 +14,7 @@ import com.xuexiang.xpage.annotation.Page;
 public class OtherTextViewFragment extends BaseFragment {
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_option_item;
+        return R.layout.fragment_other_text_view;
     }
 
     @Override

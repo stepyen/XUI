@@ -3,10 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
->
+    android:orientation="vertical"
+    >
+
     <TextView
         style="@style/TextView_hint_tag"
         android:text="商城倒计时"
@@ -19,4 +20,68 @@
         android:layout_marginLeft="20dp"
         app:viewSize="12">
     </com.daidingkang.SnapUpCountDownTimerView>
+
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="实现shape所有 ShapeTextView"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.stepyen.xui.widget.textview.ShapeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginLeft="@dimen/xui_config_margin"
+            android:background="@color/xui_config_color_light_blue"
+            android:paddingHorizontal="7dp"
+            android:text="圆角为高度一半"
+            android:textColor="@color/white"
+            app:sCornersRadius="5dp"
+            app:sIsRadiusAdjustBounds="true"
+            />
+
+        <com.stepyen.xui.widget.textview.ShapeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="5dp"
+            android:text="触摸反馈"
+            android:textColor="@color/white"
+            app:sCornersRadius="5dp"
+            app:sSelectorNormalColor="@color/colorAccent"
+            app:sSelectorPressedColor="@color/xui_gray_6"
+            app:sUseSelector="true"/>
+
+        <com.stepyen.xui.widget.textview.ShapeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="不可点击颜色"
+            android:textColor="@color/white"
+            app:sCornersRadius="5dp"
+            app:sSelectorDisableColor="@color/xui_gray_8"
+            app:sSelectorNormalColor="@color/colorAccent"
+            app:sSelectorPressedColor="@color/colorPrimary"
+            app:sUseSelector="true"/>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="跑马灯 AutoMoveTextView"
+        />
+
+
+    <com.stepyen.xui.widget.textview.AutoMoveTextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="这个是跑马灯效果，我跑啊，跑啊，跑，怎么还没结束！！！"
+        android:layout_marginLeft="@dimen/xui_config_margin"
+        />
+
+
+
+
 </LinearLayout>

@@ -92,7 +92,7 @@
         <attr name="riv_is_touch_select_mode_enabled" format="boolean" />
     </declare-styleable>
 
-    <declare-styleable name="SuperButton">
+    <declare-styleable name="ShapeTextView">
         <attr name="sGravity" format="enum">
             <enum name="center" value="0" />
             <enum name="left" value="1" />
@@ -623,5 +623,37 @@
         <attr name="ts_typeface_provider" format="string" />
     </declare-styleable>
     <attr name="TabSegmentStyle" format="reference" />
+
+
+    <!--===============================Spinner======================================-->
+    <!--MaterialSpinner-->
+    <declare-styleable name="MaterialSpinner">
+        <!--下拉框选择的内容-->
+        <attr name="ms_entries" format="reference" />
+        <!--下拉框箭头的颜色， 默认和字体的颜色一样-->
+        <attr name="ms_arrow_tint" format="color" />
+        <!--下拉框是否有箭头， 默认是true-->
+        <attr name="ms_hide_arrow" format="boolean" />
+        <!--下拉框背景的颜色-->
+        <attr name="ms_background_color" format="color" />
+        <!--下拉框背景点击的效果-->
+        <attr name="ms_background_selector" format="integer" />
+        <!--下拉框字体的颜色-->
+        <attr name="ms_text_color" format="color" />
+
+        <!--下拉框 下拉条目最大的高度-->
+        <attr name="ms_dropdown_max_height" format="dimension" />
+        <!--下拉框 下拉条目的样式，默认wrap_content-->
+        <attr name="ms_dropdown_height" format="dimension">
+            <enum name="fill_parent" value="-1" />
+            <enum name="match_parent" value="-1" />
+            <enum name="wrap_content" value="-2" />
+        </attr>
+        <!--下拉框 下拉条目的背景-->
+        <attr name="ms_dropdown_bg" format="reference" />
+        <!--是否在dialog中, 默认false-->
+        <attr name="ms_in_dialog" format="boolean" />
+    </declare-styleable>
+    <attr name="MaterialSpinnerStyle" format="reference" />
 
 </resources>

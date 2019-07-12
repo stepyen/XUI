@@ -205,7 +205,7 @@
             </com.stepyen.xui.widget.radiogruop.RadioGroupPlus>
 
 
-            <com.stepyen.xui.widget.textview.button.SuperButton
+            <com.stepyen.xui.widget.textview.ShapeTextView
                 android:id="@+id/superbtn_comfrim"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"

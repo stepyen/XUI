@@ -1,9 +1,8 @@
-package com.stepyen.xuidemo.fragment.components;
+package com.stepyen.xuidemo.fragment.components.textview;
 
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.stepyen.xui.widget.textview.button.SuperButton;
 import com.stepyen.xui.widget.radiogruop.RadioGroupPlus;
 import com.stepyen.xui.widget.textview.supertextview.OptionItem;
 import com.stepyen.xuidemo.R;

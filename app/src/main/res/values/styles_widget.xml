@@ -33,4 +33,13 @@
         <item name="android:layout_marginBottom">@dimen/xui_config_content_spacing_vertical_phone</item>
     </style>
 
+
+    <style name="Material.SpinnerStyle" parent="@style/Widget.AppCompat.Spinner">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="ms_dropdown_height">wrap_content</item>
+        <item name="ms_text_color">@color/colorAccent</item>
+    </style>
+
 </resources>

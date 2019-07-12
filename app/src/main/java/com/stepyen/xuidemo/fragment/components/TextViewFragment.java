@@ -2,6 +2,7 @@ package com.stepyen.xuidemo.fragment.components;
 
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.ComponentContainerFragment;
+import com.stepyen.xuidemo.fragment.components.textview.OptionItemFragment;
 import com.stepyen.xuidemo.fragment.components.textview.OtherTextViewFragment;
 import com.xuexiang.xpage.annotation.Page;
 

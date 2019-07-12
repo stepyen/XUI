@@ -214,4 +214,11 @@
     <dimen name="xui_tab_segment_text_size">16sp</dimen>
     <dimen name="xui_tab_sign_count_view_minSize_with_text">16dp</dimen>
     <dimen name="xui_tab_sign_count_view_minSize">8dp</dimen>
+
+    <!--**************************** Spinner ***********************************************-->
+    <dimen name="default_ms_padding_left_size_phone">8dp</dimen>
+    <dimen name="default_ms_padding_top_size_phone">6.5dp</dimen>
+    <dimen name="default_ms_item_height_size_phone">30dp</dimen>
+    <dimen name="default_ms_dropdown_offset_phone">1dp</dimen>
+    <dimen name="default_ms_arrow_size_phone">8dp</dimen>
 </resources>
