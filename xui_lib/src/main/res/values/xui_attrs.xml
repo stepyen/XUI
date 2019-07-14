@@ -656,4 +656,16 @@
     </declare-styleable>
     <attr name="MaterialSpinnerStyle" format="reference" />
 
+
+
+    <declare-styleable name="OptionItemTitleValue">
+        <attr name="opkv_title" format="string"></attr>
+        <attr name="opkv_title_size" format="dimension"></attr>
+        <attr name="opkv_title_color" format="color"></attr>
+        <attr name="opkv_value" format="string"></attr>
+        <attr name="opkv_value_size" format="dimension"></attr>
+        <attr name="opkv_value_color" format="color"></attr>
+
+        <attr name="opkv_title_value_space" format="dimension"></attr>
+    </declare-styleable>
 </resources>
