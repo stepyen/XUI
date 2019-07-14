@@ -91,7 +91,8 @@
         <item name="xui_actionbar_title_text_size">@dimen/xui_actionbar_title_text_size_phone</item>
         <item name="xui_actionbar_action_text_size">@dimen/xui_actionbar_action_text_size_phone</item>
         <item name="xui_actionbar_sub_text_size">@dimen/xui_actionbar_sub_text_size_phone</item>
-        <item name="xui_actionbar_action_padding">@dimen/xui_actionbar_action_padding_phone</item>
+        <item name="xui_actionbar_action_horizontal_padding">@dimen/xui_actionbar_action_horizontal_padding</item>
+        <item name="xui_actionbar_action_vertical_padding">@dimen/xui_actionbar_action_vertical_padding</item>
         <item name="xui_actionbar_side_text_padding">@dimen/xui_actionbar_side_text_padding_phone</item>
 
         <!--************************文本样式*******************************-->

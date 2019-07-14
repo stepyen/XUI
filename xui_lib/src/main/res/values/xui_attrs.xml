@@ -18,8 +18,10 @@
         <attr name="tb_barHeight" format="dimension" />
         <!--是否是沉浸式标题栏，默认是false-->
         <attr name="tb_immersive" format="boolean" />
-        <!--左右图标和文字的padding-->
-        <attr name="tb_actionPadding" format="dimension" />
+        <!--左右图标和文字的水平方向padding-->
+        <attr name="tb_action_horizontal_padding" format="dimension" />
+        <!--左右图标和文字的垂直方向padding-->
+        <attr name="tb_action_vertical_padding" format="dimension" />
         <!--标题栏两侧控件的padding-->
         <attr name="tb_sideTextPadding" format="dimension" />
         <!--标题栏左侧文字的颜色-->

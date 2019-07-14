@@ -71,7 +71,8 @@
     <!--标题栏动作文字的大小-->
     <attr name="xui_actionbar_action_text_size" format="dimension"/>
     <!--标题栏动作图片的padding-->
-    <attr name="xui_actionbar_action_padding" format="dimension"/>
+    <attr name="xui_actionbar_action_horizontal_padding" format="dimension"/>
+    <attr name="xui_actionbar_action_vertical_padding" format="dimension"/>
     <!--标题栏两侧文字的padding-->
     <attr name="xui_actionbar_side_text_padding" format="dimension"/>
 

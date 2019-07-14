@@ -6,7 +6,8 @@
     <style name="TitleBar">
         <item name="tb_barHeight">?attr/xui_actionbar_height</item>
         <item name="tb_immersive">?attr/xui_actionbar_immersive</item>
-        <item name="tb_actionPadding">?attr/xui_actionbar_action_padding</item>
+        <item name="xui_actionbar_action_horizontal_padding">?attr/xui_actionbar_action_horizontal_padding</item>
+        <item name="xui_actionbar_action_vertical_padding">?attr/xui_actionbar_action_vertical_padding</item>
         <item name="tb_sideTextPadding">?attr/xui_actionbar_side_text_padding</item>
         <item name="tb_sideTextColor">?attr/xui_actionbar_text_color</item>
         <item name="tb_titleTextColor">?attr/xui_actionbar_text_color</item>

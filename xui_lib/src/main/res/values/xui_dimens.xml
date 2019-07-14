@@ -60,9 +60,11 @@
     <dimen name="xui_actionbar_sub_text_size_tablet_small">14sp</dimen>
     <dimen name="xui_actionbar_sub_text_size_phone">12sp</dimen>
 
-    <dimen name="xui_actionbar_action_padding_tablet_big">7dp</dimen>
-    <dimen name="xui_actionbar_action_padding_tablet_small">6dp</dimen>
-    <dimen name="xui_actionbar_action_padding_phone">5dp</dimen>
+    <dimen name="xui_actionbar_action_horizontal_padding">5dp</dimen>
+    <dimen name="xui_actionbar_action_vertical_padding">0dp</dimen>
+
+
+
 
     <dimen name="xui_actionbar_side_text_padding_tablet_big">18dp</dimen>
     <dimen name="xui_actionbar_side_text_padding_tablet_small">16dp</dimen>

@@ -23,6 +23,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -30,6 +31,7 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -84,9 +86,13 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
      */
     private int mStatusBarHeight;
     /**
-     * 点击动作控件的padding
+     * 点击动作控件的水平方向padding
      */
-    private int mActionPadding;
+    private int mActionHorizontalPadding;
+    /**
+     * 点击动作控件的垂直方向padding
+     */
+    private int mActionVerticalPadding;
     /**
      * 左右侧文字的padding
      */
@@ -132,7 +138,8 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
         mBarHeight = typedArray.getDimensionPixelSize(R.styleable.TitleBar_tb_barHeight, ThemeUtils.resolveDimension(context, R.attr.xui_actionbar_height));
         mImmersive = typedArray.getBoolean(R.styleable.TitleBar_tb_immersive, ThemeUtils.resolveBoolean(context, R.attr.xui_actionbar_immersive));
 
-        mActionPadding = typedArray.getDimensionPixelSize(R.styleable.TitleBar_tb_actionPadding, ThemeUtils.resolveDimension(context, R.attr.xui_actionbar_action_padding));
+        mActionHorizontalPadding = typedArray.getDimensionPixelSize(R.styleable.TitleBar_tb_action_horizontal_padding, ThemeUtils.resolveDimension(context, R.attr.xui_actionbar_action_horizontal_padding));
+        mActionVerticalPadding = typedArray.getDimensionPixelSize(R.styleable.TitleBar_tb_action_vertical_padding, ThemeUtils.resolveDimension(context, R.attr.xui_actionbar_action_vertical_padding));
         mSideTextPadding = typedArray.getDimensionPixelSize(R.styleable.TitleBar_tb_sideTextPadding, ThemeUtils.resolveDimension(context, R.attr.xui_actionbar_side_text_padding));
         mCenterGravity = typedArray.getInt(R.styleable.TitleBar_tb_centerGravity, CENTER_CENTER);
 
@@ -680,11 +687,26 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
             if (mActionTextColor != 0) {
                 text.setTextColor(mActionTextColor);
             }
+
+
+
+            if (action.getDrawable() !=0) {
+                Drawable drawable = ResUtils.getDrawable(getContext(), action.getDrawable());
+                drawable.setBounds(0, 0, DensityUtils.dp2px(getContext(), 19), DensityUtils.dp2px(getContext(), 19));
+                text.setCompoundDrawables(null, drawable, null, null);
+
+            }
+
             view = text;
         }
 
-        view.setPadding(action.leftPadding() != -1 ? action.leftPadding() : mActionPadding, 0, action.rightPadding() != -1 ? action.rightPadding() : mActionPadding, 0);
+        view.setPadding(action.leftPadding() != -1 ? action.leftPadding() : mActionHorizontalPadding,
+                action.topPadding() != -1 ? action.topPadding() : mActionVerticalPadding ,
+                action.rightPadding() != -1 ? action.rightPadding() : mActionHorizontalPadding,
+                action.bottomPadding() != -1 ? action.bottomPadding() : mActionVerticalPadding);
+
         view.setTag(action);
+
         view.setOnClickListener(this);
         return view;
     }
@@ -801,6 +823,16 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
          * @return 右边间距
          */
         int rightPadding();
+
+        /**
+         * @return 上边间距
+         */
+        int topPadding();
+
+        /**
+         * @return 下边间距
+         */
+        int bottomPadding();
     }
 
     /**
@@ -831,8 +863,19 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
 
         @Override
         public int rightPadding() {
-            return 0;
+            return -1;
         }
+
+        @Override
+        public int topPadding() {
+            return -1;
+        }
+
+        @Override
+        public int bottomPadding() {
+            return -1;
+        }
+
     }
 
     /**
@@ -863,8 +906,19 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
 
         @Override
         public int rightPadding() {
-            return 0;
+            return -1;
         }
+
+        @Override
+        public int topPadding() {
+            return -1;
+        }
+
+        @Override
+        public int bottomPadding() {
+            return -1;
+        }
+
     }
 
     /**
