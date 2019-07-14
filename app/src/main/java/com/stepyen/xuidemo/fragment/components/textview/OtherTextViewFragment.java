@@ -1,8 +1,12 @@
 package com.stepyen.xuidemo.fragment.components.textview;
 
+import android.view.View;
+
 import com.daidingkang.SnapUpCountDownTimerView;
+import com.stepyen.xui.widget.textview.supertextview.OptionItemTitleValue;
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.BaseFragment;
+import com.stepyen.xutil.tip.ToastUtils;
 import com.xuexiang.xpage.annotation.Page;
 
 /**
@@ -23,5 +27,14 @@ public class OtherTextViewFragment extends BaseFragment {
         SnapUpCountDownTimerView rushBuyCountDownTimerView = (SnapUpCountDownTimerView) findViewById(R.id.RushBuyCountDownTimerView);
         rushBuyCountDownTimerView.setTime(0,1,3);//设置小时，分钟，秒。注意不能大于正常值，否则会抛出异常
         rushBuyCountDownTimerView.start();//开始倒计时
+
+
+        OptionItemTitleValue optionItemTitleValue = findViewById(R.id.optv_1);
+        optionItemTitleValue.setValueClick(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtils.toast("点击了值");
+            }
+        });
     }
 }

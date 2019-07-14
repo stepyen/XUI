@@ -14,7 +14,6 @@
         android:id="@+id/tv_option_title"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginLeft="15dp"
         android:textSize="15sp"
         android:textColor="@color/black"
         android:text="标题："

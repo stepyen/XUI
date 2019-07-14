@@ -3,6 +3,7 @@ package com.stepyen.xui.widget.textview.supertextview;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -54,13 +55,14 @@ public class OptionItemTitleValue extends RelativeLayout {
 
         int titleValueSpace = ta.getDimensionPixelSize(R.styleable.OptionItemTitleValue_opkv_title_value_space, 20);
 
+        ta.recycle();
 
         mTitleTv.setText(title);
-        mTitleTv.setTextSize(titleSize);
+        mTitleTv.setTextSize(TypedValue.COMPLEX_UNIT_PX,titleSize);
         mTitleTv.setTextColor(titleColor);
 
         mValueTv.setText(value);
-        mValueTv.setTextSize(valueSize);
+        mValueTv.setTextSize(TypedValue.COMPLEX_UNIT_PX,valueSize);
         mValueTv.setTextColor(valueColor);
 
 
@@ -69,24 +71,27 @@ public class OptionItemTitleValue extends RelativeLayout {
         lp.leftMargin = titleValueSpace;
         mValueTv.setLayoutParams(lp);
 
-        ta.recycle();
+
 
     }
 
 
-    public void setTitle(CharSequence charSequence) {
+    public OptionItemTitleValue setTitle(CharSequence charSequence) {
         mTitleTv.setText(charSequence);
+        return this;
     }
 
 
-    public void setValue(CharSequence charSequence) {
+    public OptionItemTitleValue setValue(CharSequence charSequence) {
         mValueTv.setText(charSequence);
+        return this;
     }
 
-    public void setValueClick(OnClickListener clickListener) {
+    public OptionItemTitleValue setValueClick(OnClickListener clickListener) {
         if (clickListener != null) {
             mValueTv.setOnClickListener(clickListener);
         }
+        return this;
     }
     
 }

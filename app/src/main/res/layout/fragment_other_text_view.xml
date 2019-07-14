@@ -81,6 +81,22 @@
         android:layout_marginLeft="@dimen/xui_config_margin"
         />
 
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="跑马灯 AutoMoveTextView"
+        />
+
+    <com.stepyen.xui.widget.textview.supertextview.OptionItemTitleValue
+        android:id="@+id/optv_1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingLeft="15dp"
+        app:opkv_title="车辆颜色: "
+        app:opkv_title_color="@color/black"
+        app:opkv_title_size="10sp"
+        app:opkv_value="红色"
+        app:opkv_title_value_space="8dp"
+        ></com.stepyen.xui.widget.textview.supertextview.OptionItemTitleValue>
 
 
 
