@@ -1,21 +1,13 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme2" parent="XUITheme.Phone">
+    <style name="AppTheme" parent="XUITheme.Phone">
 
-
-
-        // 不起作用 为什么？
-        <item name="xui_actionbar_action_vertical_padding">10dp</item>
+        <item name="xui_actionbar_action_vertical_padding">4dp</item>
+        <item name="xui_actionbar_action_horizontal_padding">10dp</item>
         <item name="xui_actionbar_action_text_size">9sp</item>
 
-
     </style>
-
-
-
-
-
 
     <style name="XUITheme.Launch.APP">
         <item name="android:windowBackground">@drawable/splash_bg</item>

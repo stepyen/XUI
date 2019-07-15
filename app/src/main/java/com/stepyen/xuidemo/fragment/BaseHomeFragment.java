@@ -43,6 +43,11 @@ public abstract class BaseHomeFragment extends BaseFragment implements BaseRecyc
             public void performAction(View view) {
                 openNewPage(AboutFragment.class);
             }
+
+            @Override
+            public int[] getPadding() {
+                return null;
+            }
         });
         return titleBar;
     }

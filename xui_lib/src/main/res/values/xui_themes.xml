@@ -52,6 +52,8 @@
         <item name="xui_actionbar_immersive">false</item>
         <item name="xui_actionbar_ic_navigation_back">@drawable/xui_ic_navigation_back_white</item>
 
+        <!--XUI 提供的样式-->
+        <item name="TitleBarStyle">@style/TitleBar</item>
 
     </style>
 
@@ -78,21 +80,19 @@
         <item name="xui_config_size_item">@dimen/xui_config_size_item</item>
         <item name="xui_config_size_line">@dimen/xui_config_size_line</item>
 
-
         <item name="xui_config_color_background">@color/xui_config_color_background_phone</item>
         <item name="xui_config_color_line">@color/xui_config_color_line</item>
         <item name="xui_config_color_item">@color/xui_config_color_item</item>
         <item name="xui_config_color_item_space">@color/xui_config_color_item_space</item>
         <item name="android:windowBackground">?attr/xui_config_color_background</item>
 
-
         <!--actionbar-->
         <item name="xui_actionbar_height">@dimen/xui_actionbar_height_phone</item>
         <item name="xui_actionbar_title_text_size">@dimen/xui_actionbar_title_text_size_phone</item>
         <item name="xui_actionbar_action_text_size">@dimen/xui_actionbar_action_text_size_phone</item>
         <item name="xui_actionbar_sub_text_size">@dimen/xui_actionbar_sub_text_size_phone</item>
-        <item name="xui_actionbar_action_horizontal_padding">@dimen/xui_actionbar_action_horizontal_padding</item>
-        <item name="xui_actionbar_action_vertical_padding">@dimen/xui_actionbar_action_vertical_padding</item>
+        <item name="xui_actionbar_action_horizontal_padding">@dimen/xui_actionbar_action_horizontal_padding_phone</item>
+        <item name="xui_actionbar_action_vertical_padding">@dimen/xui_actionbar_action_vertical_padding_phone</item>
         <item name="xui_actionbar_side_text_padding">@dimen/xui_actionbar_side_text_padding_phone</item>
 
         <!--************************文本样式*******************************-->
@@ -107,9 +107,6 @@
         <item name="xui_config_color_subtitle">@color/xui_config_color_subtitle</item>
         <item name="xui_config_color_content">@color/xui_config_color_content</item>
         <item name="xui_config_color_explain">@color/xui_config_color_explain</item>
-
-
-
 
 
 <!--对话框 dialog-->
@@ -128,7 +125,6 @@
         <item name="ms_dropdown_offset">@dimen/default_ms_dropdown_offset_phone</item>
         <item name="ms_arrow_size">@dimen/default_ms_arrow_size_phone</item>
     </style>
-
 
     <!--平板主题-->
     <style name="XUITheme.Tablet"> </style>

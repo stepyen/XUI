@@ -689,8 +689,7 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
             }
 
 
-
-            if (action.getDrawable() !=0) {
+            if (action.getDrawable() != 0) {
                 Drawable drawable = ResUtils.getDrawable(getContext(), action.getDrawable());
                 drawable.setBounds(0, 0, DensityUtils.dp2px(getContext(), 19), DensityUtils.dp2px(getContext(), 19));
                 text.setCompoundDrawables(null, drawable, null, null);
@@ -700,10 +699,17 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
             view = text;
         }
 
-        view.setPadding(action.leftPadding() != -1 ? action.leftPadding() : mActionHorizontalPadding,
-                action.topPadding() != -1 ? action.topPadding() : mActionVerticalPadding ,
-                action.rightPadding() != -1 ? action.rightPadding() : mActionHorizontalPadding,
-                action.bottomPadding() != -1 ? action.bottomPadding() : mActionVerticalPadding);
+        int[] padding = action.getPadding();
+        if (padding != null) {
+            if (padding.length!=4) {
+                throw new IllegalStateException("设置Action的Padding数组必须是4个元素");
+            }
+
+            view.setPadding(padding[0],padding[1],padding[2],padding[3]);
+        }else{
+            view.setPadding(mActionHorizontalPadding,mActionVerticalPadding,mActionHorizontalPadding,mActionVerticalPadding);
+        }
+
 
         view.setTag(action);
 
@@ -815,24 +821,11 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
         void performAction(View view);
 
         /**
-         * @return 左边间距
+         * Action的间距，按照 left、top、right、bottom 进行设置
+         *
+         * @return
          */
-        int leftPadding();
-
-        /**
-         * @return 右边间距
-         */
-        int rightPadding();
-
-        /**
-         * @return 上边间距
-         */
-        int topPadding();
-
-        /**
-         * @return 下边间距
-         */
-        int bottomPadding();
+        int[] getPadding();
     }
 
     /**
@@ -855,27 +848,6 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
         public String getText() {
             return null;
         }
-
-        @Override
-        public int leftPadding() {
-            return -1;
-        }
-
-        @Override
-        public int rightPadding() {
-            return -1;
-        }
-
-        @Override
-        public int topPadding() {
-            return -1;
-        }
-
-        @Override
-        public int bottomPadding() {
-            return -1;
-        }
-
     }
 
     /**
@@ -899,25 +871,6 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
             return mText;
         }
 
-        @Override
-        public int leftPadding() {
-            return -1;
-        }
-
-        @Override
-        public int rightPadding() {
-            return -1;
-        }
-
-        @Override
-        public int topPadding() {
-            return -1;
-        }
-
-        @Override
-        public int bottomPadding() {
-            return -1;
-        }
 
     }
 

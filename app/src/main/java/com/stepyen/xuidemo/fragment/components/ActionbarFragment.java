@@ -42,21 +42,14 @@ public class ActionbarFragment extends BaseFragment {
             }
 
             @Override
+            public int[] getPadding() {
+                return null;
+            }
+
+            @Override
             public int getDrawable() {
                 return R.drawable.ic_add_store;
             }
-
-
-            @Override
-            public int leftPadding() {
-                return 20;
-            }
-
-            @Override
-            public int rightPadding() {
-                return 20;
-            }
-
         });
 
         actionBar.addAction(new TitleBar.TextAction("分享") {
@@ -66,18 +59,13 @@ public class ActionbarFragment extends BaseFragment {
             }
 
             @Override
+            public int[] getPadding() {
+                return null;
+            }
+
+            @Override
             public int getDrawable() {
                 return R.drawable.ic_share;
-            }
-
-            @Override
-            public int leftPadding() {
-                return 20;
-            }
-
-            @Override
-            public int rightPadding() {
-                return 20;
             }
 
         });

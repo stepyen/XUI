@@ -39,7 +39,9 @@
         <item name="android:layout_height">30dp</item>
         <item name="android:textSize">15sp</item>
         <item name="ms_dropdown_height">wrap_content</item>
-        <item name="ms_text_color">@color/colorAccent</item>
+        <item name="ms_text_color">@color/black</item>
+        <item name="ms_padding_left_size">0dp</item>
+        <item name="ms_dropdown_offset">0dp</item>
     </style>
 
 </resources>

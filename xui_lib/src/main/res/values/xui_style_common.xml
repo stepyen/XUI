@@ -3,7 +3,29 @@
 
     <!--这里写通用的样式-->
 
-<!--文本样式-->
+    <!--TitleBar-->
+    <style name="TitleBar">
+        <item name="tb_barHeight">?attr/xui_actionbar_height</item>
+        <item name="tb_immersive">?attr/xui_actionbar_immersive</item>
+        <item name="xui_actionbar_action_horizontal_padding">?attr/xui_actionbar_action_horizontal_padding</item>
+        <item name="xui_actionbar_action_vertical_padding">?attr/xui_actionbar_action_vertical_padding</item>
+        <item name="tb_sideTextPadding">?attr/xui_actionbar_side_text_padding</item>
+        <item name="tb_sideTextColor">?attr/xui_actionbar_text_color</item>
+        <item name="tb_titleTextColor">?attr/xui_actionbar_text_color</item>
+        <item name="tb_subTitleTextColor">?attr/xui_actionbar_text_color</item>
+        <item name="tb_actionTextColor">?attr/xui_actionbar_text_color</item>
+        <item name="tb_sideTextSize">?attr/xui_actionbar_action_text_size</item>
+        <item name="tb_titleTextSize">?attr/xui_actionbar_title_text_size</item>
+        <item name="tb_subTitleTextSize">?attr/xui_actionbar_sub_text_size</item>
+        <item name="tb_actionTextSize">?attr/xui_actionbar_action_text_size</item>
+        <item name="tb_leftImageResource">?attr/xui_actionbar_ic_navigation_back</item>
+        <item name="tb_dividerColor">@color/transparent</item>
+        <item name="tb_dividerHeight">1dp</item>
+    </style>
+
+
+
+    <!--文本样式-->
     <style name="TextStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

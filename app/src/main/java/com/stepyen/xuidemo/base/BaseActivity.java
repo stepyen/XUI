@@ -36,7 +36,7 @@ public class BaseActivity extends XPageActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        XUI.initTheme(this);
+//        XUI.initTheme(this);
         super.onCreate(savedInstanceState);
         mUnbinder = ButterKnife.bind(this);
     }

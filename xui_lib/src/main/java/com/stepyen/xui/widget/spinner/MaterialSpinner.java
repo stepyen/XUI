@@ -25,7 +25,6 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-
 import com.stepyen.xui.R;
 import com.stepyen.xui.utils.ResUtils;
 import com.stepyen.xui.utils.ThemeUtils;
