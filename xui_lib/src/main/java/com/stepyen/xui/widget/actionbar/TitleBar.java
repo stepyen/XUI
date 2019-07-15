@@ -1,19 +1,3 @@
-/*
- * Copyright (C) 2019 xuexiangjys(xuexiangjys@163.com)
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
 
 package com.stepyen.xui.widget.actionbar;
 
@@ -23,7 +7,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
+
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -51,7 +35,7 @@ import uk.co.chrisjenx.calligraphy.HasTypeface;
 /**
  * 标题栏
  */
-public class TitleBar extends ViewGroup implements View.OnClickListener, HasTypeface {
+public class TitleBar extends ViewGroup implements HasTypeface {
     private static final String STATUS_BAR_HEIGHT_RES_NAME = "status_bar_height";
     public static final int CENTER_CENTER = 0;
     public static final int CENTER_LEFT = 1;
@@ -572,15 +556,6 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
         return this;
     }
 
-    @Override
-    public void onClick(View view) {
-        final Object tag = view.getTag();
-        if (tag instanceof Action) {
-            final Action action = (Action) tag;
-            action.performAction(view);
-        }
-    }
-
     /**
      * Adds a list of {@link Action}s.
      *
@@ -668,52 +643,48 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
      * @return a view
      */
     protected View inflateAction(Action action) {
+        if (action == null) {
+            return null;
+        }
+
         View view = null;
-        if (TextUtils.isEmpty(action.getText())) {
+
+        if (TextUtils.isEmpty(action.text)) {
             ImageView img = new ImageView(getContext());
-            img.setImageResource(action.getDrawable());
+            img.setImageDrawable(action.drawable);
             view = img;
-        } else {
+        }else{
             TextView text = new XUIAlphaTextView(getContext());
             text.setGravity(Gravity.CENTER);
-            text.setText(action.getText());
-            text.setTextSize(TypedValue.COMPLEX_UNIT_PX, mActionTextSize);
+            text.setText(action.text);
+            text.setTextSize(TypedValue.COMPLEX_UNIT_PX, action.textSize == 0 ? mActionTextSize : action.textSize);
+            text.setTypeface(XUI.getDefaultTypeface());
             //字体大于等于16sp自动加粗
             if (DensityUtils.px2sp(getContext(), mActionTextSize) >= 16) {
                 TextPaint tp = text.getPaint();
                 tp.setFakeBoldText(true);
             }
-            text.setTypeface(XUI.getDefaultTypeface());
-            if (mActionTextColor != 0) {
-                text.setTextColor(mActionTextColor);
-            }
+            text.setTextColor(action.textColor == 0 ? mActionTextColor : action.textColor);
 
-
-            if (action.getDrawable() != 0) {
-                Drawable drawable = ResUtils.getDrawable(getContext(), action.getDrawable());
-                drawable.setBounds(0, 0, DensityUtils.dp2px(getContext(), 19), DensityUtils.dp2px(getContext(), 19));
-                text.setCompoundDrawables(null, drawable, null, null);
-
+            if (action.drawable != null) {
+                action.drawable.setBounds(0, 0, DensityUtils.dp2px(getContext(), 19), DensityUtils.dp2px(getContext(), 19));
+                text.setCompoundDrawables(null, action.drawable, null, null);
             }
 
             view = text;
         }
 
-        int[] padding = action.getPadding();
+        int[] padding = action.padding;
         if (padding != null) {
-            if (padding.length!=4) {
-                throw new IllegalStateException("设置Action的Padding数组必须是4个元素");
-            }
-
-            view.setPadding(padding[0],padding[1],padding[2],padding[3]);
-        }else{
-            view.setPadding(mActionHorizontalPadding,mActionVerticalPadding,mActionHorizontalPadding,mActionVerticalPadding);
+            view.setPadding(padding[0], padding[1], padding[2], padding[3]);
+        } else {
+            view.setPadding(mActionHorizontalPadding, mActionVerticalPadding, mActionHorizontalPadding, mActionVerticalPadding);
         }
 
+        if (action.clickListener !=null) {
+            view.setOnClickListener(action.clickListener);
+        }
 
-        view.setTag(action);
-
-        view.setOnClickListener(this);
         return view;
     }
 
@@ -798,80 +769,85 @@ public class TitleBar extends ViewGroup implements View.OnClickListener, HasType
     public static class ActionList extends LinkedList<Action> {
     }
 
-    /**
-     * Definition of an action that could be performed, along with a icon to
-     * show.
-     */
-    public interface Action {
-        /**
-         * @return 显示文字
-         */
-        String getText();
 
-        /**
-         * @return 显示图标
-         */
-        int getDrawable();
+    public static class Action {
+        public CharSequence text;
+        public int textColor;
+        public int textSize;
+        public Drawable drawable;
+        public int[] padding;
+        public OnClickListener clickListener;
 
-        /**
-         * 点击动作
-         *
-         * @param view
-         */
-        void performAction(View view);
-
-        /**
-         * Action的间距，按照 left、top、right、bottom 进行设置
-         *
-         * @return
-         */
-        int[] getPadding();
-    }
-
-    /**
-     * 图片动作
-     */
-    public static abstract class ImageAction implements Action {
-
-        private int mDrawable;
-
-        public ImageAction(int drawable) {
-            mDrawable = drawable;
+        private Action(Builder builder) {
+            text = builder.text;
+            textColor = builder.textColor;
+            textSize = builder.textSize;
+            drawable = builder.drawable;
+            padding = builder.padding;
+            clickListener = builder.clickListener;
         }
 
-        @Override
-        public int getDrawable() {
-            return mDrawable;
-        }
-
-        @Override
-        public String getText() {
-            return null;
-        }
-    }
-
-    /**
-     * 文字动作
-     */
-    public static abstract class TextAction implements Action {
-
-        final private String mText;
-
-        public TextAction(String text) {
-            mText = text;
-        }
-
-        @Override
-        public int getDrawable() {
-            return 0;
-        }
-
-        @Override
-        public String getText() {
-            return mText;
+        public static Builder newBuilder() {
+            return new Builder();
         }
 
 
+        public static final class Builder {
+            private CharSequence text;
+            private int textColor;
+            private int textSize;
+            private Drawable drawable;
+            private int[] padding;
+            private OnClickListener clickListener;
+
+            private Builder() {
+            }
+
+            public Builder text(CharSequence val) {
+                text = val;
+                return this;
+            }
+
+            public Builder textColor(int val) {
+                textColor = ResUtils.getColor(val);
+                return this;
+            }
+
+            public Builder textSize(int val) {
+                textSize = ResUtils.getDimensionPixelSize(val);
+                return this;
+            }
+
+            public Builder drawable(int val) {
+                drawable = ResUtils.getDrawable(val);
+                return this;
+            }
+
+            public Builder padding(int padding) {
+                padding = DensityUtils.dp2px(padding);
+                this.padding = new int[]{padding, padding, padding, padding};
+                return this;
+            }
+
+            public Builder padding(int left, int top, int right, int bottom) {
+                left = DensityUtils.dp2px(left);
+                top = DensityUtils.dp2px(top);
+                right = DensityUtils.dp2px(right);
+                bottom = DensityUtils.dp2px(bottom);
+                this.padding = new int[]{left, top, right, bottom};
+                return this;
+            }
+
+
+            public Builder clickListener(OnClickListener val) {
+                clickListener = val;
+                return this;
+            }
+
+            public Action build() {
+                return new Action(this);
+            }
+        }
     }
 
     /**

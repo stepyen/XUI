@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="XUITheme.Phone">
 
-        <item name="xui_actionbar_action_vertical_padding">4dp</item>
-        <item name="xui_actionbar_action_horizontal_padding">10dp</item>
-        <item name="xui_actionbar_action_text_size">9sp</item>
+        <!--<item name="xui_actionbar_action_vertical_padding">4dp</item>-->
+        <!--<item name="xui_actionbar_action_horizontal_padding">10dp</item>-->
+        <!--<item name="xui_actionbar_action_text_size">9sp</item>-->
 
     </style>
 

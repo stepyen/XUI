@@ -1,10 +1,12 @@
 package com.stepyen.xuidemo.fragment;
+
 import android.content.res.Configuration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.stepyen.xui.widget.actionbar.TitleBar;
 import com.stepyen.xui.widget.recycleview.decorator.GridDividerItemDecoration;
 import com.stepyen.xuidemo.adapter.base.BaseRecyclerAdapter;
@@ -15,9 +17,11 @@ import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.activity.MainActivity;
 import com.stepyen.xuidemo.adapter.WidgetItemAdapter;
 import com.stepyen.xutil.common.ClickUtils;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
 import butterknife.BindView;
 
 /**
@@ -37,18 +41,16 @@ public abstract class BaseHomeFragment extends BaseFragment implements BaseRecyc
     protected TitleBar initTitle() {
         TitleBar titleBar = super.initTitle();
         titleBar.setLeftVisible(false);
-        titleBar.addAction(new TitleBar.ImageAction(R.drawable.icon_action_about) {
-            @Override
-            @SingleClick
-            public void performAction(View view) {
-                openNewPage(AboutFragment.class);
-            }
+        titleBar.addAction(TitleBar.Action.newBuilder()
+                .textColor(R.color.xui_config_color_red)
+                .textSize(R.dimen.title_small)
+                .drawable(R.drawable.icon_action_about)
+                .padding(5)
+                .clickListener(v -> {
+                    openNewPage(AboutFragment.class);
+                })
+                .build());
 
-            @Override
-            public int[] getPadding() {
-                return null;
-            }
-        });
         return titleBar;
     }
 
@@ -79,6 +81,7 @@ public abstract class BaseHomeFragment extends BaseFragment implements BaseRecyc
 
     /**
      * 进行排序
+     *
      * @param pageInfoList
      * @return
      */

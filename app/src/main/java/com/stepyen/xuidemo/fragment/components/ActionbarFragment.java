@@ -2,6 +2,7 @@ package com.stepyen.xuidemo.fragment.components;
 
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.stepyen.xui.utils.ResUtils;
 import com.stepyen.xui.widget.actionbar.TitleBar;
@@ -34,41 +35,19 @@ public class ActionbarFragment extends BaseFragment {
         });
         actionBar.setBackgroundColor(ResUtils.getColor(R.color.white));
         actionBar.setActionTextColor(ResUtils.getColor(R.color.black));
-
-        actionBar.addAction(new TitleBar.TextAction("放进我的店") {
-            @Override
-            public void performAction(View view) {
-                ToastUtils.toast("放进我的店");
-            }
-
-            @Override
-            public int[] getPadding() {
-                return null;
-            }
-
-            @Override
-            public int getDrawable() {
-                return R.drawable.ic_add_store;
-            }
-        });
-
-        actionBar.addAction(new TitleBar.TextAction("分享") {
-            @Override
-            public void performAction(View view) {
-                ToastUtils.toast("分享");
-            }
-
-            @Override
-            public int[] getPadding() {
-                return null;
-            }
-
-            @Override
-            public int getDrawable() {
-                return R.drawable.ic_share;
-            }
-
-        });
+        actionBar.addAction(TitleBar.Action.newBuilder()
+                .text("放进我的店")
+                .build());
+        actionBar.addAction(TitleBar.Action.newBuilder()
+                .text("分享")
+                .textColor(R.color.xui_config_color_red)
+                .textSize(R.dimen.title_small)
+                .drawable(R.drawable.ic_share)
+                .padding(5)
+                .clickListener(v->{
+                    ToastUtils.toast("分享");
+                })
+                .build());
 
 
         linearLayout.addView(actionBar);
