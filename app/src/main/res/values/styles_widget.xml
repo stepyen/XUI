@@ -44,4 +44,12 @@
         <item name="ms_dropdown_offset">0dp</item>
     </style>
 
+
+    <style name="EditInfoItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="sUseRipple">false</item>
+        <item name="sEnableEdit">true</item>
+    </style>
+
 </resources>

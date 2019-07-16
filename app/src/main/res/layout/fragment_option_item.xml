@@ -85,6 +85,19 @@
                 app:sRightViewType="switchBtn"
                 app:sSwitchIsChecked="true"
                 />
+
+            <com.stepyen.xui.widget.textview.supertextview.OptionItem
+                app:sDividerLineType="bottom"
+                app:sLeftTextString="声音"
+                app:sRightTextString="人"
+                app:sCenterViewGravity="left_center"
+                app:sEditTextHint="请输入"
+                style="@style/EditInfoItem"
+                app:sEditTextButtonType="none"
+                android:background="@color/white"
+                app:sEditTextGravity="right"
+                />
+
             <com.stepyen.xui.widget.textview.supertextview.OptionItem
                 android:layout_width="match_parent"
                 android:layout_height="60dp"

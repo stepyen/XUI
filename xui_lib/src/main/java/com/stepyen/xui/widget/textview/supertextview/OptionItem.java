@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
@@ -23,6 +24,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import com.stepyen.xui.R;
 import com.stepyen.xui.utils.ResUtils;
+import com.stepyen.xui.widget.CommonType;
 import com.stepyen.xui.widget.textview.edittext.ClearEditText;
 import com.stepyen.xui.widget.textview.edittext.PasswordEditText;
 
@@ -255,6 +257,7 @@ public class OptionItem extends RelativeLayout implements HasTypeface {
     //输入框的背景
     private Drawable mEditBackground;
     private String mEditTextHint;
+    private int mEditTextGravity = Gravity.LEFT;
     private String mEditTextString;
     private int mEditTextInputType;
 
@@ -508,6 +511,7 @@ public class OptionItem extends RelativeLayout implements HasTypeface {
         mEditTextWidth = typedArray.getDimensionPixelSize(R.styleable.OptionItem_sEditTextWidth, mEditTextWidth);
         mEditTextString = typedArray.getString(R.styleable.OptionItem_sEditTextString);
         mEditTextHint = typedArray.getString(R.styleable.OptionItem_sEditTextHint);
+        mEditTextGravity = typedArray.getInteger(R.styleable.OptionItem_sEditTextGravity, mEditTextGravity);
         mEditTextInputType = typedArray.getInt(R.styleable.OptionItem_android_inputType, -1);
         mEditTextButtonType = typedArray.getInt(R.styleable.OptionItem_sEditTextButtonType, mEditTextButtonType);
 
@@ -756,6 +760,8 @@ public class OptionItem extends RelativeLayout implements HasTypeface {
             mCenterEditText.setMaxLines(mCenterLines);
             mCenterEditText.setText(mEditTextString);
             mCenterEditText.setHint(mEditTextHint);
+            mCenterEditText.setGravity(mEditTextGravity);
+
             if (mEditTextInputType != -1) {
                 mCenterEditText.setInputType(mEditTextInputType);
             }

@@ -121,4 +121,13 @@
 
     <attr name="ms_dropdown_offset" format="dimension" />
     <attr name="ms_arrow_size" format="dimension" />
+
+    <!--**************************** 输入框文字 ***********************************************-->
+
+    <attr name="xui_config_size_edittext_input_text" format="dimension" />
+    <attr name="xui_config_size_edittext_helper_text" format="dimension" />
+    <attr name="xui_config_size_edittext_components_spacing" format="dimension" />
+    <attr name="xui_config_size_edittext_left_padding" format="dimension" />
+    <attr name="xui_config_size_edittext_radius" format="dimension" />
+    <attr name="xui_config_size_edittext_height" format="dimension" />
 </resources>

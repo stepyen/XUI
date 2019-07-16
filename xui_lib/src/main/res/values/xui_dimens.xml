@@ -71,6 +71,14 @@
     <dimen name="xui_actionbar_side_text_padding_phone">14dp</dimen>
 
 
+    <!--************************输入框样式*******************************-->
+    <dimen name="xui_config_size_edittext_input_text_phone">13sp</dimen>
+    <dimen name="xui_config_size_edittext_helper_text_phone">8sp</dimen>
+    <dimen name="xui_config_size_edittext_components_spacing_phone">7dp</dimen>
+    <dimen name="xui_config_size_edittext_left_padding_phone">10dp</dimen>
+    <dimen name="xui_config_size_edittext_radius_phone">4dp</dimen>
+    <dimen name="xui_config_size_edittext_height_phone">30dp</dimen>
+
 <!--dialog-->
     <dimen name="xui_dialog_radius_size">7dp</dimen>
     <dimen name="xui_dialog_content_padding">18dp</dimen>

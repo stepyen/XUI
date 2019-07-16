@@ -54,6 +54,8 @@
 
         <!--XUI 提供的样式-->
         <item name="TitleBarStyle">@style/TitleBar</item>
+        <item name="ClearEditTextStyle">@style/EditText.Clear</item>
+        <item name="PasswordEditTextStyle">@style/EditText.Password</item>
 
     </style>
 
@@ -109,9 +111,22 @@
         <item name="xui_config_color_explain">@color/xui_config_color_explain</item>
 
 
-<!--对话框 dialog-->
+
+        <!--输入框样式-->
+        <item name="xui_config_size_edittext_input_text">@dimen/xui_config_size_edittext_input_text_phone</item>
+        <item name="xui_config_size_edittext_helper_text">@dimen/xui_config_size_edittext_helper_text_phone</item>
+        <item name="xui_config_size_edittext_components_spacing">@dimen/xui_config_size_edittext_components_spacing_phone</item>
+        <item name="xui_config_size_edittext_left_padding">@dimen/xui_config_size_edittext_left_padding_phone</item>
+        <item name="xui_config_size_edittext_radius">@dimen/xui_config_size_edittext_radius_phone</item>
+        <item name="xui_config_size_edittext_height">@dimen/xui_config_size_edittext_height_phone</item>
+
+
+
+        <!--对话框 dialog-->
         <item name="xui_dialog_radius_size">@dimen/xui_dialog_radius_size</item>
         <item name="xui_dialog_content_padding">@dimen/xui_dialog_content_padding</item>
+
+
 
         <!--MiniLoadingDialog-->
         <item name="xui_dialog_mini_loadingview_size">@dimen/xui_dialog_mini_loadingview_size</item>
@@ -139,6 +154,8 @@
 
 
 
+
+    <style name="EditTextBase" parent="android:Widget.Holo.Light.EditText" />
 
 
 </resources>
