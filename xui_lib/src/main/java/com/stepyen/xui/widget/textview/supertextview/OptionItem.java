@@ -742,6 +742,7 @@ public class OptionItem extends RelativeLayout implements HasTypeface {
 
             mCenterEditTextParams.addRule(RelativeLayout.CENTER_IN_PARENT, TRUE);
             mCenterEditTextParams.addRule(RelativeLayout.CENTER_VERTICAL, TRUE);
+            // 不是居中的话，输入框的两边对齐左右两边的View
             if (mCenterGravity != GRAVITY_CENTER) {
                 mCenterEditTextParams.addRule(RIGHT_OF, R.id.sLeftViewId);
                 mCenterEditTextParams.addRule(LEFT_OF, R.id.sRightViewId);

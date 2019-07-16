@@ -87,15 +87,30 @@
                 />
 
             <com.stepyen.xui.widget.textview.supertextview.OptionItem
+                style="@style/EditInfoItem"
                 app:sDividerLineType="bottom"
+                app:sCenterViewGravity="left_center"
+                app:sEditTextButtonType="none"
+                app:sEditTextGravity="right"
+                android:background="@color/white"
+
                 app:sLeftTextString="声音"
                 app:sRightTextString="人"
-                app:sCenterViewGravity="left_center"
                 app:sEditTextHint="请输入"
+                />
+
+            <com.stepyen.xui.widget.textview.supertextview.OptionItem
                 style="@style/EditInfoItem"
+                app:sDividerLineType="bottom"
                 app:sEditTextButtonType="none"
                 android:background="@color/white"
                 app:sEditTextGravity="right"
+                app:sCenterViewGravity="left_center"
+                app:sRightViewMarginRight="@dimen/xui_config_margin"
+                app:sRightViewMarginLeft="0dp"
+
+                app:sLeftTextString="声音"
+                app:sEditTextHint="请输入"
                 />
 
             <com.stepyen.xui.widget.textview.supertextview.OptionItem
