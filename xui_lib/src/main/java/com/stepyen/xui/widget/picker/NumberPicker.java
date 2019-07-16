@@ -2,19 +2,15 @@ package com.stepyen.xui.widget.picker;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.stepyen.xui.R;
-import com.stepyen.xui.logs.LogHelp;
 import com.stepyen.xui.utils.DensityUtils;
 import com.stepyen.xui.utils.ResUtils;
 import com.stepyen.xui.utils.shape.ShapeBuilder;
@@ -54,11 +50,22 @@ public class NumberPicker extends LinearLayout {
      * 数量前缀
      */
     private String mNumberPrefix = "";
+    /**
+     * 添加
+     */
+    private Drawable mAddDrawable;
+    /**
+     * 减去
+     */
+    private Drawable mSubDrawable;
+    /**
+     * 添加和减去的padding
+     */
+    private int mDrawablePadding;
 
-
-    TextView mTvSub;
+    ImageView mIvSub;
     TextView mTvValue;
-    TextView mTvAdd;
+    ImageView mIvAdd;
 
     public NumberPicker(Context context) {
 
@@ -86,9 +93,22 @@ public class NumberPicker extends LinearLayout {
         mMinNum = ta.getInteger(R.styleable.NumberPicker_min_number, DEFAULT_MIN_MUM);
         mMaxNum = ta.getInteger(R.styleable.NumberPicker_max_number, DEFAULT_MAX_MUM);
         mNumberPrefix = ta.getString(R.styleable.NumberPicker_number_prefix);
+        mSubDrawable = ta.getDrawable(R.styleable.NumberPicker_subtract_drawable);
+        mAddDrawable = ta.getDrawable(R.styleable.NumberPicker_add_drawable);
+        mDrawablePadding = ta.getDimensionPixelSize(R.styleable.NumberPicker_drawable_padding, DensityUtils.dp2px(3));
+
         if (TextUtils.isEmpty(mNumberPrefix)) {
             mNumberPrefix = "";
         }
+
+        if (mSubDrawable == null) {
+            mSubDrawable = ResUtils.getDrawable(R.drawable.ic_subtract);
+        }
+
+        if (mAddDrawable == null) {
+            mAddDrawable = ResUtils.getDrawable(R.drawable.ic_add);
+        }
+
 
         ta.recycle();
     }
@@ -96,29 +116,27 @@ public class NumberPicker extends LinearLayout {
 
     private void initView(Context context) {
 
-        mTvSub = new TextView(context);
-        mTvSub.setGravity(Gravity.CENTER);
-        mTvSub.setText("-");
-        mTvSub.setTextSize(18);
+        mIvSub = new ImageView(context);
+        mIvSub.setImageDrawable(mSubDrawable);
+        mIvSub.setPadding(mDrawablePadding,mDrawablePadding,mDrawablePadding,mDrawablePadding);
 
         mTvValue = new TextView(context);
         mTvValue.setGravity(Gravity.CENTER);
         mTvValue.setText(mNumber + "");
         mTvValue.setTextSize(18);
 
-        mTvAdd = new TextView(context);
-        mTvAdd.setGravity(Gravity.CENTER);
-        mTvAdd.setText("+");
-        mTvAdd.setTextSize(18);
+        mIvAdd = new ImageView(context);
+        mIvAdd.setImageDrawable(mAddDrawable);
+        mIvAdd.setPadding(mDrawablePadding,mDrawablePadding,mDrawablePadding,mDrawablePadding);
 
-        addView(mTvSub);
+        addView(mIvSub);
         addView(mTvValue);
-        addView(mTvAdd);
+        addView(mIvAdd);
 
-        mTvSub.setOnClickListener(v -> {
+        mIvSub.setOnClickListener(v -> {
             sub();
         });
-        mTvAdd.setOnClickListener(v -> {
+        mIvAdd.setOnClickListener(v -> {
             add();
         });
 
@@ -138,20 +156,20 @@ public class NumberPicker extends LinearLayout {
 
         int otherWidth = (getMeasuredWidth() - mMiddleWidth) / 2;
 
-        LinearLayout.LayoutParams tvSubLp = (LayoutParams) mTvSub.getLayoutParams();
+        LinearLayout.LayoutParams tvSubLp = (LayoutParams) mIvSub.getLayoutParams();
         tvSubLp.width = otherWidth;
         tvSubLp.height = LayoutParams.MATCH_PARENT;
-        mTvSub.setLayoutParams(tvSubLp);
+        mIvSub.setLayoutParams(tvSubLp);
 //
         LinearLayout.LayoutParams tvValueLp = (LayoutParams) mTvValue.getLayoutParams();
         tvValueLp.width = mMiddleWidth;
         tvValueLp.height = LayoutParams.MATCH_PARENT;
         mTvValue.setLayoutParams(tvValueLp);
 
-        LinearLayout.LayoutParams tvAddLp = (LayoutParams) mTvAdd.getLayoutParams();
+        LinearLayout.LayoutParams tvAddLp = (LayoutParams) mIvAdd.getLayoutParams();
         tvAddLp.width = otherWidth;
         tvAddLp.height = LayoutParams.MATCH_PARENT;
-        mTvAdd.setLayoutParams(tvAddLp);
+        mIvAdd.setLayoutParams(tvAddLp);
     }
 
 

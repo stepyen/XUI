@@ -69,6 +69,9 @@
         <attr name="min_number" format="integer" />
         <attr name="max_number" format="integer" />
         <attr name="number_prefix" format="string" />
+        <attr name="add_drawable" format="reference"></attr>
+        <attr name="subtract_drawable" format="reference"></attr>
+        <attr name="drawable_padding" format="dimension"></attr>
     </declare-styleable>
 
 

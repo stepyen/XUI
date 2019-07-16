@@ -21,7 +21,7 @@
         app:max_number="10"
         app:min_number="1"
         app:middle_width="30dp"
+        app:drawable_padding="7dp"
         ></com.stepyen.xui.widget.picker.NumberPicker>
-
 
 </LinearLayout>
