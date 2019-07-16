@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -14,6 +15,8 @@ import com.stepyen.xui.R;
 import com.stepyen.xui.utils.DensityUtils;
 import com.stepyen.xui.utils.ResUtils;
 import com.stepyen.xui.utils.shape.ShapeBuilder;
+
+import java.sql.ResultSet;
 
 /**
  * date：2018/10/27
@@ -81,15 +84,10 @@ public class NumberPicker extends LinearLayout {
 
         setOrientation(HORIZONTAL);
 
-        initAttrs(context, attrs, defStyle);
-
-        initView(context);
-
-    }
-
-    private void initAttrs(Context context, AttributeSet attrs, int defStyle) {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.NumberPicker, 0, 0);
         mMiddleWidth = (int) ta.getDimension(R.styleable.NumberPicker_middle_width, DEFAULT_MIDDLE_WIDTH);
+        int middleTextSize = (int) ta.getDimension(R.styleable.NumberPicker_middle_text_size, DensityUtils.sp2px(18));
+        int middleTextColor =  ta.getColor(R.styleable.NumberPicker_middle_text_color, ResUtils.getColor(R.color.black));
         mMinNum = ta.getInteger(R.styleable.NumberPicker_min_number, DEFAULT_MIN_MUM);
         mMaxNum = ta.getInteger(R.styleable.NumberPicker_max_number, DEFAULT_MAX_MUM);
         mNumberPrefix = ta.getString(R.styleable.NumberPicker_number_prefix);
@@ -109,12 +107,8 @@ public class NumberPicker extends LinearLayout {
             mAddDrawable = ResUtils.getDrawable(R.drawable.ic_add);
         }
 
-
         ta.recycle();
-    }
 
-
-    private void initView(Context context) {
 
         mIvSub = new ImageView(context);
         mIvSub.setImageDrawable(mSubDrawable);
@@ -123,7 +117,8 @@ public class NumberPicker extends LinearLayout {
         mTvValue = new TextView(context);
         mTvValue.setGravity(Gravity.CENTER);
         mTvValue.setText(mNumber + "");
-        mTvValue.setTextSize(18);
+        mTvValue.setTextSize(TypedValue.COMPLEX_UNIT_PX,middleTextSize);
+        mTvValue.setTextColor(middleTextColor);
 
         mIvAdd = new ImageView(context);
         mIvAdd.setImageDrawable(mAddDrawable);
@@ -140,14 +135,11 @@ public class NumberPicker extends LinearLayout {
             add();
         });
 
-        ShapeBuilder.create(context)
-                .stroke(DensityUtils.dp2px(0.5f), R.color.xui_gray_7)
-                .solid(R.color.white)
-                .build(this);
-        ShapeBuilder.create(context).stroke(1, R.color.black).build(mTvValue);
-
         mTvValue.setText(mNumberPrefix + mNumber);
+
     }
+
+
 
 
     @Override

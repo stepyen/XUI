@@ -66,6 +66,8 @@
     <declare-styleable name="NumberPicker">
         <!--中间view的宽度-->
         <attr name="middle_width" format="dimension" />
+        <attr name="middle_text_size" format="dimension"></attr>
+        <attr name="middle_text_color" format="color"></attr>
         <attr name="min_number" format="integer" />
         <attr name="max_number" format="integer" />
         <attr name="number_prefix" format="string" />
