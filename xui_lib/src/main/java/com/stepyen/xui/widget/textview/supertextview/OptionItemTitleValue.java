@@ -22,7 +22,7 @@ import javax.xml.transform.Result;
  * author：stepyen
  * description：
  */
-public class OptionItemTitleValue extends RelativeLayout {
+public class OptionItemTitleValue extends LinearLayout {
     private TextView mTitleTv;
     private TextView mValueTv;
 
@@ -37,11 +37,9 @@ public class OptionItemTitleValue extends RelativeLayout {
 
     public OptionItemTitleValue(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        View view = View.inflate(context, R.layout.view_option_item_title_value, null);
-        addView(view);
+        View view = View.inflate(context, R.layout.view_option_item_title_value, this);
         mTitleTv = view.findViewById(R.id.tv_option_title);
         mValueTv = view.findViewById(R.id.tv_option_value);
-
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.OptionItemTitleValue, defStyle, 0);
 

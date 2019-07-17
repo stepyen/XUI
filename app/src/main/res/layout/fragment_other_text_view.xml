@@ -89,13 +89,13 @@
     <com.stepyen.xui.widget.textview.supertextview.OptionItemTitleValue
         android:id="@+id/optv_1"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="100dp"
         android:paddingLeft="15dp"
         app:opkv_title="车辆颜色: "
         app:opkv_title_color="@color/black"
-        app:opkv_title_size="10sp"
         app:opkv_value="红色"
         app:opkv_title_value_space="8dp"
+        android:background="@color/xui_config_color_red"
         ></com.stepyen.xui.widget.textview.supertextview.OptionItemTitleValue>
 
 
