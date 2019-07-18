@@ -23,7 +23,9 @@ import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import com.stepyen.xui.R;
+import com.stepyen.xui.utils.DensityUtils;
 import com.stepyen.xui.utils.ResUtils;
+import com.stepyen.xui.utils.Utils;
 import com.stepyen.xui.widget.CommonType;
 import com.stepyen.xui.widget.textview.edittext.ClearEditText;
 import com.stepyen.xui.widget.textview.edittext.PasswordEditText;
@@ -877,6 +879,7 @@ public class OptionItem extends RelativeLayout implements HasTypeface {
             }
         });
         addView(mRightCheckBox);
+        Utils.expandTouchArea(mRightCheckBox, DensityUtils.dp2px(10));
     }
 
     /**

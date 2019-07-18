@@ -29,10 +29,12 @@ import android.graphics.ColorFilter;
 import android.graphics.LightingColorFilter;
 import android.graphics.Matrix;
 import android.graphics.PixelFormat;
+import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.text.TextUtils;
+import android.view.TouchDelegate;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -378,6 +380,36 @@ public final class Utils {
             drawable.setColorFilter(colorFilter);
         }
         return colorFilter;
+    }
+
+    /**
+     * 增加View的点击区域
+     * @param view
+     */
+    public static void expandTouchArea(View view) {
+        expandTouchArea(view, 20);
+    }
+
+    /**
+     * 增加View的点击区域
+     * @param view
+     */
+    public static void expandTouchArea(View view, int size) {
+        View parentView = (View) view.getParent();
+        parentView.post(new Runnable() {
+            @Override
+            public void run() {
+                Rect rect = new Rect();
+                view.getHitRect(rect);
+
+                rect.top -= size;
+                rect.bottom += size;
+                rect.left -= size;
+                rect.right += size;
+
+                parentView.setTouchDelegate(new TouchDelegate(rect, view));
+            }
+        });
     }
 
 }
