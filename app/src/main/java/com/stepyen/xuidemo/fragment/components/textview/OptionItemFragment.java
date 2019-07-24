@@ -55,7 +55,8 @@ public class OptionItemFragment extends BaseFragment {
             }
         });
 
-
+        // 动态添加 OptionItem
+        mLlSuperTextParent.addView(new OptionItem(getContext(),null,R.attr.OptionItemStyle));
 
     }
 

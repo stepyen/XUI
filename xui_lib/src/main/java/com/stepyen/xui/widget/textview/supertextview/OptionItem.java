@@ -340,32 +340,29 @@ public class OptionItem extends RelativeLayout implements HasTypeface {
     private GradientDrawable mGradientDrawable;
 
     public OptionItem(Context context) {
-        super(context);
-        initAttrs(context, null);
+        this(context, null);
     }
 
     public OptionItem(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        initAttrs(context, attrs);
+        this(context, attrs,0);
     }
 
     public OptionItem(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        initAttrs(context, attrs);
+        initAttrs(context, attrs,defStyleAttr);
     }
 
-    private void initAttrs(Context context, AttributeSet attrs) {
+    private void initAttrs(Context context, AttributeSet attrs, int defStyleAttr) {
         mContext = context;
         mDefaultSize = sp2px(context, mDefaultSize);
         mDefaultMargin = dip2px(context, mDefaultMargin);
 
-        getAttr(attrs);
+        getAttr(attrs,defStyleAttr);
         initView();
     }
 
-    private void getAttr(AttributeSet attrs) {
-        TypedArray typedArray = mContext.obtainStyledAttributes(attrs, R.styleable.OptionItem);
-
+    private void getAttr(AttributeSet attrs,int defStyleAttr) {
+        TypedArray typedArray = mContext.obtainStyledAttributes(attrs, R.styleable.OptionItem,defStyleAttr,0);
 
         mLeftTextString = typedArray.getString(R.styleable.OptionItem_sLeftTextString);
         mLeftTopTextString = typedArray.getString(R.styleable.OptionItem_sLeftTopTextString);

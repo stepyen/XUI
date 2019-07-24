@@ -7,9 +7,26 @@
         <!--<item name="xui_actionbar_action_horizontal_padding">10dp</item>-->
         <!--<item name="xui_actionbar_action_text_size">9sp</item>-->
 
+        <item name="OptionItemStyle">@style/OptionItemStyle</item>
     </style>
 
     <style name="XUITheme.Launch.APP">
         <item name="android:windowBackground">@drawable/splash_bg</item>
+    </style>
+
+    <style name="OptionItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:background">@color/xui_config_color_red</item>
+
+        <item name="sLeftTextSize">15sp</item>
+        <item name="sLeftTextColor">@color/black</item>
+        <item name="sLeftViewMarginLeft">15dp</item>
+        <item name="sLeftTextString">动态添加OptionItem</item>
+
+        <item name="sDividerLineType">bottom</item>
+        <item name="sDividerLineColor">@color/xui_config_color_line</item>
+        <item name="sBottomDividerLineMarginLR">15dp</item>
+
     </style>
 </resources>
