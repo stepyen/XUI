@@ -32,6 +32,12 @@ import java.util.List;
  * date：2019/6/26
  * author：stepyen
  * description：底部弹窗
+ *
+ *
+ *
+ * 使用 {@link ListDialog} 可以实现底部弹窗
+ *
+ * 此类暂时保留
  */
 public class BottomMenuDialog extends Dialog {
     private final int STATE_TOP = 1;

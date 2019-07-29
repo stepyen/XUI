@@ -40,8 +40,8 @@ public class MiniLoadingDialog extends BaseDialog implements IMessageLoader {
     }
 
     private void initView(String tipMessage) {
-        mLoadingView = findViewById(R.id.mini_loading_view);
-        mTvTipMessage = findViewById(R.id.tv_tip_message);
+        mLoadingView = (MiniLoadingView) findViewById(R.id.mini_loading_view);
+        mTvTipMessage = (TextView) findViewById(R.id.tv_tip_message);
 
         updateMessage(tipMessage);
 
