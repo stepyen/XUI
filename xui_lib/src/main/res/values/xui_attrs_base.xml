@@ -20,6 +20,12 @@
     <attr name="xui_alpha_pressed" format="float"/>
     <attr name="xui_alpha_disabled" format="float"/>
 
+
+    <attr name="xui_general_shadow_elevation" format="dimension"/>
+    <attr name="xui_general_shadow_alpha" format="float"/>
+    <!-- 小的分割块使用浅色的分割线-->
+    <attr name="xui_config_color_separator_light" format="color" />
+
     <!--**************************文本样式************************************-->
     <attr name="xui_config_size_big_title" format="dimension"/>
     <attr name="xui_config_size_title" format="dimension"/>

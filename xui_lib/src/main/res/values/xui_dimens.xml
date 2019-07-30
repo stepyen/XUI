@@ -37,6 +37,9 @@
     <dimen name="xui_config_size_item">47dp</dimen>
     <dimen name="xui_config_size_item_space">10dp</dimen>
 
+    <dimen name="default_xui_general_shadow_elevation">14dp</dimen>
+    <dimen name="default_xui_general_shadow_alpha">0.25</dimen>
+
 
     <!--***************   xui splash view  *************************-->
     <dimen name="xui_config_app_logo_bottom">250dp</dimen>

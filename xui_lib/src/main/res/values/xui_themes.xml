@@ -139,6 +139,9 @@
         <item name="ms_item_height_size">@dimen/default_ms_item_height_size_phone</item>
         <item name="ms_dropdown_offset">@dimen/default_ms_dropdown_offset_phone</item>
         <item name="ms_arrow_size">@dimen/default_ms_arrow_size_phone</item>
+
+
+        <item name="xui_config_color_separator_light">@color/xui_config_color_separator_light_phone</item>
     </style>
 
     <!--平板主题-->

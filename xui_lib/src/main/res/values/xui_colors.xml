@@ -111,6 +111,7 @@
     <!--条目点击后的背景颜色-->
     <color name="xui_config_color_background_pressed">@color/xui_config_color_pressed</color>
 
+    <color name="xui_config_color_separator_light_phone">#F0F2F4</color>
 
 
 
