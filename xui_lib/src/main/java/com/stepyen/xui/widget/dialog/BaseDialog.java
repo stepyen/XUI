@@ -89,13 +89,18 @@ public class BaseDialog<T extends BaseDialog> extends AppCompatDialog {
         return (T) this;
     }
 
+    /**
+     * 设置背景模糊程度
+     * @param amount 0-1,越到1越模糊
+     * @return
+     */
     public T setDimAmount(float amount) {
         getWindow().setDimAmount(amount);
         return (T) this;
     }
 
     @Override
-    public <T extends View> T findViewById(int resId) {
+    public <V extends View> V findViewById(int resId) {
         return mContentView.findViewById(resId);
     }
 

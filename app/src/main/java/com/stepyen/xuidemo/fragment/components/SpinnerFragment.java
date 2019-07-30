@@ -35,6 +35,7 @@ public class SpinnerFragment extends BaseFragment {
     @Override
     protected void initViews() {
         mSpinner1.setItems(ResUtils.getStringArray(R.array.sort_mode_entry));
+        mSpinner1.setArrowColor(ResUtils.getColor(R.color.xui_config_color_red));
         mSpinner1.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener() {
             @Override
             public void onItemSelected(MaterialSpinner spinner, int position, long id, Object item) {
