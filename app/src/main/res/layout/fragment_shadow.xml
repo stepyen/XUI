@@ -6,13 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     >
 
-    <com.stepyen.xui.widget.layout.XUIRelativeLayout
+    <com.stepyen.xui.widget.layout.XUILinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_margin="20dp"
-        app:xui_shadowAlpha="0.04"
+        app:xui_shadowAlpha="0.4"
         app:xui_shadowElevation="25dp"
         app:xui_radius="3dp"
         app:xui_borderColor="#F5F5FF"
@@ -24,6 +25,6 @@
             android:layout_height="match_parent"
             android:background="@color/white"
             ></View>
-    </com.stepyen.xui.widget.layout.XUIRelativeLayout>
+    </com.stepyen.xui.widget.layout.XUILinearLayout>
 
 </LinearLayout>

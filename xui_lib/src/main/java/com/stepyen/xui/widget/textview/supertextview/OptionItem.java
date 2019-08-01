@@ -226,7 +226,7 @@ public class OptionItem extends RelativeLayout implements HasTypeface {
     private int mRightViewMarginRight;
 
 
-    private boolean mUseRipple;
+    private boolean mUseRipple = true; // 是否使用波纹
     private Drawable mBackgroundDrawable;
 
     private OnSuperTextViewClickListener mSuperTextViewClickListener;
@@ -335,7 +335,7 @@ public class OptionItem extends RelativeLayout implements HasTypeface {
     private float mStrokeDashWidth;
     private float mStrokeDashGap;
 
-    private boolean mUseShape;
+    private boolean mUseShape = false;
 
     private GradientDrawable mGradientDrawable;
 
@@ -515,7 +515,7 @@ public class OptionItem extends RelativeLayout implements HasTypeface {
         mEditTextButtonType = typedArray.getInt(R.styleable.OptionItem_sEditTextButtonType, mEditTextButtonType);
 
 
-        mUseRipple = typedArray.getBoolean(R.styleable.OptionItem_sUseRipple, true);
+        mUseRipple = typedArray.getBoolean(R.styleable.OptionItem_sUseRipple, mUseRipple);
         mBackgroundDrawable = typedArray.getDrawable(R.styleable.OptionItem_sBackgroundDrawableRes);
 
         mRightViewType = typedArray.getInt(R.styleable.OptionItem_sRightViewType, -1);
@@ -560,7 +560,7 @@ public class OptionItem extends RelativeLayout implements HasTypeface {
 
         mStrokeColor = typedArray.getColor(R.styleable.OptionItem_sShapeStrokeColor, mDefaultShapeColor);
 
-        mUseShape = typedArray.getBoolean(R.styleable.OptionItem_sUseShape, false);
+        mUseShape = typedArray.getBoolean(R.styleable.OptionItem_sUseShape, mUseShape);
 
         typedArray.recycle();
     }
