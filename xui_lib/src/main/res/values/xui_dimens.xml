@@ -33,7 +33,7 @@
     <!--高度-->
     <dimen name="xui_config_padding">15dp</dimen>
     <dimen name="xui_config_margin">15dp</dimen>
-    <dimen name="xui_config_size_line">0.5dp</dimen>
+    <dimen name="xui_config_size_line">1px</dimen>
     <dimen name="xui_config_size_item">47dp</dimen>
     <dimen name="xui_config_size_item_space">10dp</dimen>
 
@@ -234,4 +234,10 @@
     <dimen name="default_ms_item_height_size_phone">30dp</dimen>
     <dimen name="default_ms_dropdown_offset_phone">1dp</dimen>
     <dimen name="default_ms_arrow_size_phone">8dp</dimen>
+
+
+    <!--WheelView-->
+    <dimen name="default_wheel_view_text_size">20sp</dimen>
+    <dimen name="picker_view_topbar_padding">20dp</dimen>
+    <dimen name="picker_view_topbar_height">44dp</dimen>
 </resources>

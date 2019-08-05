@@ -59,4 +59,45 @@
         <item name="pet_nonMonospaceFont">false</item>
         <item name="pet_enableIconAlpha">true</item>
     </style>
+
+    <!-- PickerView -->
+    <style name="picker_view_scale_anim" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/picker_view_dialog_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/picker_view_dialog_scale_out</item>
+    </style>
+
+    <style name="picker_view_slide_anim" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/picker_view_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/picker_view_slide_out_bottom</item>
+    </style>
+
+    <!-- RulerView -->
+    <style name="RulerView">
+        <item name="rv_rulerHeight">50dp</item>
+        <item name="rv_rulerToResultGap">30dp</item>
+        <item name="rv_scaleGap">10dp</item>
+        <item name="rv_scaleLimit">1</item>
+        <item name="rv_scaleCount">10</item>
+
+        <item name="rv_bgColor">@color/default_ruler_view_bg_color</item>
+        <item name="rv_smallScaleColor">@color/default_ruler_view_small_scale_color</item>
+        <item name="rv_midScaleColor">@color/default_ruler_view_mid_scale_color</item>
+        <item name="rv_largeScaleColor">@color/default_ruler_view_large_scale_color</item>
+        <item name="rv_scaleNumColor">@color/default_ruler_view_scale_num_color</item>
+        <item name="rv_resultNumColor">@color/default_ruler_view_result_num_color</item>
+        <item name="rv_unitColor">@color/default_ruler_view_unit_color</item>
+
+        <item name="rv_smallScaleStroke">2dp</item>
+        <item name="rv_midScaleStroke">3dp</item>
+        <item name="rv_largeScaleStroke">5dp</item>
+
+        <item name="rv_resultNumTextSize">20sp</item>
+        <item name="rv_scaleNumTextSize">16sp</item>
+        <item name="rv_unitTextSize">13sp</item>
+
+        <item name="rv_showScaleResult">true</item>
+        <item name="rv_isBgRoundRect">true</item>
+        <item name="rv_roundRadius">10dp</item>
+    </style>
+
 </resources>

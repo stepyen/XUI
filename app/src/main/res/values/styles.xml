@@ -8,6 +8,7 @@
         <!--<item name="xui_actionbar_action_text_size">9sp</item>-->
 
         <item name="OptionItemStyle">@style/OptionItemStyle</item>
+        <item name="TextView_hint_tag">@style/TextView_hint_tag</item>
     </style>
 
     <style name="XUITheme.Launch.APP">

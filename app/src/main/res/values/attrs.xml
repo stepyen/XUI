@@ -2,4 +2,5 @@
 <resources>
 
     <attr name="OptionItemStyle" format="reference"></attr>
+    <attr name="TextView_hint_tag" format="reference"></attr>
 </resources>

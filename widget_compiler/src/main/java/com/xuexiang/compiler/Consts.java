@@ -2,7 +2,7 @@ package com.xuexiang.compiler;
 
 /**
  * 常量
- * @author xuexiang
+
  */
 public class Consts {
     // Generate

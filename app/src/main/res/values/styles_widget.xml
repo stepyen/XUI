@@ -31,6 +31,7 @@
         <item name="android:layout_marginLeft">@dimen/xui_config_content_spacing_horizontal_phone</item>
         <item name="android:layout_marginTop">@dimen/xui_config_content_spacing_vertical_phone</item>
         <item name="android:layout_marginBottom">@dimen/xui_config_content_spacing_vertical_phone</item>
+        <item name="android:gravity">left</item>
     </style>
 
 

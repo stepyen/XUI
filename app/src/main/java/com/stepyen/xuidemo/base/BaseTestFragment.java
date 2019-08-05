@@ -22,8 +22,9 @@ import butterknife.ButterKnife;
  * author：stepyen
  * description：
  */
-public  abstract class BaseTestFragment extends BaseFragment {
+public abstract class BaseTestFragment extends BaseFragment {
     private LinearLayout mParentLl;
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_base_test;
@@ -43,7 +44,7 @@ public  abstract class BaseTestFragment extends BaseFragment {
 
 
     public void addView(String title, final Class<?> cls) {
-        addView(title, v->{
+        addView(title, v -> {
             Intent intent = new Intent(getContext(), cls);
             startActivity(intent);
         }, 0);
@@ -51,20 +52,20 @@ public  abstract class BaseTestFragment extends BaseFragment {
 
 
     public void addView(String title, final Class<?> cls, int marginTop) {
-        addView(title, v->{
+        addView(title, v -> {
             Intent intent = new Intent(getContext(), cls);
             startActivity(intent);
         }, marginTop);
     }
 
-    public void addView(String title, View.OnClickListener clickListener) {
-        addView(title,clickListener,0 );
+    public TextView addView(String title, View.OnClickListener clickListener) {
+        return addView(title, clickListener, 0);
     }
 
-    public void addView(String title, View.OnClickListener clickListener, int marginTop) {
+    public TextView addView(String title, View.OnClickListener clickListener, int marginTop) {
         TextView tv = new TextView(getContext());
         tv.setGravity(Gravity.CENTER_VERTICAL);
-        tv.setPadding(DensityUtils.dp2px(15), 0, 0,0);
+        tv.setPadding(DensityUtils.dp2px(15), 0, 0, 0);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, DensityUtils.dp2px(47));
         tv.setLayoutParams(lp);
         tv.setBackgroundColor(ResUtils.getColor(R.color.white));
@@ -80,10 +81,21 @@ public  abstract class BaseTestFragment extends BaseFragment {
         lineView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.xui_config_color_line));
         mParentLl.addView(lineView);
 
+        return tv;
+
     }
 
     public TextView addTextView(CharSequence txt, int marginTop) {
-        TextView tv = new TextView(getContext());
+        return addTextView(txt,0,marginTop);
+    }
+
+    public TextView addTextView(CharSequence txt, int defStyleAttr, int marginTop) {
+        TextView tv;
+        if (defStyleAttr != 0) {
+            tv = new TextView(getContext(), null, defStyleAttr);
+        } else {
+            tv = new TextView(getContext());
+        }
         tv.setText(txt);
         mParentLl.addView(tv);
         setLpMarginTop(tv, marginTop);
@@ -97,7 +109,7 @@ public  abstract class BaseTestFragment extends BaseFragment {
         }
         LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) view.getLayoutParams();
         if (lp != null) {
-            lp.setMargins(0, DensityUtils.dp2px(mActivity, marginTop), 0, 0);
+            lp.setMargins(DensityUtils.dp2px(mActivity, 15), DensityUtils.dp2px(mActivity, marginTop), lp.rightMargin, DensityUtils.dp2px(mActivity, 10));
             view.setLayoutParams(lp);
         }
     }

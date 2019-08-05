@@ -29,9 +29,6 @@ import static com.stepyen.xuidemo.fragment.components.banner.UserGuideFragment.P
 
 /**
  * 使用ViewPager实现的图片轮播
- *
- * @author xuexiang
- * @date 2017/10/15 下午1:17
  */
 @Page(name = "使用ViewPager实现的Banner")
 public class ViewPagerBannerFragment extends BaseFragment {
