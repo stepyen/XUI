@@ -246,6 +246,10 @@ public class NumberPicker extends LinearLayout {
 
         mNumber--;
         mTvValue.setText(mNumberPrefix + mNumber);
+
+        if (mNumberLimitListen !=null) {
+            mNumberLimitListen.numberChange(mNumber);
+        }
     }
 
     private void add() {
@@ -258,15 +262,21 @@ public class NumberPicker extends LinearLayout {
 
         mNumber++;
         mTvValue.setText(mNumberPrefix + mNumber);
+
+        if (mNumberLimitListen !=null) {
+            mNumberLimitListen.numberChange(mNumber);
+        }
     }
 
     public interface OnNumberLimitListen {
         void isMinimum();
 
         void isMaximum();
+
+        void numberChange(int number);
     }
 
-    public OnNumberLimitListen mNumberLimitListen;
+    private OnNumberLimitListen mNumberLimitListen;
 
     public void setNumberLimitListen(OnNumberLimitListen numberLimitListen) {
         mNumberLimitListen = numberLimitListen;
