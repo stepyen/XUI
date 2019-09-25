@@ -33,7 +33,11 @@
         <item name="android:gravity">center</item>
         <item name="fontPath">@string/default_app_font_path</item>
     </style>
-
+    <!-- 辅助说明 style -->
+    <style name="TextStyle.Explain">
+        <item name="android:textSize">?attr/xui_config_size_explain</item>
+        <item name="android:textColor">?attr/xui_config_color_explain</item>
+    </style>
 
     <!--************************************* 基础输入框样式 ****************************************************-->
     <style name="EditText" parent="EditTextBase">

@@ -24,6 +24,16 @@ public class GridDividerItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     @Override
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+        int position = parent.getChildLayoutPosition(view);
+        if ((position + 1) % mSpanCount > 0) {
+            outRect.set(0, 0, mDivider.getIntrinsicWidth(), mDivider.getIntrinsicHeight());
+        } else {
+            outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
+        }
+    }
+
+    @Override
     public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
         super.onDraw(c, parent, state);
         final int childCount = parent.getChildCount();
@@ -54,13 +64,5 @@ public class GridDividerItemDecoration extends RecyclerView.ItemDecoration {
     }
 
 
-    @Override
-    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-        int position = parent.getChildLayoutPosition(view);
-        if ((position + 1) % mSpanCount > 0) {
-            outRect.set(0, 0, mDivider.getIntrinsicWidth(), mDivider.getIntrinsicHeight());
-        } else {
-            outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
-        }
-    }
+
 }

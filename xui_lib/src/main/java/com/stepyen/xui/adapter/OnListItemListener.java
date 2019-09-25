@@ -1,4 +1,4 @@
-package com.stepyen.xuidemo.adapter;
+package com.stepyen.xui.adapter;
 
 /**
  * 集合条目监听

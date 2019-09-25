@@ -1,13 +1,18 @@
 package com.stepyen.xuidemo.fragment.components;
 
-import com.stepyen.xui.utils.ResUtils;
-import com.stepyen.xui.widget.spinner.MaterialSpinner;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.stepyen.xui.widget.layout.XUILinearLayout;
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.BaseFragment;
-import com.stepyen.xutil.tip.ToastUtils;
 import com.xuexiang.xpage.annotation.Page;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * date：2019/7/12
@@ -16,6 +21,10 @@ import butterknife.BindView;
  */
 @Page(name = "阴影", extra = R.drawable.ic_widget_imageview)
 public class shadowFragment extends BaseFragment {
+
+
+    @BindView(R.id.XUILinearLayout)
+    XUILinearLayout mXUILinearLayout;
 
     @Override
     protected int getLayoutId() {

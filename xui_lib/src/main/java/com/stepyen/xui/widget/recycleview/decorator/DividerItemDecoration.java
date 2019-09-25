@@ -72,7 +72,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
 
     /**
-     * 获取分割线尺寸
+     * 设置预留分割线大小
      * @param outRect
      * @param view
      * @param parent

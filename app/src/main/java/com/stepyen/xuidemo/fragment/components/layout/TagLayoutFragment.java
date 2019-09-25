@@ -1,14 +1,17 @@
 package com.stepyen.xuidemo.fragment.components.layout;
 import android.text.TextUtils;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.stepyen.xui.widget.linearlayout.AutoNewLineLayout;
+
+import com.stepyen.xui.widget.linearlayout.FlowTagLayout;
 import com.stepyen.xuidemo.DataProvider;
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.BaseFragment;
 import com.stepyen.xutil.display.DensityUtils;
 import com.stepyen.xutil.shape.ShapeBuilder;
+import com.stepyen.xutil.tip.ToastUtils;
 import com.xuexiang.xpage.annotation.Page;
 import java.util.List;
 import butterknife.BindView;
@@ -20,8 +23,12 @@ import butterknife.BindView;
  */
 @Page(name = "标签布局")
 public class TagLayoutFragment extends BaseFragment {
-    @BindView(R.id.autonew_layout)
-    AutoNewLineLayout mAutonewLayout;
+    @BindView(R.id.ftl_tag_none)
+    FlowTagLayout ftl_tag_none;
+    @BindView(R.id.ftl_tag_single_select)
+    FlowTagLayout ftl_tag_single_select;
+    @BindView(R.id.ftl_tag_multiple_select)
+    FlowTagLayout ftl_tag_multiple_select;
 
     @Override
     protected int getLayoutId() {
@@ -30,7 +37,9 @@ public class TagLayoutFragment extends BaseFragment {
 
     @Override
     protected void initViews() {
-        initTag(mAutonewLayout, DataProvider.getTags());
+        initTag(ftl_tag_none, DataProvider.getTags());
+        initSingleSelect();
+        initMultipleSelect();
     }
 
 
@@ -60,4 +69,20 @@ public class TagLayoutFragment extends BaseFragment {
             viewParent.addView(tv);
         }
     }
+
+    private void initSingleSelect() {
+
+    }
+
+    private void initMultipleSelect() {
+        ftl_tag_multiple_select.setItems(DataProvider.getTags().subList(0, 5));
+        ftl_tag_multiple_select.setOnTagClickListener(new FlowTagLayout.OnTagClickListener() {
+            @Override
+            public void onItemClick(FlowTagLayout parent, View view, int position) {
+                ToastUtils.toast("点击了标签");
+            }
+        });
+
+    }
+
 }

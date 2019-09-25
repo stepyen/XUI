@@ -81,6 +81,8 @@
         <item name="xui_config_size_item_space">@dimen/xui_config_size_item_space</item>
         <item name="xui_config_size_item">@dimen/xui_config_size_item</item>
         <item name="xui_config_size_line">@dimen/xui_config_size_line</item>
+        <item name="xui_config_content_spacing_horizontal">@dimen/xui_config_content_spacing_horizontal_phone</item>
+        <item name="xui_config_content_spacing_vertical">@dimen/xui_config_content_spacing_vertical_phone</item>
 
         <item name="xui_config_color_background">@color/xui_config_color_background_phone</item>
         <item name="xui_config_color_line">@color/xui_config_color_line</item>

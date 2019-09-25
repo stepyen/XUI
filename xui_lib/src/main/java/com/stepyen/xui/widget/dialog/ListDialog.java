@@ -20,7 +20,9 @@ import com.stepyen.xui.utils.ResUtils;
 /**
  * date：2019/7/29
  * author：stepyen
- * description：
+ * description：列表对话框
+ * 上面是列表，下面有个取消选项
+ *
  */
 public class ListDialog extends BaseDialog<ListDialog> {
     private final LinearLayout mLlParent;

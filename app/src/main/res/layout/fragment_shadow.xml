@@ -15,9 +15,11 @@
         android:layout_margin="20dp"
         app:xui_shadowAlpha="0.4"
         app:xui_shadowElevation="25dp"
+
         app:xui_radius="3dp"
         app:xui_borderColor="#F5F5FF"
         app:xui_borderWidth="1dp"
+        android:background="@color/white"
         >
 
         <View
@@ -27,4 +29,30 @@
             ></View>
     </com.stepyen.xui.widget.layout.XUILinearLayout>
 
+    <com.stepyen.xui.widget.layout.XUILinearLayout
+        android:id="@+id/XUILinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        app:xui_shadowAlpha="0.4"
+        app:xui_shadowElevation="25dp"
+
+        app:xui_radius="3dp"
+        app:xui_borderColor="#F5F5FF"
+        app:xui_borderWidth="1dp"
+        android:background="@color/white"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            ></View>
+    </com.stepyen.xui.widget.layout.XUILinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试"
+        />
 </LinearLayout>

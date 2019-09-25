@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.stepyen.xuidemo.R;
-import com.stepyen.xuidemo.adapter.BaseListAdapter;
+import com.stepyen.xui.adapter.BaseListAdapter;
 import com.stepyen.xutil.common.StringUtils;
 
 import java.util.List;

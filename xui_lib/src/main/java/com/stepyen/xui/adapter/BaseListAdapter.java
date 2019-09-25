@@ -1,4 +1,4 @@
-package com.stepyen.xuidemo.adapter;
+package com.stepyen.xui.adapter;
 
 import android.content.Context;
 import android.view.View;

@@ -5,4 +5,6 @@
     <color name="colorAccent">#D81B60</color>
 
 
+    <color name="shadow_color">#F5F5FF</color>
+
 </resources>

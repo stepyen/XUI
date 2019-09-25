@@ -3,15 +3,6 @@
 <!--控件的自定义属性-->
 <resources>
 
-
-    <!--自动换行-->
-    <declare-styleable name="AutoNewLineLayout">
-        <attr name="max_row" format="integer" />
-        <attr name="max_column" format="integer" />
-        <attr name="vertical_space" format="dimension" />
-        <attr name="horizontal_space" format="dimension" />
-    </declare-styleable>
-
     <!--ActionBar  TitleBar-->
     <declare-styleable name="TitleBar">
         <!--标题栏的高度，默认52dp-->
@@ -854,4 +845,29 @@
         <!--轮廓是否使用内边距，默认false-->
         <attr name="xui_outlineExcludePadding" format="boolean" />
     </declare-styleable>
+
+
+    <!--FlowTagLayout-->
+    <declare-styleable name="FlowTagLayout">
+        <!--选择模式，默认不可选-->
+        <attr name="ftl_check_mode" format="enum">
+            <!--不可选择-->
+            <enum name="none" value="0" />
+            <!--单选-->
+            <enum name="single" value="1" />
+            <!--多选-->
+            <enum name="multi" value="2" />
+            <!--只是展示-->
+            <enum name="display" value="3" />
+        </attr>
+<!--        设置默认的数据-->
+        <attr name="ftl_entries" format="reference" />
+<!--        设置选择的数据-->
+        <attr name="ftl_selecteds" format="reference" />
+        <attr name="max_row" format="integer" />
+        <attr name="max_column" format="integer" />
+        <attr name="vertical_space" format="dimension" />
+        <attr name="horizontal_space" format="dimension" />
+    </declare-styleable>
+
 </resources>
