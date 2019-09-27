@@ -15,7 +15,6 @@ public class MaterialSpinnerAdapter<T> extends MaterialSpinnerBaseAdapter {
         super(context);
         mItems = items;
     }
-
     @Override
     public int getCount() {
         return mItems != null ? mItems.size() - 1 : 0;

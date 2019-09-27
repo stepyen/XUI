@@ -8,12 +8,45 @@
     android:layout_height="match_parent"
 >
 
+
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="图标View   IconImageView"
+        />
+    <com.stepyen.xui.widget.imageview.IconImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:iiv_icon_scale="0.5"
+        app:iiv_is_show="true"
+        app:iiv_icon="@drawable/bg_splash"
+        android:src="@drawable/ic_auction_prefecture"
+        android:background="@color/colorPrimary"
+        />
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="单张图片预览 PreviewBuilder"
+        />
+
     <ImageView
         android:id="@+id/iv_preview"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/img_beautiful_scenery"
+        android:src="@drawable/bg_splash"
         android:scaleType="centerCrop"
         />
+
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="九宫图和多张图片预览 NineGridImageView"
+        />
+    <com.stepyen.xui.widget.imageview.nine.NineGridImageView
+        android:id="@+id/ngl_images"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ngiv_imgGap="3dp"
+        app:ngiv_showStyle="grid"
+        app:ngiv_singleImgSize="500dp" />
+
+
 
 </LinearLayout>

@@ -3,5 +3,11 @@
 
     <application>
         <activity android:name=".TestActivity"></activity>
+
+        <activity
+            android:name=".widget.imageview.preview.ui.PreviewActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".widget.imageview.preview.ui.VideoPlayerActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
     </application>
 </manifest>

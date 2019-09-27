@@ -25,4 +25,8 @@
 
     <string name="xui_count_down_finish">重新获取</string>
 
+    <string name="xui_preview_play_failed">播放失败</string>
+    <string name="xui_preview_count_string">%1$d/%2$d</string>
+
+
 </resources>

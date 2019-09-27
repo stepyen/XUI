@@ -98,6 +98,11 @@ public class PickerViewFragment extends BaseTestFragment {
             public void isMaximum() {
                 ToastUtils.toast("已经是最大了");
             }
+
+            @Override
+            public void numberChange(int number) {
+
+            }
         });
 
 

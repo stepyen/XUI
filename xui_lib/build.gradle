@@ -50,7 +50,5 @@ dependencies {
     implementation deps.okhttputils
 
 
-    api 'com.github.chrisbanes:PhotoView:2.0.0'
-
 }
 apply from: '../JitPackUpload.gradle'
