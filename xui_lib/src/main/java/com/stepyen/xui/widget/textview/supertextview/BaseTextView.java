@@ -6,7 +6,10 @@ import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import uk.co.chrisjenx.calligraphy.HasTypeface;
@@ -25,6 +28,7 @@ public class BaseTextView extends LinearLayout implements HasTypeface {
     public BaseTextView(Context context) {
         super(context);
         init(context);
+
     }
 
     public BaseTextView(Context context, AttributeSet attrs) {

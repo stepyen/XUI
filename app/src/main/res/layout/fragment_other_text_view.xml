@@ -1,30 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
-
-    <TextView
-        style="@style/TextView_hint_tag"
-        android:text="商城倒计时"
-        />
-
-    <com.daidingkang.SnapUpCountDownTimerView
-        android:id="@+id/RushBuyCountDownTimerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        app:viewSize="12">
-    </com.daidingkang.SnapUpCountDownTimerView>
-
-    <TextView
-        style="@style/TextView_hint_tag"
-        android:text="实现shape所有 ShapeTextView"
-        />
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,8 +20,7 @@
             android:text="圆角为高度一半"
             android:textColor="@color/white"
             app:sCornersRadius="5dp"
-            app:sIsRadiusAdjustBounds="true"
-            />
+            app:sIsRadiusAdjustBounds="true" />
 
         <com.stepyen.xui.widget.textview.ShapeTextView
             android:layout_width="wrap_content"
@@ -52,7 +31,7 @@
             app:sCornersRadius="5dp"
             app:sSelectorNormalColor="@color/colorAccent"
             app:sSelectorPressedColor="@color/xui_gray_6"
-            app:sUseSelector="true"/>
+            app:sUseSelector="true" />
 
         <com.stepyen.xui.widget.textview.ShapeTextView
             android:layout_width="wrap_content"
@@ -64,40 +43,62 @@
             app:sSelectorDisableColor="@color/xui_gray_8"
             app:sSelectorNormalColor="@color/colorAccent"
             app:sSelectorPressedColor="@color/colorPrimary"
-            app:sUseSelector="true"/>
+            app:sUseSelector="true" />
 
     </LinearLayout>
 
     <TextView
         style="@style/TextView_hint_tag"
-        android:text="跑马灯 AutoMoveTextView"
-        />
+        android:text="实现shape所有 ShapeTextView" />
 
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="商城倒计时" />
+
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="跑马灯 AutoMoveTextView" />
+
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="键值View OptionItemTitleValue" />
+
+
+    <com.daidingkang.SnapUpCountDownTimerView
+        android:id="@+id/RushBuyCountDownTimerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        app:viewSize="12"></com.daidingkang.SnapUpCountDownTimerView>
 
     <com.stepyen.xui.widget.textview.AutoMoveTextView
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="这个是跑马灯效果，我跑啊，跑啊，跑，怎么还没结束！！！"
         android:layout_marginLeft="@dimen/xui_config_margin"
-        />
-
-    <TextView
-        style="@style/TextView_hint_tag"
-        android:text="跑马灯 AutoMoveTextView"
-        />
+        android:text="这个是跑马灯效果，我跑啊，跑啊，跑，怎么还没结束！！！" />
 
     <com.stepyen.xui.widget.textview.supertextview.OptionItemTitleValue
         android:id="@+id/optv_1"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:paddingLeft="15dp"
-        app:opkv_title="车辆颜色: "
+        app:opkv_title="证件图片: "
         app:opkv_title_color="@color/black"
-        app:opkv_value="红色"
         app:opkv_title_value_space="8dp"
-        android:background="@color/xui_config_color_red"
-        ></com.stepyen.xui.widget.textview.supertextview.OptionItemTitleValue>
+        app:opkv_value="查看"
+        app:opkv_value_color="@color/xui_config_color_red" />
 
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="标记 BadgeView" />
 
+    <ImageView
+        android:id="@+id/iv_badge"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_action_setting"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        />
 
 </LinearLayout>

@@ -50,9 +50,25 @@
             ></View>
     </com.stepyen.xui.widget.layout.XUILinearLayout>
 
+
+    <com.stepyen.xui.widget.layout.XUILinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        app:xui_radius="10dp"
+        app:xui_borderColor="#000000"
+        app:xui_borderWidth="3dp"
+        android:background="@color/xui_config_color_red"
+        >
+
+    </com.stepyen.xui.widget.layout.XUILinearLayout>
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="测试"
         />
+
+
 </LinearLayout>
