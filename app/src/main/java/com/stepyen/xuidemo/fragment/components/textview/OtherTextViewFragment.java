@@ -1,8 +1,6 @@
 package com.stepyen.xuidemo.fragment.components.textview;
 
-import android.support.v7.util.DiffUtil;
 import android.view.Gravity;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
@@ -11,7 +9,7 @@ import com.stepyen.xui.utils.ResUtils;
 import com.stepyen.xui.widget.textview.supertextview.OptionItemTitleValue;
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.BaseFragment;
-import com.stepyen.xuidemo.fragment.components.textview.badge.BadgeView;
+import com.stepyen.xui.widget.textview.badge.BadgeView;
 import com.stepyen.xutil.tip.ToastUtils;
 import com.xuexiang.xpage.annotation.Page;
 

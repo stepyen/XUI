@@ -1,4 +1,5 @@
-package com.stepyen.xuidemo.fragment.components.textview.badge;
+
+package com.stepyen.xui.widget.textview.badge;
 
 import android.graphics.PointF;
 import android.graphics.drawable.Drawable;
