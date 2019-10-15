@@ -92,13 +92,22 @@
         style="@style/TextView_hint_tag"
         android:text="标记 BadgeView" />
 
-    <ImageView
-        android:id="@+id/iv_badge"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/ic_action_setting"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        />
+
+    <FrameLayout
+        android:id="@+id/fl_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        >
+        <ImageView
+            android:id="@+id/iv_badge"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_action_setting"
+            />
+
+    </FrameLayout>
+
+
 
 </LinearLayout>

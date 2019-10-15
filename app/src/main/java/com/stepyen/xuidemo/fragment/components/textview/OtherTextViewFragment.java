@@ -3,6 +3,7 @@ package com.stepyen.xuidemo.fragment.components.textview;
 import android.support.v7.util.DiffUtil;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.daidingkang.SnapUpCountDownTimerView;
@@ -43,8 +44,10 @@ public class OtherTextViewFragment extends BaseFragment {
                 });
 
         ImageView badgeIv = findViewById(R.id.iv_badge);
+        FrameLayout badgeFl = findViewById(R.id.fl_badge);
         new BadgeView(getContext())
-                .bindTarget(badgeIv)
+                .bindTarget(badgeFl)
+                .setGravityOffset(5,5,true)
                 .setBadgeNumber(5)
                 .setBadgeGravity(Gravity.TOP | Gravity.END)
                 .setBadgeTextColor(ResUtils.getColor(R.color.white))
