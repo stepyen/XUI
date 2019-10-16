@@ -5,11 +5,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.stepyen.xui.widget.linearlayout.FlowTagLayout;
+import com.stepyen.xui.widget.linearlayout.StarLayout;
+import com.stepyen.xui.widget.linearlayout.flow_tag.FlowTagLayout;
 import com.stepyen.xuidemo.DataProvider;
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.BaseFragment;
 import com.stepyen.xutil.display.DensityUtils;
+import com.stepyen.xutil.resource.ResUtils;
 import com.stepyen.xutil.shape.ShapeBuilder;
 import com.stepyen.xutil.tip.ToastUtils;
 import com.xuexiang.xpage.annotation.Page;
@@ -29,6 +31,8 @@ public class TagLayoutFragment extends BaseFragment {
     FlowTagLayout ftl_tag_single_select;
     @BindView(R.id.ftl_tag_multiple_select)
     FlowTagLayout ftl_tag_multiple_select;
+    @BindView(R.id.starlayout)
+    StarLayout starLayout;
 
     @Override
     protected int getLayoutId() {
@@ -40,6 +44,19 @@ public class TagLayoutFragment extends BaseFragment {
         initTag(ftl_tag_none, DataProvider.getTags());
         initSingleSelect();
         initMultipleSelect();
+        initStarLayout();
+    }
+
+    private void initStarLayout() {
+        starLayout.setAllNumber(5);
+        starLayout.setDefaultStarWidth(DensityUtils.dip2px(34f));
+        starLayout.setDefaultStarHeight(DensityUtils.dip2px(30f));
+        starLayout.setCheckStartDrawable(R.drawable.ic_star_check);
+        starLayout.setDefaultStartDrawable(R.drawable.ic_star_default);
+        starLayout.initView();
+
+        starLayout.setNumber(3);
+
     }
 
 

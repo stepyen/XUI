@@ -1,9 +1,10 @@
-package com.stepyen.xui.widget.linearlayout;
+package com.stepyen.xui.widget.linearlayout.flow_tag;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 import com.stepyen.xui.R;
+import com.stepyen.xui.widget.linearlayout.flow_tag.BaseTagAdapter;
 
 /**
  * 默认流标签布局适配器

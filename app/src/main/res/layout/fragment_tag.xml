@@ -13,7 +13,7 @@
         android:text="自动换行 AutoNewLineLayout"
         />
 
-    <com.stepyen.xui.widget.linearlayout.FlowTagLayout
+    <com.stepyen.xui.widget.linearlayout.flow_tag.FlowTagLayout
         android:id="@+id/ftl_tag_none"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         style="@style/TextView_hint_tag"
         android:text="单选"
         />
-    <com.stepyen.xui.widget.linearlayout.FlowTagLayout
+    <com.stepyen.xui.widget.linearlayout.flow_tag.FlowTagLayout
         android:id="@+id/ftl_tag_single_select"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,10 +48,20 @@
         style="@style/TextView_hint_tag"
         android:text="多选"
         />
-    <com.stepyen.xui.widget.linearlayout.FlowTagLayout
+    <com.stepyen.xui.widget.linearlayout.flow_tag.FlowTagLayout
         android:id="@+id/ftl_tag_multiple_select"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:ftl_check_mode="multi"
+        />
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="星星评分 StarLayout"
+        />
+    <com.stepyen.xui.widget.linearlayout.StarLayout
+        android:id="@+id/starlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
         />
 </LinearLayout>

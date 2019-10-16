@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'com.xuexiang.xaop' //引用xaop插件
 android {
     compileSdkVersion build_versions.target_sdk
@@ -18,7 +21,14 @@ android {
                 arguments = [ moduleName : project.getName() ]
             }
         }
+
     }
+
+    androidExtensions{
+        // 支持kotlin使用注解实现 Pracelable
+        experimental = true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -54,7 +64,7 @@ dependencies {
     implementation  deps.glide
 
     implementation deps.butterknife.runtime
-    annotationProcessor deps.butterknife.compiler
+    kapt deps.butterknife.compiler
 
     api project(path: ':xui_lib')
 
@@ -68,7 +78,7 @@ dependencies {
 
     //XPage
     implementation 'com.github.xuexiangjys.XPage:xpage-lib:2.2.6'
-    annotationProcessor project(':widget_compiler')
+    kapt project(':widget_compiler')
 
     //倒计时
     implementation 'com.daidingkang:snapupcountdowntimerview:1.0.0'

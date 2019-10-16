@@ -1,13 +1,6 @@
-
 package com.stepyen.xui.widget.textview.badge;
-
 import android.graphics.PointF;
-
 import java.util.List;
-
-/**
- *
- */
 public class MathUtils {
 
     private MathUtils() {

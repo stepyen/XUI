@@ -1,4 +1,4 @@
-package com.stepyen.xui.widget.linearlayout;
+package com.stepyen.xui.widget.linearlayout.flow_tag;
 
 import android.content.Context;
 import android.content.res.TypedArray;

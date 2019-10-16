@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion build_versions.target_sdk
@@ -12,7 +15,10 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
-
+    androidExtensions{
+        // 支持kotlin使用注解实现 Pracelable
+        experimental = true
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -38,7 +44,7 @@ dependencies {
     api deps.support.recyclerview
 
     implementation deps.butterknife.runtime
-    annotationProcessor deps.butterknife.compiler
+    kapt deps.butterknife.compiler
 
     compileOnly deps.glide
     // 字体
@@ -46,7 +52,7 @@ dependencies {
     implementation 'com.nineoldandroids:library:2.4.0'
 
 
-
+    api"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation deps.okhttputils
 
 
