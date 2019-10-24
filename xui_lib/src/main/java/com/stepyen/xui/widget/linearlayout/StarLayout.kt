@@ -35,8 +35,8 @@ class StarLayout : LinearLayout {
         }
     var defaultStartDrawable = 0
 
-    private var checkStarWidth = defaultStarWidth
-    private var checkStarHeight = defaultStarHeight
+    var checkStarWidth = defaultStarWidth
+    var checkStarHeight = defaultStarHeight
     var checkStartDrawable = 0
 
     var starSpace: Int = DensityUtils.dp2px(5f)
