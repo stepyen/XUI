@@ -1,74 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
-    >
-
-    <com.stepyen.xui.widget.layout.XUILinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_margin="20dp"
-        app:xui_shadowAlpha="0.4"
-        app:xui_shadowElevation="25dp"
-
-        app:xui_radius="3dp"
-        app:xui_borderColor="#F5F5FF"
-        app:xui_borderWidth="1dp"
-        android:background="@color/white"
-        >
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            ></View>
-    </com.stepyen.xui.widget.layout.XUILinearLayout>
+    android:orientation="vertical">
 
     <com.stepyen.xui.widget.layout.XUILinearLayout
         android:id="@+id/XUILinearLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_margin="20dp"
-        app:xui_shadowAlpha="0.4"
-        app:xui_shadowElevation="25dp"
-
-        app:xui_radius="3dp"
-        app:xui_borderColor="#F5F5FF"
-        app:xui_borderWidth="1dp"
         android:background="@color/white"
-        >
+        app:xui_radius="3dp"
+        app:xui_shadowAlpha="0.4"
+        app:xui_shadowElevation="25dp">
 
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            ></View>
+            android:background="@color/white"></View>
     </com.stepyen.xui.widget.layout.XUILinearLayout>
+
+    <com.stepyen.xui.widget.layout.XUILinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        android:background="@color/white"
+        app:xui_borderColor="#F5F5FF"
+
+        app:xui_borderWidth="1dp"
+        app:xui_radius="3dp"
+        app:xui_shadowAlpha="0.4"
+        app:xui_shadowElevation="25dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"></View>
+    </com.stepyen.xui.widget.layout.XUILinearLayout>
+
+    <com.stepyen.xui.widget.layout.XUILinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        android:background="@color/xui_config_color_red"
+        app:xui_borderColor="#000000"
+        app:xui_borderWidth="3dp"
+        app:xui_hideRadiusSide="top"
+        app:xui_radius="10dp" />
 
 
     <com.stepyen.xui.widget.layout.XUILinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_margin="20dp"
-        app:xui_radius="10dp"
-        app:xui_borderColor="#000000"
-        app:xui_borderWidth="3dp"
+
         android:background="@color/xui_config_color_red"
-        >
+        app:xui_bottomDividerColor="#000"
+        app:xui_bottomDividerHeight="5dp"
+        app:xui_bottomDividerInsetLeft="15dp"
 
-    </com.stepyen.xui.widget.layout.XUILinearLayout>
+        app:xui_bottomDividerInsetRight="15dp" />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试"
-        />
+
 
 
 </LinearLayout>

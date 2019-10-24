@@ -99,7 +99,5 @@ public class TagLayoutFragment extends BaseFragment {
                 ToastUtils.toast("点击了标签");
             }
         });
-
     }
-
 }

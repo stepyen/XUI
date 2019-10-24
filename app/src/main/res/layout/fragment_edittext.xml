@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="自定义多行输入框   MultiLineEditText" />
+
+    <com.stepyen.xui.widget.textview.edittext.MultiLineEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/white"
+        app:mlet_contentPadding="10dp"
+        app:mlet_showSurplusNumber="true"
+        app:mlet_contentViewHeight="100dp"
+        app:xui_radius = "5dp"
+        />
+
+
+</LinearLayout>

@@ -24,11 +24,19 @@ class StarLayout : LinearLayout {
     private var number = 0
 
     var defaultStarWidth = DensityUtils.dp2px(12f)
+        set(value) {
+            field = value
+            checkStarWidth = value
+        }
     var defaultStarHeight = DensityUtils.dp2px(12f)
+        set(value) {
+            field = value
+            checkStarHeight = value
+        }
     var defaultStartDrawable = 0
 
-    var checkStarWidth = defaultStarWidth
-    var checkStarHeight = defaultStarHeight
+    private var checkStarWidth = defaultStarWidth
+    private var checkStarHeight = defaultStarHeight
     var checkStartDrawable = 0
 
     var starSpace: Int = DensityUtils.dp2px(5f)

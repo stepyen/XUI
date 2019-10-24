@@ -10,6 +10,7 @@
         <solid android:color="@android:color/white" />
         <stroke
             android:width="@dimen/xui_list_divider_height_table"
-            android:color="@color/xui_config_color_separator_dark_tablet" />
+            android:color="@color/xui_config_color_separator_dark_tablet"
+            />
     </shape>
 </inset>
