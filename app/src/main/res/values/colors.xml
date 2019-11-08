@@ -7,4 +7,6 @@
 
     <color name="shadow_color">#F5F5FF</color>
 
+    <color name="circular_arc_progress_view_first_background_color">#FF6347</color>
+    <color name="circular_arc_progress_view_first_progress_color">#FFAEB9</color>
 </resources>

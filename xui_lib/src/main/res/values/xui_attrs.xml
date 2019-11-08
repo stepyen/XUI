@@ -931,4 +931,17 @@
 
 
 
+    <declare-styleable name="CircularArcProgressView">
+        <!--背景颜色-->
+        <attr name="capv_background_color" format="color" />
+        <!--当前进度背景颜色-->
+        <attr name="capv_progress_color" format="color" />
+        <!--进度文本颜色-->
+        <attr name="capv_progress_text_color" format="color" />
+        <!--当前进度-->
+        <attr name="capv_percent" format="float" />
+        <!--是否显示进度文本-->
+        <attr name="capv_is_show_progress_text" format="boolean" />
+    </declare-styleable>
+
 </resources>

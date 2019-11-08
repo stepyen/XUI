@@ -1,8 +1,18 @@
 package com.stepyen.xuidemo.fragment.components;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.stepyen.xui.widget.progress.CircularArcProgressView;
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.BaseFragment;
 import com.xuexiang.xpage.annotation.Page;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * date：2019/7/4
@@ -11,6 +21,10 @@ import com.xuexiang.xpage.annotation.Page;
  */
 @Page(name = "进度条", extra = R.drawable.ic_widget_imageview)
 public class ProgressFragment extends BaseFragment {
+    @BindView(R.id.capv_first)
+    CircularArcProgressView mCapvFirst;
+
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_progress;
@@ -18,6 +32,10 @@ public class ProgressFragment extends BaseFragment {
 
     @Override
     protected void initViews() {
+        mCapvFirst.startAnimator(1000);
+
+
 
     }
+
 }

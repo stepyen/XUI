@@ -9,10 +9,35 @@
 
 >
 
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="圆形进度 MiniLoadingView"
+        />
+
     <com.stepyen.xui.widget.progress.loading.MiniLoadingView
         android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:background="@color/xui_gray_6"
         />
+
+    <TextView
+        style="@style/TextView_hint_tag"
+        android:text="圆形进度 CircularArcProgressView"
+        />
+
+    <com.stepyen.xui.widget.progress.CircularArcProgressView
+        android:id="@+id/capv_first"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_margin="20dp"
+        app:capv_background_color="@color/circular_arc_progress_view_first_background_color"
+        app:capv_is_show_progress_text="true"
+        app:capv_percent="0.8"
+        app:capv_progress_color="@color/circular_arc_progress_view_first_progress_color"
+
+        />
+
+
+
 </LinearLayout>
