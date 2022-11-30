@@ -489,9 +489,17 @@
     <declare-styleable name="ClearEditText">
         <!--清除按钮的图片资源-->
         <attr name="cet_clearIcon" format="reference" />
-        <!--清除按钮的图片尺寸-->
-        <attr name="cet_clearIconSize" format="dimension" />
+
+        <!--清除按钮的图片宽-->
+        <attr name="cet_clearIconWidth" format="dimension" />
+        <attr name="cet_clearIconHeight" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="YClearEditTextView">
+
+
+    </declare-styleable>
+
     <attr name="ClearEditTextStyle" format="reference" />
 
     <!-- PasswordEditText -->

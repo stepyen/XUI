@@ -16,7 +16,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
@@ -26,8 +25,7 @@ import com.stepyen.xui.R;
 import com.stepyen.xui.utils.DensityUtils;
 import com.stepyen.xui.utils.ResUtils;
 import com.stepyen.xui.utils.Utils;
-import com.stepyen.xui.widget.CommonType;
-import com.stepyen.xui.widget.textview.edittext.ClearEditText;
+import com.stepyen.xui.widget.textview.edittext.ClearEditTextView;
 import com.stepyen.xui.widget.textview.edittext.PasswordEditText;
 
 import uk.co.chrisjenx.calligraphy.HasTypeface;
@@ -732,7 +730,7 @@ public class OptionItem extends RelativeLayout implements HasTypeface {
                 if (mEditTextButtonType == TYPE_NONE) {
                     mCenterEditText = new AppCompatEditText(mContext);
                 } else if (mEditTextButtonType == TYPE_CLEAR) {
-                    mCenterEditText = new ClearEditText(mContext);
+                    mCenterEditText = new ClearEditTextView(mContext).getEditText();
                 } else if (mEditTextButtonType == TYPE_PASSWORD) {
                     mCenterEditText = new PasswordEditText(mContext);
                 }
@@ -755,15 +753,16 @@ public class OptionItem extends RelativeLayout implements HasTypeface {
             } else {
                 mCenterEditText.setBackgroundColor(ResUtils.getColor(R.color.transparent));
             }
-            mCenterEditText.setTextColor(mCenterTextColor);
-            mCenterEditText.setTextSize(TypedValue.COMPLEX_UNIT_PX, mCenterTextSize);
-            mCenterEditText.setMaxLines(mCenterLines);
-            mCenterEditText.setText(mEditTextString);
-            mCenterEditText.setHint(mEditTextHint);
-            mCenterEditText.setGravity(mEditTextGravity);
+            EditText editText = mCenterEditText;
+            editText.setTextColor(mCenterTextColor);
+            editText.setTextSize(TypedValue.COMPLEX_UNIT_PX, mCenterTextSize);
+            editText.setMaxLines(mCenterLines);
+            editText.setText(mEditTextString);
+            editText.setHint(mEditTextHint);
+            editText.setGravity(mEditTextGravity);
 
             if (mEditTextInputType != -1) {
-                mCenterEditText.setInputType(mEditTextInputType);
+                editText.setInputType(mEditTextInputType);
             }
 
             addView(mCenterEditText);

@@ -11,7 +11,7 @@ import java.util.TimerTask;
  * 功能：
  * 1、支持 计时 和 倒计时
  */
-public class YUICountTimeHelp {
+public class CountTimeHelp {
 
     // 是否是倒计时
     private boolean isCountDownTime = false;
@@ -39,29 +39,29 @@ public class YUICountTimeHelp {
     private TimerTask timerTask;
 
 
-    private YUICountTimeHelp(boolean isCountDownTime, long maxCountTime) {
+    private CountTimeHelp(boolean isCountDownTime, long maxCountTime) {
         this.isCountDownTime = isCountDownTime;
         reset(maxCountTime);
         timer = new Timer();
     }
 
 
-    public static YUICountTimeHelp newCountDownHelp(long maxCountTime) {
+    public static CountTimeHelp newCountDownHelp(long maxCountTime) {
         if (maxCountTime <= 0) {
             throw new IllegalStateException("倒计时时间不能小于等于0");
         }
-        return new YUICountTimeHelp(true, maxCountTime);
+        return new CountTimeHelp(true, maxCountTime);
     }
 
-    public static YUICountTimeHelp newCountUpHelp() {
-        return new YUICountTimeHelp(false, -1);
+    public static CountTimeHelp newCountUpHelp() {
+        return new CountTimeHelp(false, -1);
     }
 
-    public static YUICountTimeHelp newCountUpHelp(long maxCountTime) {
+    public static CountTimeHelp newCountUpHelp(long maxCountTime) {
         if (maxCountTime <= 0) {
             throw new IllegalStateException("计时时间不能小于等于0");
         }
-        return new YUICountTimeHelp(false, maxCountTime);
+        return new CountTimeHelp(false, maxCountTime);
     }
 
     /**
@@ -77,7 +77,7 @@ public class YUICountTimeHelp {
             return;
         }
 
-        synchronized (YUICountTimeHelp.class) {
+        synchronized (CountTimeHelp.class) {
 
             if (timer == null || timerTask != null) {
                 return;
