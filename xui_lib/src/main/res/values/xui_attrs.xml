@@ -500,7 +500,6 @@
 
     </declare-styleable>
 
-    <attr name="ClearEditTextStyle" format="reference" />
 
     <!-- PasswordEditText -->
     <declare-styleable name="PasswordEditText">

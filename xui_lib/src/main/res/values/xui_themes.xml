@@ -54,7 +54,6 @@
 
         <!--XUI 提供的样式-->
         <item name="TitleBarStyle">@style/TitleBar</item>
-        <item name="ClearEditTextStyle">@style/EditText.Clear</item>
         <item name="PasswordEditTextStyle">@style/EditText.Password</item>
 
     </style>
