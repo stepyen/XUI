@@ -1,8 +1,6 @@
 package com.stepyen.xuidemo.fragment;
 
 import android.content.res.Configuration;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +20,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 
 /**
@@ -54,7 +54,7 @@ public abstract class BaseHomeFragment extends BaseFragment implements BaseRecyc
         return titleBar;
     }
 
-    @Override
+
     protected int getLayoutId() {
         return R.layout.fragment_home_container;
     }

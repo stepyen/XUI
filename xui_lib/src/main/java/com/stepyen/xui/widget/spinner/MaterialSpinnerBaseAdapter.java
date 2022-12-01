@@ -3,8 +3,7 @@ package com.stepyen.xui.widget.spinner;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Build;
-import android.support.annotation.ColorInt;
-import android.support.annotation.DrawableRes;
+
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +12,10 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.stepyen.xui.R;
 import java.util.List;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.DrawableRes;
+
 /**
  * 基础Spinner适配器
  *

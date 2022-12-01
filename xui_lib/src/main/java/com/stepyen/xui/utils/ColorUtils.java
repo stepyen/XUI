@@ -2,9 +2,10 @@
 package com.stepyen.xui.utils;
 
 import android.graphics.Color;
-import android.support.annotation.ColorInt;
 
 import java.util.Random;
+
+import androidx.annotation.ColorInt;
 
 
 /**

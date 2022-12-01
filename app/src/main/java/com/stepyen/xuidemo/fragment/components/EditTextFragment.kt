@@ -2,7 +2,6 @@ package com.stepyen.xuidemo.fragment.components
 
 import com.stepyen.xuidemo.R
 import com.stepyen.xuidemo.base.BaseFragment
-import com.stepyen.xuidemo.base.BaseTestFragment
 import com.xuexiang.xpage.annotation.Page
 
 /**

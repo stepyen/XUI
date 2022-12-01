@@ -1,12 +1,14 @@
 package com.stepyen.xui;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
 import android.widget.LinearLayout;
 
 
 import com.stepyen.xui.utils.ResUtils;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * date：2019/6/28

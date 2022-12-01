@@ -7,10 +7,6 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -21,6 +17,11 @@ import com.stepyen.xui.R;
 import com.stepyen.xui.utils.ResUtils;
 import com.stepyen.xui.widget.banner.recycler.layout.BannerLayoutManager;
 import com.stepyen.xui.widget.banner.recycler.layout.CenterSnapHelper;
+
+import androidx.core.view.GravityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import static android.widget.AbsListView.OnScrollListener.SCROLL_STATE_IDLE;
 

@@ -1,7 +1,7 @@
 package com.stepyen.xuidemo.base;
 
 import android.content.res.Configuration;
-import android.support.v4.app.Fragment;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * 解决输入法内存泄漏, 修改列表样式为主副标题显示

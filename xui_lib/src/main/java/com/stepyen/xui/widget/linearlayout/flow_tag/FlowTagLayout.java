@@ -3,7 +3,7 @@ package com.stepyen.xui.widget.linearlayout.flow_tag;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.database.DataSetObserver;
-import android.support.annotation.NonNull;
+
 import android.util.AttributeSet;
 import android.util.SparseBooleanArray;
 import android.view.View;
@@ -16,6 +16,8 @@ import com.stepyen.xui.utils.ResUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import androidx.annotation.NonNull;
 
 /**
  * date：2019/9/24

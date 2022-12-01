@@ -1,7 +1,7 @@
 
 package com.stepyen.xui.widget.tabbar;
 
-import android.support.v4.util.Pools;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -10,6 +10,9 @@ import com.stepyen.xui.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.core.util.Pools;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * 一个带 cache 功能的“列表型数据-View”的适配器，适用于自定义 {@link View} 需要显示重复单元 {@link ListView} 的情景，

@@ -5,16 +5,16 @@ package com.stepyen.xui.widget.banner.recycler.layout;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
+
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import java.util.ArrayList;
 
-import static android.support.v7.widget.RecyclerView.NO_POSITION;
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class BannerLayoutManager extends RecyclerView.LayoutManager {
@@ -25,6 +25,8 @@ public class BannerLayoutManager extends RecyclerView.LayoutManager {
     public static final int VERTICAL = OrientationHelper.VERTICAL;
 
     private static final int DIRECTION_NO_WHERE = -1;
+
+    private static final int NO_POSITION = -1;
 
     private static final int DIRECTION_FORWARD = 0;
 

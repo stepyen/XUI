@@ -7,7 +7,6 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
-import android.support.v7.widget.AppCompatEditText;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -28,6 +27,7 @@ import com.stepyen.xui.utils.Utils;
 import com.stepyen.xui.widget.textview.edittext.ClearEditTextView;
 import com.stepyen.xui.widget.textview.edittext.PasswordEditText;
 
+import androidx.appcompat.widget.AppCompatEditText;
 import uk.co.chrisjenx.calligraphy.HasTypeface;
 
 /**

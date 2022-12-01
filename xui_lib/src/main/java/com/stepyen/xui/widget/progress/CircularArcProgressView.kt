@@ -5,12 +5,12 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
 import android.os.Build
-import android.support.annotation.ColorInt
-import android.support.annotation.RequiresApi
 import android.text.TextPaint
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.AccelerateInterpolator
+import androidx.annotation.ColorInt
+import androidx.annotation.RequiresApi
 import com.stepyen.xui.R
 
 /**

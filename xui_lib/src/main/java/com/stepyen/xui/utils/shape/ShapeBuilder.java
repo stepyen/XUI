@@ -2,9 +2,10 @@ package com.stepyen.xui.utils.shape;
 
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
-import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
 import android.view.View;
+
+import androidx.core.content.ContextCompat;
 
 /**
  * date：2018/9/29

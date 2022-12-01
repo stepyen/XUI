@@ -8,10 +8,12 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
+import androidx.appcompat.widget.AppCompatImageView;
+
 /**
  * 九宫图图片
  */
-public class GridImageView extends android.support.v7.widget.AppCompatImageView {
+public class GridImageView extends AppCompatImageView {
 
     public GridImageView(Context context, AttributeSet attrs) {
         super(context, attrs);

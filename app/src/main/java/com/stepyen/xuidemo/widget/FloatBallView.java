@@ -4,12 +4,15 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.support.annotation.Nullable;
+
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
 import com.stepyen.xui.utils.DensityUtils;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
 
 
 /**
@@ -23,7 +26,7 @@ import com.stepyen.xui.utils.DensityUtils;
  * 3、点击 view，移动到屏幕正中间
  * 4、放开 view,自动吸附到屏幕边上
  */
-public class FloatBallView extends android.support.v7.widget.AppCompatImageView {
+public class FloatBallView extends AppCompatImageView {
     private int NAVIGATION_HEIGHT;  // 底部导航栏的高度
     private int TOOLBAR_HEIGHT;      // 首页toolbar高度
 

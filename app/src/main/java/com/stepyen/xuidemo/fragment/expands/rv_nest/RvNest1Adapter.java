@@ -1,6 +1,5 @@
 package com.stepyen.xuidemo.fragment.expands.rv_nest;
 
-import android.support.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.MultipleItemRvAdapter;
@@ -9,6 +8,8 @@ import com.stepyen.xuidemo.fragment.expands.rv_nest.item_provider.RecycleviewIte
 import com.stepyen.xuidemo.fragment.expands.rv_nest.item_provider.ViewpagerItemProvider;
 
 import java.util.List;
+
+import androidx.annotation.Nullable;
 
 /**
  * date：2019/7/9

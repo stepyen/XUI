@@ -1,7 +1,7 @@
 package com.stepyen.xuidemo.base;
 
 import android.content.Intent;
-import android.support.v4.content.ContextCompat;
+
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +15,7 @@ import com.stepyen.xui.utils.DensityUtils;
 import com.stepyen.xui.utils.ResUtils;
 import com.stepyen.xuidemo.R;
 
+import androidx.core.content.ContextCompat;
 import butterknife.ButterKnife;
 
 /**
@@ -109,7 +110,7 @@ public abstract class BaseTestFragment extends BaseFragment {
         }
         LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) view.getLayoutParams();
         if (lp != null) {
-            lp.setMargins(DensityUtils.dp2px(mActivity, 15), DensityUtils.dp2px(mActivity, marginTop), lp.rightMargin, DensityUtils.dp2px(mActivity, 10));
+            lp.setMargins(DensityUtils.dp2px(getContext(), 15), DensityUtils.dp2px(getContext(), marginTop), lp.rightMargin, DensityUtils.dp2px(getContext(), 10));
             view.setLayoutParams(lp);
         }
     }
@@ -136,7 +137,7 @@ public abstract class BaseTestFragment extends BaseFragment {
     }
 
     public void showToast(String str) {
-        Toast.makeText(mActivity, str, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), str, Toast.LENGTH_SHORT).show();
     }
 
 }

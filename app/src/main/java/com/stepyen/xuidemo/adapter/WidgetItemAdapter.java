@@ -1,9 +1,11 @@
 package com.stepyen.xuidemo.adapter;
 
-import com.stepyen.xuidemo.adapter.base.BaseRecyclerAdapter;
-import com.xuexiang.xpage.model.PageInfo;
+
+import com.stepyen.xui.utils.ResUtils;
 import com.stepyen.xuidemo.R;
+import com.stepyen.xuidemo.adapter.base.BaseRecyclerAdapter;
 import com.stepyen.xuidemo.adapter.base.RecyclerViewHolder;
+import com.xuexiang.xpage.model.PageInfo;
 
 import java.util.List;
 
@@ -22,7 +24,7 @@ public class WidgetItemAdapter extends BaseRecyclerAdapter<PageInfo> {
     public void bindData(RecyclerViewHolder holder, int position, PageInfo item) {
         holder.getTextView(R.id.item_name).setText(item.getName());
         if (item.getExtra() != 0) {
-            holder.getImageView(R.id.item_icon).setImageResource(item.getExtra());
+//            holder.getImageView(R.id.item_icon).setBackgroundColor(ResUtils.getColor((item.getExtra())));
         }
     }
 

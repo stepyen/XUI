@@ -1,12 +1,17 @@
 package com.stepyen.xuidemo.activity;
-import android.support.design.widget.TabLayout;
+
 import android.os.Bundle;
+
+import com.google.android.material.tabs.TabLayout;
 import com.stepyen.xuidemo.R;
 import com.stepyen.xuidemo.base.BaseActivity;
 import com.stepyen.xuidemo.fragment.ComponentsFragment;
 import com.stepyen.xuidemo.fragment.ExpandsFragment;
 import com.stepyen.xuidemo.fragment.UtilitysFragment;
+
 import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  *
  * 慢慢来，整理自己需要的
@@ -15,15 +20,14 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.tabs)
     TabLayout mTabLayout;
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_main;
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setContentView( R.layout.activity_main);
+        ButterKnife.bind(this);
         initView();
     }
 

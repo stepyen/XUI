@@ -25,7 +25,7 @@
         app:ts_typeface_provider="com.stepyen.xuidemo.fragment.components.indicater.TestTypefaceProvider"
         />
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/contentViewPager2"
         android:layout_width="match_parent"
         android:layout_height="200dp"

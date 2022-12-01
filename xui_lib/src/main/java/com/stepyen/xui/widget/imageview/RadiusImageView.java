@@ -17,12 +17,14 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.support.annotation.ColorInt;
-import android.support.v7.widget.AppCompatImageView;
+
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 import com.stepyen.xui.R;
+
+import androidx.annotation.ColorInt;
+import androidx.appcompat.widget.AppCompatImageView;
 
 /**
  * date：2019/6/26

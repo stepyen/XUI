@@ -3,10 +3,7 @@ package com.stepyen.xui.widget.imageview.preview.ui;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.CallSuper;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewCompat;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +15,11 @@ import com.stepyen.xui.widget.imageview.preview.enitity.IPreviewInfo;
 import com.stepyen.xui.widget.imageview.preview.loader.ISimpleTarget;
 import com.stepyen.xui.widget.imageview.preview.loader.OnVideoClickListener;
 import com.stepyen.xui.widget.imageview.preview.view.SmoothImageView;
+
+import androidx.annotation.CallSuper;
+import androidx.annotation.Nullable;
+import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
 
 
 /**

@@ -2,13 +2,14 @@ package com.stepyen.xui.widget.actionbar;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.stepyen.xui.R;
 import com.stepyen.xui.utils.ThemeUtils;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * 标题栏工具

@@ -33,26 +33,27 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    api "$library.androidx_activity"
+    api "$library.androidx_fragment"
+    api "$library.androidx_multidex"
+    api "$library.androidx_appcompat"
+    api "$library.androidx_constraintlayout"
+    api "$library.androidx_core"
+    api "$library.androidx_core_ktx"
+    api "$library.androidx_activity_ktx"
+    api "$library.androidx_fragment_ktx"
 
-    api(deps.support.app_compat){
-        exclude module: 'support-annotations'
-    }
-    api deps.support.annotations
-    api deps.support.recyclerview
+    api "$library.androidx_recyclerview"
+    api "$library.glide"
 
-    implementation deps.butterknife.runtime
-    kapt deps.butterknife.compiler
+    // kotlin
+    compileOnly( "$library.kotlin_stdlib_jdk7")
+    compileOnly( "$library.kotlin_android_extensions_runtime")
 
-    compileOnly deps.glide
     // 字体
     api 'uk.co.chrisjenx:calligraphy:2.3.0'
     implementation 'com.nineoldandroids:library:2.4.0'
 
-
-    api"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation deps.okhttputils
 
 

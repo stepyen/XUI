@@ -37,7 +37,6 @@ import android.widget.ImageView;
 import com.stepyen.xui.widget.imageview.photoview.PhotoView;
 import com.stepyen.xui.R;
 import com.stepyen.xui.utils.Utils;
-import com.stepyen.xui.widget.imageview.photoview.PhotoView;
 
 /**
  * 可支持缩放的图片控件

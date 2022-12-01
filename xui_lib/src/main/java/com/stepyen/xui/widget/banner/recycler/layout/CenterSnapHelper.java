@@ -2,10 +2,11 @@
 
 package com.stepyen.xui.widget.banner.recycler.layout;
 
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Scroller;
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class CenterSnapHelper extends RecyclerView.OnFlingListener {

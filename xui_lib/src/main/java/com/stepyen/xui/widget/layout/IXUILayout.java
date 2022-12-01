@@ -1,11 +1,13 @@
 
 package com.stepyen.xui.widget.layout;
 
-import android.support.annotation.ColorInt;
-import android.support.annotation.IntDef;
+
 import android.view.View;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.IntDef;
 
 /**
  * 布局封装的接口

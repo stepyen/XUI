@@ -24,7 +24,6 @@ public class BaseActivity extends XPageActivity {
 //    @NorIcons
 //    private static final int[] mNormalIcons = {R.drawable.nav_01_nor, R.drawable.nav_02_nor, R.drawable.nav_04_nor, R.drawable.nav_05_nor};
 
-    Unbinder mUnbinder;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -36,7 +35,7 @@ public class BaseActivity extends XPageActivity {
     protected void onCreate(Bundle savedInstanceState) {
 //        XUI.initTheme(this);
         super.onCreate(savedInstanceState);
-        mUnbinder = ButterKnife.bind(this);
+
     }
 
     /**
@@ -77,7 +76,6 @@ public class BaseActivity extends XPageActivity {
 
     @Override
     protected void onRelease() {
-        mUnbinder.unbind();
         super.onRelease();
     }
 

@@ -1,11 +1,13 @@
 package com.stepyen.xui.widget.alpha;
 
-import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.stepyen.xui.utils.ThemeUtils;
 import com.stepyen.xui.R;
 import java.lang.ref.WeakReference;
+
+import androidx.annotation.NonNull;
+
 /**
  * 透明度辅助工具
  */

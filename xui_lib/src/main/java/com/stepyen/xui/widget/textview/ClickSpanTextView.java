@@ -6,13 +6,15 @@ import android.util.AttributeSet;
 import com.stepyen.xui.R;
 import com.stepyen.xui.utils.ResUtils;
 
+import androidx.appcompat.widget.AppCompatTextView;
+
 /**
  * date：2019-07-27
  * author：stepyen
  * description：点击Span所需配置
  */
 
-public class ClickSpanTextView extends android.support.v7.widget.AppCompatTextView {
+public class ClickSpanTextView extends AppCompatTextView {
 
     public ClickSpanTextView(Context context) {
         this(context, null);

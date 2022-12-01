@@ -1,13 +1,14 @@
 package com.stepyen.xui.widget.banner.widget.loopviewpager;
 
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
+
 import android.util.AttributeSet;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 
 /**

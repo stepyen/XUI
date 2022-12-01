@@ -1,6 +1,6 @@
 package com.stepyen.xuidemo.fragment.components.banner;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
+
 import com.stepyen.xuidemo.base.BaseFragment;
 import com.xuexiang.xpage.annotation.Page;
 import com.stepyen.xui.widget.actionbar.TitleBar;
@@ -8,6 +8,9 @@ import com.stepyen.xui.widget.banner.anim.select.ZoomInEnter;
 import com.stepyen.xui.widget.banner.widget.banner.SimpleGuideBanner;
 import com.stepyen.xuidemo.DataProvider;
 import com.stepyen.xuidemo.R;
+
+import androidx.viewpager.widget.ViewPager;
+
 import static com.stepyen.xuidemo.fragment.components.banner.UserGuideFragment.POSITION;
 
 

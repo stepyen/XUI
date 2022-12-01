@@ -21,7 +21,7 @@ import com.xuexiang.xpage.annotation.Page;
 public class ActionbarFragment extends BaseFragment {
     private LinearLayout linearLayout;
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.fragment_actionbar;
     }
 

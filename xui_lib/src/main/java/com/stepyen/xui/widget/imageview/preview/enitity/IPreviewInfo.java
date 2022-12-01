@@ -3,7 +3,9 @@ package com.stepyen.xui.widget.imageview.preview.enitity;
 
 import android.graphics.Rect;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
+
 
 /**
  * 图片预览接口

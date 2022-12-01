@@ -6,12 +6,15 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.annotation.NonNull;
+
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import com.stepyen.xui.R;
 import com.stepyen.xui.utils.DensityUtils;
+
+import androidx.annotation.NonNull;
+
 /**
  * 用于显示 Loading 的 {@link View}，支持颜色和大小的设置。
  *

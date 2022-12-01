@@ -22,8 +22,7 @@ import android.graphics.Matrix;
 import android.graphics.Matrix.ScaleToFit;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
-import android.support.v4.view.MotionEventCompat;
+
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -42,6 +41,9 @@ import com.stepyen.xui.widget.imageview.photoview.gestures.VersionedGestureDetec
 import com.stepyen.xui.widget.imageview.photoview.scrollerproxy.ScrollerProxy;
 import java.lang.ref.WeakReference;
 
+
+import androidx.annotation.Nullable;
+import androidx.core.view.MotionEventCompat;
 
 import static android.view.MotionEvent.ACTION_CANCEL;
 import static android.view.MotionEvent.ACTION_DOWN;

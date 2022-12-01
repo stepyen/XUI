@@ -1,6 +1,5 @@
 package com.stepyen.xuidemo;
 
-import android.support.v4.view.ViewPager;
 
 import com.stepyen.xui.widget.banner.transform.DepthTransformer;
 import com.stepyen.xui.widget.banner.transform.FadeSlideTransformer;
@@ -12,6 +11,8 @@ import com.stepyen.xui.widget.banner.widget.banner.BannerItem;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * date：2019/6/24

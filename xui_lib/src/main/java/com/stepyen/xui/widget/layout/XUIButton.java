@@ -19,10 +19,12 @@ package com.stepyen.xui.widget.layout;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.support.annotation.ColorInt;
+
 import android.util.AttributeSet;
 
 import com.stepyen.xui.widget.alpha.XUIAlphaButton;
+
+import androidx.annotation.ColorInt;
 
 
 /**

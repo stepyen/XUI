@@ -1,9 +1,11 @@
 package com.stepyen.xuidemo.fragment.components.indicater;
 
 import android.graphics.Typeface;
-import android.support.annotation.Nullable;
+
 
 import com.stepyen.xui.widget.tabbar.TabSegment;
+
+import androidx.annotation.Nullable;
 
 /**
  * date：2019/7/8

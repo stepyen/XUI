@@ -1,7 +1,9 @@
 package com.stepyen.xuidemo.base;
 
 import android.content.res.Configuration;
-import android.support.v4.app.Fragment;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -11,6 +13,11 @@ import com.stepyen.xutil.net.JsonUtil;
 import com.xuexiang.xpage.base.XPageFragment;
 import com.xuexiang.xpage.core.PageOption;
 import com.xuexiang.xpage.enums.CoreAnim;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import butterknife.ButterKnife;
 
 /**
  * date：2019/6/24
@@ -39,6 +46,27 @@ public abstract class BaseFragment extends XPageFragment {
     protected void initListeners() {
 
     }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        mRootView = inflateView(inflater, container);
+        ButterKnife.bind(this, mRootView);
+        initArgs();
+        initPage();
+        return mRootView;
+    }
+
+
+
+    @Override
+    protected View inflateView(LayoutInflater inflater, ViewGroup group) {
+        return inflater.inflate(getLayoutId(), null);
+    }
+
+
+    protected abstract int getLayoutId();
+
 
     /**
      * 打开一个新的页面

@@ -1,8 +1,10 @@
 package com.stepyen.xui.widget.alpha;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatImageButton;
 import android.util.AttributeSet;
+
+import androidx.appcompat.widget.AppCompatImageButton;
+
 /**
  * 在 pressed 和 disabled 时改变 View 的透明度
  */

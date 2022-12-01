@@ -2,12 +2,14 @@ package com.stepyen.xui.widget.dialog;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.support.annotation.StyleRes;
+
 import android.widget.TextView;
 import com.stepyen.xui.R;
 import com.stepyen.xui.widget.progress.IMessageLoader;
 import com.stepyen.xui.widget.progress.LoadingCancelListener;
 import com.stepyen.xui.widget.progress.loading.MiniLoadingView;
+
+import androidx.annotation.StyleRes;
 
 /**
  * 迷你loading加载

@@ -12,12 +12,14 @@ import com.stepyen.xui.R;
 import com.stepyen.xui.widget.alpha.IAlphaViewHelper;
 import com.stepyen.xui.widget.alpha.XUIAlphaViewHelper;
 
+import androidx.appcompat.widget.AppCompatTextView;
+
 
 /**
  * 超级TextView  实现shape所有的属性
  *
  */
-public class ShapeTextView extends android.support.v7.widget.AppCompatTextView {
+public class ShapeTextView extends AppCompatTextView {
 
     private Context mContext;
 

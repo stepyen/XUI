@@ -14,13 +14,15 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.os.Build;
-import android.support.annotation.ColorInt;
+
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import com.stepyen.xui.R;
 import com.stepyen.xui.utils.ThemeUtils;
 import java.lang.ref.WeakReference;
+
+import androidx.annotation.ColorInt;
 
 /**
  * 布局辅助工具

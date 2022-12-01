@@ -1,13 +1,15 @@
 package com.stepyen.xui.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 
 import com.stepyen.xui.utils.Utils;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * 基础启动页

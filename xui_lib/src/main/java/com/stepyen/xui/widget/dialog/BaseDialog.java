@@ -3,8 +3,7 @@ package com.stepyen.xui.widget.dialog;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.StyleRes;
-import android.support.v7.app.AppCompatDialog;
+
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -13,6 +12,9 @@ import android.view.WindowManager;
 import com.stepyen.xui.R;
 import com.stepyen.xui.utils.KeyboardUtils;
 import com.stepyen.xui.utils.ResUtils;
+
+import androidx.annotation.StyleRes;
+import androidx.appcompat.app.AppCompatDialog;
 
 /**
  * 基类Dialog

@@ -2,19 +2,21 @@ package com.stepyen.xuidemo;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.multidex.MultiDex;
 
 import com.stepyen.xui.XUI;
 import com.stepyen.xuidemo.base.BaseActivity;
 import com.stepyen.xutil.XUtil;
 import com.xuexiang.xaop.XAOP;
-import com.xuexiang.xpage.AppPageConfig;
+
 import com.xuexiang.xpage.PageConfig;
 import com.xuexiang.xpage.PageConfiguration;
+import com.xuexiang.xpage.base.XPageActivity;
 import com.xuexiang.xpage.model.PageInfo;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.multidex.MultiDex;
 
 /**
  * date：2019/6/24
@@ -57,17 +59,25 @@ public class App extends Application {
     }
 
     private void initPage() {
+//        PageConfig.getInstance()
+//                .setPageConfiguration(new PageConfiguration() { //页面注册
+//                    @Override
+//                    public List<PageInfo> registerPages(Context context) {
+//                        //自动注册页面,是编译时自动生成的，build一下就出来了。如果你还没使用@Page的话，暂时是不会生成的。
+//                        return AppPageConfig.getInstance().getPages(); //自动注册页面
+////                        return new ArrayList<>();
+//                    }
+//                })
+//                .debug("PageLog")       //开启调试
+//                .setContainActivityClazz(BaseActivity.class) //设置默认的容器Activity
+//                .enableWatcher(false)   //设置是否开启内存泄露监测
+//                .init(this);            //初始化页面配置
+
         PageConfig.getInstance()
-                .setPageConfiguration(new PageConfiguration() { //页面注册
-                    @Override
-                    public List<PageInfo> registerPages(Context context) {
-                        //自动注册页面,是编译时自动生成的，build一下就出来了。如果你还没使用@Page的话，暂时是不会生成的。
-                        return AppPageConfig.getInstance().getPages(); //自动注册页面
-                    }
-                })
+//      //页面注册,默认不设置的话使用的就是自动注册
+//      .setPageConfiguration(new AutoPageConfiguration())
                 .debug("PageLog")       //开启调试
-                .setContainActivityClazz(BaseActivity.class) //设置默认的容器Activity
-                .enableWatcher(false)   //设置是否开启内存泄露监测
+                .setContainActivityClazz(XPageActivity.class) //设置默认的容器Activity
                 .init(this);            //初始化页面配置
     }
 }

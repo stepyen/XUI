@@ -7,7 +7,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,6 +21,8 @@ import com.stepyen.xui.XUI;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
+
+import androidx.annotation.NonNull;
 
 /**
  * 软键盘工具

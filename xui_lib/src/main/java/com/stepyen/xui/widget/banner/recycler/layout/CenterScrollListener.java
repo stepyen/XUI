@@ -2,7 +2,8 @@
 
 package com.stepyen.xui.widget.banner.recycler.layout;
 
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public class CenterScrollListener extends RecyclerView.OnScrollListener {
     private boolean mAutoSet = false;

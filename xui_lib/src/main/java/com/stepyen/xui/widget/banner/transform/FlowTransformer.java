@@ -1,7 +1,8 @@
 package com.stepyen.xui.widget.banner.transform;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import com.nineoldandroids.view.ViewHelper;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * 翻转切换

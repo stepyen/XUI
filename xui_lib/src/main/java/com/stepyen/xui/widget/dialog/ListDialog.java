@@ -2,8 +2,7 @@ package com.stepyen.xui.widget.dialog;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.ColorInt;
-import android.support.annotation.StyleRes;
+
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -16,6 +15,8 @@ import android.widget.TextView;
 import com.stepyen.xui.R;
 import com.stepyen.xui.utils.DensityUtils;
 import com.stepyen.xui.utils.ResUtils;
+
+import androidx.annotation.ColorInt;
 
 /**
  * date：2019/7/29

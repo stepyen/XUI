@@ -2,9 +2,7 @@ package com.stepyen.xuidemo.fragment.expands.rv_nest.item_provider;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
+
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -17,6 +15,9 @@ import com.stepyen.xuidemo.fragment.expands.rv_nest.PullToRefreshAdapter;
 import com.stepyen.xuidemo.fragment.expands.rv_nest.Status;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * date：2019/7/9

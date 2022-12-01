@@ -9,13 +9,13 @@
     tools:context=".activity.MainActivity">
 
     <FrameLayout
-        android:id="@id/fragment_container"
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
     </FrameLayout>
 
-    <android.support.design.widget.TabLayout
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         style="@style/TabLayoutStyle"
         android:layout_width="match_parent"
@@ -28,6 +28,6 @@
         app:tabPaddingTop="2dp"
         app:tabTextAppearance="@style/TabText.Explain">
 
-    </android.support.design.widget.TabLayout>
+    </com.google.android.material.tabs.TabLayout>
 
 </LinearLayout>

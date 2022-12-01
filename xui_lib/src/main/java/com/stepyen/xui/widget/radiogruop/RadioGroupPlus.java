@@ -1,7 +1,6 @@
 package com.stepyen.xui.widget.radiogruop;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.IdRes;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.stepyen.xui.R;
+
+import androidx.annotation.IdRes;
 
 
 /**
@@ -29,10 +30,7 @@ import com.stepyen.xui.R;
  * in the XML layout file.</p>
  * <p/>
  * <p><strong>XML Attributes</strong></p>
- * <p>See {@link com.android.internal.R.styleable#RadioGroup RadioGroup Attributes},
- * {@link com.android.internal.R.styleable#LinearLayout LinearLayout Attributes},
- * {@link com.android.internal.R.styleable#ViewGroup ViewGroup Attributes},
- * {@link com.android.internal.R.styleable#View View Attributes}</p>
+
  * <p>Also see
  * {@link LinearLayout.LayoutParams LinearLayout.LayoutParams}
  * for layout attributes.</p>
@@ -241,7 +239,7 @@ public class RadioGroupPlus extends LinearLayout {
      * XML file. Otherwise, this class ussed the value read from the XML file.</p>
      * <p/>
      * <p>See
-     * {@link com.android.internal.R.styleable#LinearLayout_Layout LinearLayout Attributes}
+
      * for a list of all child view attributes that this class supports.</p>
      */
     public static class LayoutParams extends LinearLayout.LayoutParams {
