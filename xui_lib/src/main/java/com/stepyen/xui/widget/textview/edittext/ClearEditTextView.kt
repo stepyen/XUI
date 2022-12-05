@@ -56,6 +56,10 @@ class ClearEditTextView @JvmOverloads constructor(
                 height = iconHeight
             }
             clearIv.layoutParams = lp
+
+            clearIv.setOnClickListener {
+                inputEt.setText("")
+            }
         }
 
 
