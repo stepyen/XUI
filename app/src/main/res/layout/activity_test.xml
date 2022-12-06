@@ -19,4 +19,12 @@
         android:layout_marginLeft="@dimen/xui_config_margin"
         />
 
+    <TextView
+        android:id="@+id/testTv"
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:text="测试"
+        />
+
+
 </LinearLayout>

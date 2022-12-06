@@ -57,32 +57,38 @@ class TextViewCountTimeHelp @JvmOverloads constructor(
         mTimeHelp?.setOnCountListener(object : CountTimeHelp.OnCountListener {
             override fun onCount(time: Long, hour: Long, minute: Long, second: Float) {
 
-                if (mListener?.onCountDown(time) == true) {
+                if (mListener?.onCountDown(second) == true) {
 
                 } else {
-                    mTv?.let {
-                        val text = mListener?.getCountDownText(time)
-                        if (text.isNullOrEmpty()) {
-                            mTv.text = "${second.toInt()}s"
-                        } else {
-                            mTv.text = text
-                        }
-                    }
+                    configText(second)
                 }
             }
 
             override fun onFinish() {
-                mTv?.isEnabled = true
-                mTimeHelp?.reset()
 
-                if (mListener?.onFinished() == true) {
+                mTv?.post {
+                    mTv.isEnabled = true
+                    mTimeHelp?.reset()
 
-                } else {
-                    mTv?.text = mHintString
+                    if (mListener?.onFinished() == true) {
+
+                    } else {
+                        mTv.text = mHintString
+                    }
                 }
-
             }
         })
+    }
+
+    private fun configText(second: Float) {
+        mTv?.let {
+            val text = mListener?.getCountDownText(second)
+            if (text.isNullOrEmpty()) {
+                mTv.text = "${second.toInt()}s"
+            } else {
+                mTv.text = text
+            }
+        }
     }
 
     /**
@@ -90,6 +96,7 @@ class TextViewCountTimeHelp @JvmOverloads constructor(
      */
     fun start() {
         mTv?.isEnabled = false
+        configText(mCountDownTime/1000f)
         mTimeHelp?.start()
     }
 
@@ -120,9 +127,9 @@ class TextViewCountTimeHelp @JvmOverloads constructor(
          *
          * @return 是否不使用默认的倒计时提示文本
          */
-        fun onCountDown(time: Long): Boolean
+        fun onCountDown(time: Float): Boolean
 
-        fun getCountDownText(time: Long): String
+        fun getCountDownText(time: Float): String
 
         /**
          * 倒计时结束
