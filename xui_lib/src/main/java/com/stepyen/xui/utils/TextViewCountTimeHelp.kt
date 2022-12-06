@@ -63,7 +63,7 @@ class TextViewCountTimeHelp @JvmOverloads constructor(
                     mTv?.let {
                         val text = mListener?.getCountDownText(time)
                         if (text.isNullOrEmpty()) {
-                            mTv.text = "${second}s"
+                            mTv.text = "${second.toInt()}s"
                         } else {
                             mTv.text = text
                         }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.stepyen.xui.widget.textview.edittext.ClearEditTextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+
+    <com.stepyen.xui.widget.spinner.MaterialSpinner
+        android:id="@+id/spinner1"
+        style="@style/Material.SpinnerStyle"
+        android:background="@color/xui_config_color_red"
+        android:layout_marginLeft="@dimen/xui_config_margin"
+        />
+
+</LinearLayout>

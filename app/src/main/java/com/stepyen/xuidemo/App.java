@@ -73,11 +73,11 @@ public class App extends Application {
 //                .enableWatcher(false)   //设置是否开启内存泄露监测
 //                .init(this);            //初始化页面配置
 
-        PageConfig.getInstance()
-//      //页面注册,默认不设置的话使用的就是自动注册
-//      .setPageConfiguration(new AutoPageConfiguration())
-                .debug("PageLog")       //开启调试
-                .setContainActivityClazz(XPageActivity.class) //设置默认的容器Activity
-                .init(this);            //初始化页面配置
+//        PageConfig.getInstance()
+////      //页面注册,默认不设置的话使用的就是自动注册
+////      .setPageConfiguration(new AutoPageConfiguration())
+//                .debug("PageLog")       //开启调试
+//                .setContainActivityClazz(XPageActivity.class) //设置默认的容器Activity
+//                .init(this);            //初始化页面配置
     }
 }
